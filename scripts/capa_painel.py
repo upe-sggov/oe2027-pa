@@ -172,7 +172,12 @@ JS = r"""
 (function capa(){
   const C = $('#capa'); if (!C) return;
   const ATV = D.edicao_ativa, EA = D.edicoes[ATV];
-  if (HASH_INICIAL || !EA || EA.estado === 'concluído') return;
+  // A capa aparece no endereço curto e também no endereço da Síntese da edição em curso (#oe2027/sintese), que é o que o
+  // painel mostra na barra depois de abrir e que as pessoas copiam e partilham. Ligações para outros separadores ou para
+  // outra edição entram diretamente. Na mesma sessão do navegador, depois de fechada, não volta a aparecer.
+  const hashCapa = ['', '#', `#oe${ATV}`, `#oe${ATV}/`, `#oe${ATV}/sintese`];
+  let vista = false; try { vista = sessionStorage.getItem('cp-vista') === '1'; } catch (e) {}
+  if (!hashCapa.includes(HASH_INICIAL) || vista || !EA || EA.estado === 'concluído') return;
   C.hidden = false; document.body.classList.add('cp-aberta');
   const meses = ['jan.','fev.','mar.','abr.','mai.','jun.','jul.','ago.','set.','out.','nov.','dez.'];
   const dia = s => `${+s.slice(8,10)} ${meses[+s.slice(5,7)-1]}`;
@@ -319,7 +324,7 @@ JS = r"""
   if (outra) { const b = $('#cp-outra'); b.hidden = false; b.textContent = `OE ${outra}${D.edicoes[outra].estado === 'concluído' ? ' · processo concluído' : ''}`;
     b.addEventListener('click', () => { const x = document.querySelector(`#edicoes button[data-ano="${outra}"]`); if (x) x.click(); fechar(); }); }
 
-  function fechar(){ C.classList.add('saiu'); document.body.classList.remove('cp-aberta'); if (rodar) clearInterval(rodar); setTimeout(() => { C.hidden = true; }, 600); }
+  function fechar(){ try { sessionStorage.setItem('cp-vista', '1'); } catch (e) {} C.classList.add('saiu'); document.body.classList.remove('cp-aberta'); if (rodar) clearInterval(rodar); setTimeout(() => { C.hidden = true; }, 600); }
   $('#cp-entrar').addEventListener('click', fechar);
   document.addEventListener('keydown', e => { if (!C.hidden && !C.classList.contains('saiu') && e.key === 'Escape') fechar(); });
 })();
