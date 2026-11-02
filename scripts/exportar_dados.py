@@ -62,7 +62,7 @@ def construir(ano: str, saida: Path, pasta: Path | None = None) -> dict:
     ed = CONFIG["edicoes"][ano]
     pasta = pasta or RAIZ / ed["pasta"]
     f = pasta / "pa.json"
-    pa = sorted(json.loads(f.read_text(encoding="utf-8")) if f.exists() else [], key=ordem)
+    pa = sorted([r for r in (json.loads(f.read_text(encoding="utf-8")) if f.exists() else []) if not r.get("ausente_da_fonte")], key=ordem)
     execucao = json.loads((pasta / "ultima_execucao.json").read_text(encoding="utf-8")) if (pasta / "ultima_execucao.json").exists() else {}
 
     wb = Workbook()

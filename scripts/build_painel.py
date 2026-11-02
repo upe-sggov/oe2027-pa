@@ -41,7 +41,9 @@ def ler_json(f: Path, default):
 
 
 def carregar_edicao(ano: str, ed: dict, pasta: Path) -> dict:
-    pa = ler_json(pasta / "pa.json", [])
+    # Só os registos que a AR publica na versão atual do ficheiro. Os que deixaram de constar (por exemplo, uma PA
+    # que a AR dividiu em partes: 118C passou a 118C-1 e 118C-2) ficam na base e no histórico, mas não contam.
+    pa = [r for r in ler_json(pasta / "pa.json", []) if not r.get("ausente_da_fonte")]
     historico = ler_csv(pasta / "historico.csv")
     agora = dt.datetime.now(dt.timezone.utc)
     return {
