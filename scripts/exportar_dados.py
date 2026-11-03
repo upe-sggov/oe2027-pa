@@ -98,6 +98,10 @@ def construir(ano: str, saida: Path, pasta: Path | None = None) -> dict:
         ("Nota", "Cada registo numerado pela AR ocupa uma linha, incluindo as partes (120C-1, 120C-2) em que a AR divide uma proposta "
                  "que altera vários artigos ou alíneas. Todos os campos são publicados pela AR, exceto os de captura (primeira e última "
                  "captura, fonte, ausente da fonte). A coluna «Estado» agrupa o «Estado (AR)» publicado."),
+        ("Artigo", "A coluna «Artigo / mapa» mostra o artigo que a AR associa a cada registo quando o número e a epígrafe coincidem "
+                   "com o texto da proposta de lei desta edição. Na nova aplicação da AR (OE 2027), alguns registos chegam ligados a artigos "
+                   "de Orçamentos anteriores (por exemplo, «Artigo 1.º – Aprovação» do OE 2006); nesses casos a coluna fica em branco e o "
+                   "artigo visado consta do título da PA (coluna «Objeto»)."),
         ("Painel", "https://upe-sggov.github.io/oe2027-pa/"),
         ("Tratamento", "Área de Suporte à Decisão, Secretaria-Geral do Governo"),
     ]
