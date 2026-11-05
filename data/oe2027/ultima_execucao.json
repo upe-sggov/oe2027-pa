@@ -1,29 +1,29 @@
 {
- "momento": "2026-11-05T19:31:11Z",
+ "momento": "2026-11-05T23:29:57Z",
  "comando": "opendata",
  "ano": 2027,
  "erros": [],
  "ficheiro_ar": "OEPropostasAlteracao2027Or_json.txt",
- "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=c%2b8qbX%2fhnNnsegYhR9kKGpF9Whhwbftvx%2fJEUB59ThBtNUswyXntof%2fLpFcfzKhmzT7lohbv9VgxfPGUXgzeZNi6EXxm14wwqJKKlhp4QHuM1SKiJ73SgeD6uWLWLFvnlznM2Xeuf19ypv3nNzqYHA%2bpEOLMUCgoCJo%2fMn02l%2fw1Q%2bD2SfUk8ZjA70NAe3YUFP1kupRxZtU8h5Vucy7Q7DOIBS1wa9Q0YInXpONMMqOvUMYbP47lFa7P%2bSiD%2br0loRXTzCZu5QB%2fBzGHaHyF7AOcX0f6x7nW8PGJ3cYESZe69mpmJdA1oiBVapf1G7eRmZn9AWLrcW0BJktHx6ryuVzh8etqQPG1kvCaNi5n1G3Py3T2G6Ecs5tW3THthTXggWy%2fzjPVieUp%2b9lQpnNkakHJ26Wnullsjvek8oGstGI%3d&fich=OEPropostasAlteracao2027Or_json.txt&Inline=true",
+ "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=4%2f9IRpmdyLfRfFgbLMVzE1aCC1jVCnCI3JxKfIaWgjM9QQufqbHXOwkhx0YjUarGnbaXgutMWw9WupbRLASLlC80w3earbgLRCgzyiEASYKZsS67DLlXIDN9NLtM%2fE02suYo8Rc5mx%2fBog624Wtq7hJNUGq2KrWg9REzRhO%2bYfmQ0%2fIEsEh3TEvde%2fAWWrPIhK8QyQx5EuHJrwFQwGmeGp%2fDzfjYya%2faWKOpmDUP2NcrvnXOzqsP%2blxNMPro5rjQIwFz3DSTobDFvD9CgcCxo%2bw%2bNlLW%2b2xE6jmmxEkbqDBSNenFdMpMyHy1hXiBmbQFeaRPI0am9RqhYQwni%2baxVHPBcOfNgbuZTtX7oPjoIkfz9KVZgij%2bOfv58A8pxIpOEqm2mdwhkrmN6lKWFrd%2f1xSWBmjM1yPWhiNaMojgEGo%3d&fich=OEPropostasAlteracao2027Or_json.txt&Inline=true",
  "ultima_modificacao_ar": "",
- "capturados": 1299,
- "eventos": 29,
+ "capturados": 1539,
+ "eventos": 307,
  "resumo": {
-  "registos": 1317,
-  "pa": 1276,
+  "registos": 1557,
+  "pa": 1516,
   "por_proponente": {
-   "CH": 397,
-   "L": 267,
-   "PCP": 262,
-   "BE": 206,
-   "JPP": 98,
-   "PAN": 71,
+   "CH": 436,
+   "PCP": 390,
+   "L": 295,
+   "BE": 238,
+   "JPP": 105,
+   "PAN": 74,
    "IL": 12,
-   "PSD": 4,
-   "CDS-PP": 4
+   "PSD": 7,
+   "CDS-PP": 7
   },
   "por_estado": {
-   "em apreciação": 1295,
+   "em apreciação": 1535,
    "retirada": 14,
    "não admitida": 8
   }
