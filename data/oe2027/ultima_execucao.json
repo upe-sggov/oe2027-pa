@@ -1,30 +1,30 @@
 {
- "momento": "2026-11-06T19:32:04Z",
+ "momento": "2026-11-06T20:23:19Z",
  "comando": "opendata",
  "ano": 2027,
  "erros": [],
  "ficheiro_ar": "OEPropostasAlteracao2027Or_json.txt",
  "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=P4rigeeGLdo2zUHUjoAnOrTV15%2biGGcIV3soHBIis3Q6b%2bP7Obg7LvsMkP%2foUo8AoOtmpaCPHxEJOLjaUxVPCe95r4KI5koVfyFxYugg140zmjVDy01flvYF%2fU9p6Bh4tQzkknSsV2Ao0i86qSUgch7GYjMkdQK8hHYyJiJgpnGQHUYBV%2fNab9HWYUdX2dxSDIpcjVUORXV6R89T2FFthnOdU%2blrWJXn7NWywv7QRypdrCfqmGnMrlWDSLWxDVjD0RMQpuiKXZk3%2bnxUDLHJd7Gn5PqWrEDbs7tNnbaPJaAD0wmbVbtnCAMibrFdXiYRoILFu9R37o21VHxONyOSEGZ9BH3gWNJfLKF8GtxWZaM9PyWZ99Cgze2B9JwdWxVQm8PeqsPXtGjVb1wzEtDZvJZGr7%2brK4cLSI8%2fvWyc7SJDvlBia1ZScg1F4UAtm2Wm&fich=OEPropostasAlteracao2027Or_json.txt&Inline=true",
  "ultima_modificacao_ar": "",
- "capturados": 2589,
- "eventos": 96,
+ "capturados": 2693,
+ "eventos": 187,
  "resumo": {
-  "registos": 2633,
-  "pa": 2522,
+  "registos": 2737,
+  "pa": 2626,
   "por_proponente": {
-   "PCP": 590,
-   "CH": 573,
+   "PCP": 634,
+   "CH": 621,
    "L": 511,
    "BE": 372,
-   "PS": 190,
-   "JPP": 167,
-   "PAN": 99,
+   "PS": 193,
+   "JPP": 169,
+   "PAN": 105,
    "PSD": 78,
    "CDS-PP": 64,
-   "IL": 53
+   "IL": 54
   },
   "por_estado": {
-   "em apreciação": 2598,
+   "em apreciação": 2702,
    "retirada": 21,
    "não admitida": 14
   }
