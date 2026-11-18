@@ -21,8 +21,9 @@ on:
     - cron: "5 7-23 9 11 *"
     # Guiões e preparação das votações
     - cron: "15 7,19 10-17 11 *"
-    # Votações na COFAP (15h00) e votação final global
-    - cron: "10 7,13,16-23 18-20,23-24 11 *"
+    # Votações na COFAP (15h00) e votação final global: de 2 em 2 horas, 18–24 nov.
+    # (horas ímpares; as horas pares são cobertas por capturas manuais via disparar.txt)
+    - cron: "10 7-23/2 18-24 11 *"
     - cron: "15 7,19 25-30 11 *"
     - cron: "15 7 1-11 12 *"
 
