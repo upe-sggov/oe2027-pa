@@ -197,7 +197,7 @@ section.tab.oculta{display:none!important}
 .ult-ap .d{color:var(--ink2);font-variant-numeric:tabular-nums;white-space:nowrap;margin-left:auto;font-size:12px}
 .ult-ap .t{margin-top:2px;color:var(--ink2);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .ult-ap a{font-weight:600;white-space:nowrap}
-#dobra-entrega-corpo>.card{box-shadow:none}
+#dobra-entrega-corpo>.card{box-shadow:none;max-width:620px}
 .c-ok{background:var(--ok)}.c-par{background:var(--ok2)}.c-nok{background:var(--nok)}.c-ret{background:var(--ret)}.c-pre{background:#8a6fb0}.c-pend{background:var(--pend)}
 .seg{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
 .seg button{font:inherit;font-size:12.5px;padding:6px 12px;border-radius:999px;border:1px solid var(--linha);background:var(--card);color:var(--ink2);cursor:pointer}
@@ -385,7 +385,6 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="card"><h3>PA por tema (atribuído pela AR)</h3><div class="barras" id="g-tema"></div><div class="legenda">Uma proposta com vários temas conta em cada um deles.</div></div>
     <div class="card" id="c-ult-ap" hidden><h3 id="h-ult-ap">Últimas aprovadas</h3><div id="ult-ap"></div><div class="legenda">Por data da votação publicada pela AR. Título tal como a AR o publica. A lista completa está no separador Votações.</div></div>
     <div class="card" id="c-ent-hora"><h3>Entradas por hora no último dia</h3><div class="colunas" id="g-horas"></div><div class="legenda" id="g-horas-nota"></div></div>
-    <div class="card"><h3>PA por tipo (natureza publicada pela AR)</h3><div class="barras" id="g-tipo"></div></div>
     <div class="card"><h3 id="h-cal">Calendário de apreciação na AR</h3><div class="cal" id="cal"></div><div class="legenda" id="cal-fonte"></div></div>
   </div>
   <details class="card dobra" id="dobra-entrega" hidden style="margin-top:12px"><summary><h3>Fase de entrega das propostas</h3><span class="mini" id="n-entrega"></span></summary><div class="grid duas" id="dobra-entrega-corpo" style="margin-top:10px"></div></details>
@@ -397,6 +396,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="card"><h3>PA por tema e resultado</h3><div class="barras" id="g-tema-2"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas</span><span><i class="c-par"></i>parcialmente</span><span><i class="c-nok"></i>rejeitadas</span><span><i class="c-ret"></i>retiradas ou não admitidas</span><span><i class="c-pre"></i>prejudicadas</span><span><i class="c-pend"></i>por votar</span></div></div>
     <div class="card"><h3>Resultado por tema</h3><div class="tabela-wrap"><table class="matriz" id="m-tema-res"></table></div></div>
   </div>
+  <div class="card" style="margin-top:12px"><h3>PA por tipo e resultado (natureza publicada pela AR)</h3><div class="barras" id="g-tipo"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas</span><span><i class="c-par"></i>parcialmente</span><span><i class="c-nok"></i>rejeitadas</span><span><i class="c-ret"></i>retiradas ou não admitidas</span><span><i class="c-pre"></i>prejudicadas</span><span><i class="c-pend"></i>por votar</span></div><div class="legenda">Clique num tipo para filtrar a lista.</div></div>
   <div class="card" style="margin-top:12px"><h3>PA por tema e proponente</h3><div class="tabela-wrap"><table class="matriz" id="m-tema-prop"></table></div></div>
   <div class="card" id="lista-pa" style="margin-top:12px;scroll-margin-top:70px"><h3>Lista das propostas de alteração</h3>
     <div class="legenda" style="margin:-4px 0 10px">Sentido de voto de cada grupo parlamentar: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
@@ -749,8 +749,9 @@ function montar() {
   for (const id of ['c-vot-dia','c-ult-ap']) $('#'+id).hidden = !emVotacao;
   $('#dobra-entrega').hidden = !emVotacao;
   if (emVotacao) {
-    const corpo = $('#dobra-entrega-corpo'); for (const id of ['c-ent-dia','c-ent-hora']) corpo.appendChild($('#'+id));
-    $('#n-entrega').textContent = dias.length ? `${fmtN(PA.length)} registos entre ${diaMes(dias[0][0])} e ${diaMes(dias[dias.length-1][0])} ${dias[dias.length-1][0].slice(0,4)} · entradas por dia e por hora` : '';
+    $('#dobra-entrega-corpo').appendChild($('#c-ent-hora'));
+    const cCal = $('#cal').closest('.card'); cCal.parentElement.insertBefore($('#c-ent-dia'), cCal);
+    $('#n-entrega').textContent = dias.length ? `${fmtN(PA.length)} registos entre ${diaMes(dias[0][0])} e ${diaMes(dias[dias.length-1][0])} ${dias[dias.length-1][0].slice(0,4)} · entradas por hora no último dia (${diaMes(dias[dias.length-1][0])})` : '';
     const prov = diasProvisorios();
     const dv = [...new Set(votadas.map(diaVot).filter(Boolean))].sort();
     const linhasV = dv.map(d => { const rs = PA.filter(r => diaVot(r) === d), v = rs.filter(r=>r.votos_por_partido).length, ap = rs.filter(r=>/^aprovada/.test(r.estado)).length, rj = rs.filter(r=>r.estado==='rejeitada').length;
@@ -763,7 +764,7 @@ function montar() {
     $('#ult-ap').innerHTML = ult.length ? '<div class="ult-ap">' + ult.map(r => `<div><div class="cab">${r.url_pdf?`<a href="${esc(r.url_pdf)}" target="_blank" rel="noopener" title="Texto da PA (PDF)">${esc(r.n_pa)}</a>`:`<b>${esc(r.n_pa)}</b>`} <span class="chip gp"><span class="dot" style="background:${corGP(split(r.proponente)[0])}"></span>${esc(r.proponente)}</span>${r.estado==='aprovada parcialmente'?'<span class="chip ok">parcialmente</span>':''}<span class="d">${diaMes(diaVot(r))}${r.sede_votacao==='Plenário'?' · Plenário':' · Comissão'}</span></div><div class="t" title="${esc(r.objeto||'')}">${esc(r.objeto||'—')}</div></div>`).join('') + '</div>' : '<div class="mini">Ainda sem PA aprovadas.</div>';
   }
   barras($('#g-tema'), cont(PA, temasPA).slice(0,16), tm => { irPara('pa'); filtrarTema(tm); });
-  barras($('#g-tipo'), cont(PA, r=>[r.tipo_ar||'—']));
+  barrasEmpilhadas($('#g-tipo'), cont(PA, r=>[r.tipo_ar||'—']).map(([tp]) => { const rs = PA.filter(r=>(r.tipo_ar||'—')===tp); return [tp, porEstadoDe(rs), rs.length]; }), filtrarTipo);
   const hoje = new Date().toISOString().slice(0,10);
   let cal = E.calendario || [];
   if (!cal.length && PA.length) {
@@ -920,6 +921,11 @@ function renderPosicao() {
 $('#f-pos-prop').addEventListener('input', renderPosicao);
 $('#f-q-res').addEventListener('input', () => renderRes());
 { const ajNav = () => document.documentElement.style.setProperty('--nav-h', (document.querySelector('nav.tabs')?.offsetHeight || 54) + 'px'); ajNav(); window.addEventListener('resize', ajNav); }
+function filtrarTipo(tp) {
+  ['#f-q','#f-partido','#f-tema','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
+  $('#f-tipo').value = tp === '—' ? '' : tp; render();
+  document.getElementById('lista-pa').scrollIntoView({behavior:'smooth', block:'start'});
+}
 function filtrarTema(tm) {
   ['#f-q','#f-partido','#f-tipo','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
   $('#f-tema').value = tm; render();
