@@ -578,7 +578,7 @@ function renderDia() {
 
   const linha = (rotulo, a, t) => `<tr><td>${rotulo}</td><td class="num">${fmtN(a)} / ${fmtN(t)}</td><td class="bar-c"><span class="bar-dia"><i style="width:${t ? (a/t*100).toFixed(1) : 0}%"></i></span></td><td class="num mini">${t ? pct(a,t).toString().replace('.',',') + '%' : '—'}</td></tr>`;
   const pp = {}; v.forEach(r => { const p = r.proponente.replace('; ','/'); (pp[p] = pp[p] || [0,0])[1]++; }); apDia.forEach(r => { const p = r.proponente.replace('; ','/'); (pp[p] = pp[p] || [0,0])[0]++; });
-  const cab = c => `<thead><tr><th>${c}</th><th class="num">Aprovadas / votadas</th><th></th><th class="num">Taxa</th></tr></thead>`;
+  const cab = c => `<thead><tr><th>${c}</th><th class="num">Aprovadas / votadas</th><th></th><th class="num">Taxa de aprovação</th></tr></thead>`;
   $('#t-dia-prop').innerHTML = cab('Proponente') + '<tbody>' + Object.entries(pp).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([p,[a,t]]) => linha(gpChip(p), a, t)).join('') + `</tbody><tfoot><tr><td><b>Total</b></td><td class="num"><b>${fmtN(apDia.length)} / ${fmtN(v.length)}</b></td><td></td><td class="num mini">${v.length ? pct(apDia.length, v.length).toString().replace('.',',') + '%' : '—'}</td></tr></tfoot>`;
   const tt = {}; v.forEach(r => temasPA(r).forEach(t => { (tt[t] = tt[t] || [0,0])[1]++; })); apDia.forEach(r => temasPA(r).forEach(t => { (tt[t] = tt[t] || [0,0])[0]++; }));
   $('#t-dia-tema').innerHTML = cab('Tema') + '<tbody>' + Object.entries(tt).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([t,[a,n]]) => linha(esc(t), a, n)).join('') + '</tbody>';
