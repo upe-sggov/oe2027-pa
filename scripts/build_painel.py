@@ -22,6 +22,7 @@ import json
 from pathlib import Path
 
 import capa_painel  # capa de abertura (CSS, HTML e JS)
+import glossario  # glossário (separador «Fontes e método»)
 
 RAIZ = Path(__file__).resolve().parents[1]
 DOCS = RAIZ / "docs"
@@ -88,6 +89,7 @@ def main(argv=None) -> int:
         "fontes": {k: v for k, v in CONFIG["fontes"].items() if str(v).startswith("http")},
         "partidos": list(TAX["partidos"].keys()),
         "cores": TAX.get("cores", {}),
+        "glossario": glossario.payload(),
     }
     html = (TEMPLATE.replace("/*__CAPA_CSS__*/", capa_painel.CSS).replace("<!--__CAPA_HTML__-->", capa_painel.HTML)
             .replace("//__CAPA_JS__", capa_painel.JS))
@@ -202,6 +204,17 @@ tbody tr:nth-child(even) td{background:rgba(120,140,160,.05)}
 tbody tr:hover td{background:rgba(39,86,115,.07)}
 tr:last-child td{border-bottom:0}
 td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.gl{margin:0;display:grid;grid-template-columns:minmax(180px,260px) 1fr;column-gap:18px}
+.gl dt{font-weight:600;font-size:13px;padding:10px 0 0;border-top:1px solid var(--linha);scroll-margin-top:80px}
+.gl dd{margin:0;padding:10px 0;border-top:1px solid var(--linha);font-size:13px;line-height:1.5}
+.gl dt .gl-g{display:block;font-weight:400;font-size:11px;color:var(--ink3);margin-top:2px}
+.gl dd .gl-f{display:block;font-size:11.5px;color:var(--ink3);margin-top:4px}
+.gl .gl-on{background:color-mix(in srgb,var(--azul) 12%,transparent);transition:background .6s}
+.gl-letras{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}
+.gl-letras a{font-size:12px;padding:2px 7px;border-radius:6px;border:1px solid var(--linha);color:var(--ink2);text-decoration:none}
+.tip .gl-link,.gl-link{color:var(--azul);cursor:pointer;text-decoration:underline;background:none;border:0;padding:0;font:inherit}
+[data-g]{cursor:help}
+@media (max-width:700px){.gl{grid-template-columns:1fr}.gl dd{border-top:0;padding-top:2px}}
 .chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--ink2);font-size:11.5px;white-space:nowrap}
 .chip.ok{background:#e3f1ea;color:#145a44}.chip.nok{background:#f9e3e1;color:#8a1711}.chip.pre{background:#eee;color:#555}.chip.ret{background:#fdf1d6;color:#7a5200}
 .chip.gp .dot{margin-right:4px;vertical-align:0}
@@ -388,6 +401,12 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
       </ol>
     </div>
   </div>
+  <div class="card" id="glossario" style="margin-top:12px;scroll-margin-top:70px"><h3>Glossário</h3>
+    <div class="filtros"><input type="search" id="f-q-gl" placeholder="Pesquisar um termo ou uma palavra da definição…"><span class="mini" id="f-n-gl"></span></div>
+    <div class="gl-letras" id="gl-letras"></div>
+    <dl class="gl" id="gl-lista"></dl>
+    <div class="legenda">Cada termo indica a fonte. Os estados são os valores publicados pela AR; quando a AR não publica a definição, a entrada indica «leitura do painel». «Convenção do painel» assinala regras de contagem próprias desta ferramenta.</div>
+  </div>
 </section>
 </main>
 <button id="topo-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo" aria-label="Voltar ao topo"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -421,7 +440,7 @@ const temaDe = r => (r.tema_ar||'').replace(/;\s*$/,'').trim();
 const temasPA = r => split(r.tema_ar).length ? split(r.tema_ar) : ['—'];
 const ESTADOS = ['aprovada','aprovada parcialmente','rejeitada','retirada','não admitida','prejudicada','em apreciação'];
 const CLS = {aprovada:'c-ok','aprovada parcialmente':'c-par',rejeitada:'c-nok',retirada:'c-ret','não admitida':'c-ret',prejudicada:'c-pre','em apreciação':'c-pend'};
-const estadoChip = e => { const c = {aprovada:'ok','aprovada parcialmente':'ok',rejeitada:'nok',prejudicada:'pre',retirada:'ret','não admitida':'ret'}[e]||''; return `<span class="chip ${c}">${esc(e||'—')}</span>`; };
+const estadoChip = e => { const c = {aprovada:'ok','aprovada parcialmente':'ok',rejeitada:'nok',prejudicada:'pre',retirada:'ret','não admitida':'ret'}[e]||''; const g = GL_ESTADO[e]; return `<span class="chip ${c}"${g?glAttr(g):''}>${esc(e||'—')}</span>`; };
 const gpChip = p => `<span class="chip gp"><span class="dot" style="background:${corGP(p)}"></span>${esc(p)}</span>`;
 const votosHTML = s => split(s).map(v => { const [g,x] = v.split(':').map(y=>y.trim()); const c = {Favor:'vf',Contra:'vc','Abstenção':'va'}[x]||'vx'; return `<span class="vt ${c}" title="${esc(g)}: ${esc(x)}">${esc(g)}</span>`; }).join('');
 const numPA = s => { const m=/^(\d+)([A-Z]*)(?:-(\d+))?/.exec(s||''); return m ? [+m[1], m[2], +(m[3]||0)] : [1e9,'',0]; };
@@ -450,6 +469,32 @@ function colunas(el, pares, fmtX) {
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico de colunas" style="color:var(--ink)">${grelha}${cols}</svg>`;
 }
 const opts = (id, vals, manter=1) => { const s=$(id); while (s.options.length>manter) s.remove(manter); for (const v of vals) { const o=document.createElement('option'); o.value=v; o.textContent=v; s.appendChild(o);} };
+// ----- glossário
+const GL = (D.glossario||{termos:[],grupos:[]});
+const GL_POR_ID = Object.fromEntries(GL.termos.map(t=>[t.id,t]));
+const GL_ESTADO = {'aprovada':'aprovada','aprovada parcialmente':'aprovada','rejeitada':'rejeitada','prejudicada':'prejudicada','retirada':'retirada','não admitida':'nao-admitida','em apreciação':'aguarda',
+  'Entrada (via IPA)':'entrada','Admitida':'admitida','Não Admitida':'nao-admitida','Aguarda Voto em Comissão':'aguarda','Aprovado(a) em Comissão':'aprovada','Aprovado(a) Parcialmente em Comissão':'aprovada','Aprovado(a) por Unanimidade em Comissão':'aprovada','Rejeitado(a) em Comissão':'rejeitada','Prejudicado(a)':'prejudicada','Substituído(a)':'substituida','Retirado(a)':'retirada','Remetido(a) a Plenário':'remetida','Avocado(a)':'avocada'};
+const GL_KPI = {'Propostas de alteração (contagem da AR)':'registo','Números de PA distintos':'pa-distinta','Aprovadas (total ou parcialmente)':'aprovada','Rejeitadas':'rejeitada','Retiradas, prejudicadas ou não admitidas':'retirada','Taxa de aprovação':'taxa','PA votadas':'pa-votadas','Prejudicadas':'prejudicada','Votadas em Plenário (avocação)':'avocacao','Requerimentos de avocação publicados':'requerimento','Por votar':'aguarda','Em apreciação':'aguarda','Temas atribuídos pela AR':'tema'};
+const glAttr = id => GL_POR_ID[id] ? ` data-g="${id}" title="${esc(GL_POR_ID[id].def)} (clique para abrir o glossário)"` : '';
+const glNorm = x => String(x||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+function renderGlossario() {
+  const q = glNorm($('#f-q-gl').value.trim());
+  const termos = GL.termos.slice().sort((a,b)=>a.termo.localeCompare(b.termo,'pt')).filter(t => !q || glNorm(t.termo+' '+t.def).includes(q));
+  const letras = [...new Set(termos.map(t=>glNorm(t.termo[0]).toUpperCase()))];
+  $('#gl-letras').innerHTML = letras.map(l=>`<a href="#" onclick="event.preventDefault();document.querySelector('.gl dt[data-l=&quot;${l}&quot;]').scrollIntoView({behavior:'smooth',block:'start'})">${l}</a>`).join('');
+  const vistas = new Set();
+  $('#gl-lista').innerHTML = termos.map(t => { const l = glNorm(t.termo[0]).toUpperCase(); const dl = vistas.has(l) ? '' : ` data-l="${l}"`; vistas.add(l);
+    return `<dt id="g-${t.id}"${dl}>${esc(t.termo)}<span class="gl-g">${esc(GL.grupos[t.grupo]||'')}</span></dt><dd id="gd-${t.id}">${esc(t.def)}<span class="gl-f">Fonte: ${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.fonte)}</a>`:esc(t.fonte)}</span></dd>`; }).join('') || '<dd class="mini">Nenhum termo encontrado.</dd>';
+  $('#f-n-gl').textContent = q ? `${termos.length} de ${GL.termos.length} termos` : `${GL.termos.length} termos`;
+}
+function irGlossario(id) {
+  if ($('#f-q-gl').value) { $('#f-q-gl').value=''; renderGlossario(); }
+  irPara('fontes');
+  const dt = document.getElementById('g-'+id), dd = document.getElementById('gd-'+id);
+  if (!dt) { document.getElementById('glossario').scrollIntoView({behavior:'smooth'}); return; }
+  setTimeout(()=>{ dt.scrollIntoView({behavior:'smooth', block:'start'}); [dt,dd].forEach(e=>{e.classList.add('gl-on'); setTimeout(()=>e.classList.remove('gl-on'),2200);}); }, 60);
+}
+document.addEventListener('click', ev => { const g = ev.target.closest('[data-g]'); if (g) irGlossario(g.dataset.g); });
 const INFO = {
   'Propostas de alteração (contagem da AR)': 'Registos numerados publicados pela AR. É a contagem que a AR usa: quando uma proposta altera vários artigos ou alíneas, a AR divide-a em partes (120C-1, 120C-2), cada uma com número, estado e votação próprios.',
   'Números de PA distintos': 'Números-base distintos (120C conta uma vez, com todas as suas partes). Diferença para a contagem da AR = número de partes adicionais.',
@@ -457,8 +502,8 @@ const INFO = {
   'Aprovadas (total ou parcialmente)': 'Registos aprovados em Comissão ou em Plenário, incluindo as aprovações por unanimidade e as parciais, em que só parte do texto proposto foi aprovada.',
   'Rejeitadas': 'Registos rejeitados em Comissão ou, depois de avocação, em Plenário.',
   'Retiradas, prejudicadas ou não admitidas': 'Retirada: o proponente desistiu da proposta. Prejudicada: deixou de poder ser votada porque uma votação anterior já decidiu a mesma matéria. Não admitida: não foi aceite para apreciação.',
-  'Taxa de aprovação': 'Registos aprovados (incluindo parcialmente) sobre os registos com votação publicada pela AR.',
-  'PA votadas': 'Registos com pelo menos uma votação publicada pela AR.',
+  'Taxa de aprovação': 'Registos aprovados (incluindo parcialmente) sobre os registos com sentido de voto publicado pela AR.',
+  'PA votadas': 'Registos com sentido de voto publicado pela AR. Os registos com resultado mas sem sentido de voto publicado não entram nesta contagem.',
   'Prejudicadas': 'Registos que deixaram de poder ser votados porque uma votação anterior já decidiu a mesma matéria.',
   'Votadas em Plenário (avocação)': 'Registos com votação em Plenário. Acontece quando um grupo parlamentar requer que a votação, normalmente feita na Comissão de Orçamento, Finanças e Administração Pública, seja feita (ou repetida) em Plenário.',
   'Requerimentos de avocação publicados': 'Requerimentos de avocação a Plenário publicados pela AR na ficha da proposta, com o grupo parlamentar requerente e a data.',
@@ -470,7 +515,7 @@ const INFO = {
   'Registos votados': 'Registos com sentido de voto publicado, base da matriz de posições por tema.',
   'Com pedido de parecer às Regiões Autónomas': 'Registos em que a AR assinala pedido de parecer à Região Autónoma dos Açores ou da Madeira.'
 };
-const kpi = ([l,v,c,sufixo]) => `<div class="card kpi ${c}">${INFO[l]?`<button class="info" aria-expanded="false" aria-label="O que significa «${esc(l)}»" title="O que significa?" onclick="const k=this.parentElement;k.classList.toggle('aberto');this.setAttribute('aria-expanded',k.classList.contains('aberto'))">i</button>`:''}<div class="v">${typeof v==='number'?fmtN(v):esc(v)}${sufixo||''}</div><div class="l">${l}</div>${INFO[l]?`<div class="tip">${esc(INFO[l])}</div>`:''}</div>`;
+const kpi = ([l,v,c,sufixo]) => `<div class="card kpi ${c}">${INFO[l]?`<button class="info" aria-expanded="false" aria-label="O que significa «${esc(l)}»" title="O que significa?" onclick="const k=this.parentElement;k.classList.toggle('aberto');this.setAttribute('aria-expanded',k.classList.contains('aberto'))">i</button>`:''}<div class="v">${typeof v==='number'?fmtN(v):esc(v)}${sufixo||''}</div><div class="l">${l}</div>${INFO[l]?`<div class="tip">${esc(INFO[l])}${GL_KPI[l]?` <button class="gl-link" onclick="irGlossario('${GL_KPI[l]}')">Ver no glossário</button>`:''}</div>`:''}</div>`;
 const matrizCalor = (el, linhas, colunas, celula, vazio, corLinha) => {
   if (!linhas.length) { el.innerHTML = `<tr><td class="mini">${vazio}</td></tr>`; return; }
   el.innerHTML = `<tr><th></th>${colunas.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>` + linhas.map(l => `<tr><td style="text-align:left"><b>${corLinha?`<span class="dot" style="background:${corGP(l)}"></span> `:''}${esc(l)}</b></td>${colunas.map(c => { const s = celula(l,c); if (!s || !(s.F+s.C+s.A)) return '<td class="q mini">—</td>'; const n=s.F+s.C+s.A, p=s.F/n; const cor = `hsl(${Math.round(p*120)},55%,${82-Math.round(p*10)}%)`; return `<td class="q" style="background:${cor}" title="${esc(c)} nas PA de ${esc(l)}: ${s.F} a favor, ${s.C} contra, ${s.A} abstenções">${Math.round(p*100)}%<small>${s.F} · ${s.C} · ${s.A}</small></td>`; }).join('')}</tr>`).join('');
@@ -629,7 +674,7 @@ function render() {
     <td class="mini">${esc(r.tipo_ar)}</td>
     <td class="obj">${esc(r.objeto)}</td>
     <td class="mini">${esc(temaDe(r))}</td>
-    <td>${estadoChip(r.estado)}<br><span class="mini">${esc(r.estado_ar)}</span></td>
+    <td>${estadoChip(r.estado)}<br><span class="mini"${GL_ESTADO[r.estado_ar]?glAttr(GL_ESTADO[r.estado_ar]):''}>${esc(r.estado_ar)}</span></td>
     <td class="mini votos">${r.resultado_votacao?`${esc(fmtData(r.data_votacao))}${r.sede_votacao?' · '+esc(r.sede_votacao):''}${r.n_votacoes>1?` · ${r.n_votacoes} votações`:''}<br>${votosHTML(r.votos_por_partido)}`:'—'}</td>
     <td class="mini outros">${outrosAR(r)}</td>
     <td class="mini">${r.url_detalhe?`<a href="${esc(r.url_detalhe)}" target="_blank" rel="noopener">AR</a>`:''}${r.url_pdf?` · <a href="${esc(r.url_pdf)}" target="_blank" rel="noopener">PDF</a>`:''}</td>
@@ -729,8 +774,11 @@ function renderRes() {
     || `<tr><td colspan="9" class="mini">Sem registos neste grupo.</td></tr>`;
 }
 montar();
+renderGlossario();
+$('#f-q-gl').addEventListener('input', renderGlossario);
 const alvoHash = hash[1]==='temas' ? 'pa' : hash[1];
-if (alvoHash && document.querySelector(`nav.tabs button[data-t="${alvoHash}"]:not([hidden])`)) irPara(alvoHash); else atualizarHash();
+if (alvoHash==='glossario') { irPara('fontes'); setTimeout(()=>document.getElementById('glossario').scrollIntoView({block:'start'}),80); }
+else if (alvoHash && document.querySelector(`nav.tabs button[data-t="${alvoHash}"]:not([hidden])`)) irPara(alvoHash); else atualizarHash();
 //__CAPA_JS__
 </script>
 </body>

@@ -1,0 +1,128 @@
+# -*- coding: utf-8 -*-
+"""Glossário do painel (separador «Fontes e método»).
+
+Cada termo indica a fonte. Quando a AR não publica definição, a entrada é
+marcada como leitura do painel ou convenção do painel. Validado pela UPE
+(Celine Mestre) a 19 nov. 2026.
+"""
+
+REGIMENTO = "https://www.parlamento.pt/ArquivoDocumentacao/Documents/regimento_AR_2023.pdf"
+RES_UTAO = "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/53-2006-538625"
+
+GRUPOS = ["Processo orçamental na AR", "Classificação da AR", "Estados da AR", "Votação", "Conceitos do painel"]
+
+# termo, grupo, definição, fonte, ligação da fonte (opcional)
+TERMOS = [
+    # Processo orçamental na AR
+    ("pa", "Proposta de alteração (PA)", 0,
+     "Proposta de um ou mais deputados ou grupos parlamentares para alterar o texto da proposta de lei do Orçamento do Estado.",
+     "Regimento da AR, art. 4.º, n.º 1, al. g), e art. 127.º", REGIMENTO),
+    ("especialidade", "Votação na especialidade", 0,
+     "Votação artigo a artigo da proposta de lei e das PA. Faz-se na comissão parlamentar competente em razão da matéria, organizada por artigos e mapas orçamentais.",
+     "Regimento da AR, art. 211.º-A, n.os 2 e 4", REGIMENTO),
+    ("cofap", "COFAP", 0,
+     "Comissão de Orçamento, Finanças e Administração Pública. É a comissão competente que organiza a apreciação na especialidade do Orçamento e onde se vota a maioria das PA.",
+     "Regimento da AR, arts. 211.º e 211.º-A", REGIMENTO),
+    ("guiao", "Guião de votações", 0,
+     "Documento da COFAP que ordena, por artigo, as PA a votar em cada sessão. Há guiões de Comissão e de Plenário.",
+     "Página do Orçamento do Estado na COFAP", ""),
+    ("avocacao", "Avocação", 0,
+     "Pedido para que o Plenário chame a si a votação de um artigo ou de uma PA, em vez da comissão, ou para a repetir. Tem de ser requerida por um grupo parlamentar ou por, pelo menos, 10 deputados, dentro dos limites da grelha do anexo II do Regimento.",
+     "Regimento da AR, art. 151.º e art. 211.º-A, n.º 5", REGIMENTO),
+    ("vfg", "Votação final global", 0,
+     "Votação da proposta de lei no seu conjunto, depois de concluída a especialidade. Segue-se a redação final pela comissão, num prazo de 15 dias.",
+     "Regimento da AR, arts. 155.º e 212.º", REGIMENTO),
+    ("utao", "UTAO", 0,
+     "Unidade Técnica de Apoio Orçamental da Assembleia da República. Apoia tecnicamente a COFAP em matéria orçamental. No OE 2027 publica, entre outros, relatórios sobre o impacto orçamental de PA concretas, listados nos documentos da COFAP.",
+     "Resolução da Assembleia da República n.º 53/2006; documentos publicados pela COFAP", RES_UTAO),
+    # Classificação da AR
+    ("tipo", "Tipo", 1,
+     "Substituição: altera o sentido do texto em discussão. Aditamento: acrescenta matéria nova. Eliminação: suprime uma disposição. A AR subdivide o aditamento em «Artigo PPL» (novo artigo da proposta de lei), «Números e Alíneas» (novos números ou alíneas de um artigo existente) e «Artigo Outros Diplomas». «Por definir» quer dizer que a AR ainda não classificou a PA. O tipo «Emenda» só aparece nos dados das edições até 2023.",
+     "Regimento da AR, art. 127.º; dados abertos da AR", REGIMENTO),
+    ("incide", "Incide", 1,
+     "Diz se a PA altera o articulado (o texto da lei) ou os mapas orçamentais.",
+     "Dados abertos da AR", ""),
+    ("tema", "Tema", 1,
+     "Área atribuída pelos serviços da AR a cada PA. Em 2026 corresponde à comissão parlamentar competente.",
+     "Dados abertos da AR", ""),
+    ("partes", "Partes (-1, -2…)", 1,
+     "Quando uma PA altera vários artigos ou alíneas, a AR divide-a em partes numeradas (por exemplo, 120C-1 e 120C-2), votadas separadamente.",
+     "Dados abertos da AR; leitura do painel", ""),
+    ("parecer-ra", "Pedido de parecer às Regiões Autónomas", 1,
+     "PA sobre matéria das Regiões Autónomas, que a AR submete aos órgãos de governo próprio dos Açores (RAA) e da Madeira (RAM).",
+     "Regimento da AR, art. 142.º", REGIMENTO),
+    ("requerimento", "Requerimento", 1,
+     "Pedido formal registado na ficha da PA, com o requerente, a data e o resultado. No OE 2027 são, até agora, requerimentos de avocação.",
+     "Regimento da AR, art. 151.º, n.º 2; dados abertos da AR", REGIMENTO),
+    # Estados da AR
+    ("entrada", "Entrada (via IPA)", 2,
+     "PA registada pela AR, ainda sem decisão sobre a admissão.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("admitida", "Admitida", 2,
+     "PA aceite para votação.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("nao-admitida", "Não admitida", 2,
+     "PA recusada antes da votação.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("aguarda", "Aguarda voto em comissão", 2,
+     "PA admitida, à espera de votação na COFAP.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("aprovada", "Aprovada, aprovada parcialmente, aprovada por unanimidade", 2,
+     "Aprovada no todo, só em parte (alguns números ou alíneas), ou sem votos contra nem abstenções.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("rejeitada", "Rejeitada", 2,
+     "PA votada e não aprovada.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("prejudicada", "Prejudicada", 2,
+     "PA que deixou de ser votada porque uma votação anterior lhe retirou o objeto.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("substituida", "Substituída", 2,
+     "PA trocada por outra, normalmente uma nova versão do mesmo proponente. A contagem segue na nova.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("retirada", "Retirada", 2,
+     "PA retirada pelo proponente.",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    ("remetida", "Remetida a Plenário", 2,
+     "PA a um artigo que se vota no Plenário e não na comissão, por exceção à regra do art. 211.º-A, n.º 2, do Regimento. A COFAP publica um guião próprio para estes artigos.",
+     "Estado registado nos dados abertos da AR; guiões da COFAP; definição: leitura do painel", ""),
+    ("avocada", "Avocada", 2,
+     "PA cuja votação passou para o Plenário a pedido de um grupo parlamentar. Até essa votação, a AR deixa de mostrar nos dados abertos o resultado da comissão (observado a 19 de novembro de 2026).",
+     "Estado registado nos dados abertos da AR; definição: leitura do painel", ""),
+    # Votação
+    ("sentido-voto", "Sentido de voto", 3,
+     "A favor, contra ou abstenção de cada grupo parlamentar ou deputado único representante de partido. «Ausente» assinala quem não votou. Em comissão, o voto reflete a representação de cada grupo na Assembleia.",
+     "Regimento da AR, art. 29.º, n.º 7", REGIMENTO),
+    ("durp", "Deputado único representante de partido", 3,
+     "Deputado eleito por um partido que tem só esse deputado. Não forma grupo parlamentar, mas vota e tem direitos próprios.",
+     "Regimento da AR, art. 10.º", REGIMENTO),
+    # Conceitos do painel
+    ("registo", "Registo", 4,
+     "Cada número publicado pela AR, incluindo as partes. É a unidade usada nas contagens, como faz a AR.",
+     "Convenção do painel", ""),
+    ("pa-distinta", "PA distinta", 4,
+     "Proposta contada uma só vez, sem as partes (120C conta uma vez, com todas as suas partes).",
+     "Convenção do painel", ""),
+    ("pa-votadas", "PA votadas", 4,
+     "Registos com sentido de voto publicado pela AR. Os registos com resultado mas sem sentido de voto aparecem à parte, em «decididas sem sentido de voto publicado».",
+     "Convenção do painel", ""),
+    ("taxa", "Taxa de aprovação", 4,
+     "Aprovadas (incluindo as parciais) a dividir pelos registos com sentido de voto publicado.",
+     "Convenção do painel", ""),
+    ("captura", "Captura", 4,
+     "Cada leitura dos dados abertos da AR feita pelo painel. Cada uma fica guardada, com data e hora.",
+     "Convenção do painel", ""),
+    ("alteracoes", "Alterações entre capturas", 4,
+     "Entradas, mudanças de estado e votações detetadas entre duas capturas.",
+     "Convenção do painel", ""),
+    ("ausente", "Ausente da fonte", 4,
+     "Registo que deixou de constar dos dados da AR, normalmente porque foi dividido em partes. Fica no histórico, mas não entra nas contagens.",
+     "Convenção do painel", ""),
+]
+
+
+def payload():
+    return {
+        "grupos": GRUPOS,
+        "termos": [{"id": i, "termo": t, "grupo": g, "def": d, "fonte": f, "url": u}
+                   for (i, t, g, d, f, u) in TERMOS],
+    }
