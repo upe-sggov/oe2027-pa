@@ -190,7 +190,7 @@ section.tab.oculta{display:none!important}
 .stack span{display:block;height:100%;min-width:0}
 .stack-leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12px;color:var(--ink2)}
 .stack-leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.c-ok{background:var(--ok)}.c-par{background:var(--ok2)}.c-nok{background:var(--nok)}.c-ret{background:var(--ret)}.c-pre{background:#9aa5ad}.c-pend{background:var(--pend)}
+.c-ok{background:var(--ok)}.c-par{background:var(--ok2)}.c-nok{background:var(--nok)}.c-ret{background:var(--ret)}.c-pre{background:#8a6fb0}.c-pend{background:var(--pend)}
 .seg{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
 .seg button{font:inherit;font-size:12.5px;padding:6px 12px;border-radius:999px;border:1px solid var(--linha);background:var(--card);color:var(--ink2);cursor:pointer}
 .seg button.on{background:var(--azul);border-color:var(--azul);color:#fff}
@@ -237,7 +237,7 @@ details.dobra[open]>summary::before{transform:rotate(90deg)}
 details.dobra>summary:hover h3{color:var(--azul)}
 @media print{details.dobra>.tabela-wrap,details.dobra>.legenda{display:block}}
 .chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--ink2);font-size:11.5px;white-space:nowrap}
-.chip.ok{background:#e3f1ea;color:#145a44}.chip.nok{background:#f9e3e1;color:#8a1711}.chip.pre{background:#eee;color:#555}.chip.ret{background:#fdf1d6;color:#7a5200}
+.chip.ok{background:#e3f1ea;color:#145a44}.chip.nok{background:#f9e3e1;color:#8a1711}.chip.pre{background:#efe9f7;color:#5b4a7a}.chip.ret{background:#fdf1d6;color:#7a5200}
 .chip.gp .dot{margin-right:4px;vertical-align:0}
 .vt{display:inline-block;font-size:10.5px;line-height:1.5;padding:0 5px;border-radius:4px;margin:1px 2px 1px 0;font-weight:500}
 .vt.vf{background:#d5ecdf;color:#145a44}.vt.vc{background:#f6d5d2;color:#8a1711}.vt.va{background:#f8e8c2;color:#6b4a00}.vt.vx{background:#e6e9ec;color:#555}
@@ -248,6 +248,7 @@ details.dobra>summary:hover h3{color:var(--azul)}
 :root[data-theme="dark"] .chip.ok{background:#1b3a30;color:#9fdcc2}
 :root[data-theme="dark"] .chip.nok{background:#4a1b18;color:#f5b3ad}
 :root[data-theme="dark"] .chip.ret{background:#4a3a12;color:#f3d27a}
+:root[data-theme="dark"] .chip.pre{background:#2f2640;color:#cbb8ea}
 .tabela-wrap{overflow:auto;max-height:70vh;border-radius:12px}
 .cal{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;font-size:13px}
 .cal .d{font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
@@ -486,13 +487,21 @@ const curtoEstado = x => String(x||'').replace(/o[(]a[)]/g,'a').replace(' em Com
 function resumo24h(h) {
   const base = n => String(n).split('-')[0];
   const ausentes = new Set(h.filter(x=>x.evento==='ausente da fonte').map(x=>base(x.n_pa)));
-  const votadas = new Set(), novas = new Set(), divididas = new Set(), outras = []; let aprovadas = 0, avocadasDepois = 0;
+  const votadas = new Set(), novas = new Set(), divididas = new Set(), outras = [], ultimo = new Map(), primeiro = new Map(); let aprovadas = 0, avocadasDepois = 0;
   for (const x of h) {
-    if (x.evento==='votada') { if (!votadas.has(x.n_pa) && /^Aprovad/.test(x.detalhe||'')) { aprovadas++; const r = PA.find(r=>r.n_pa===x.n_pa); if (r && r.estado_ar==='Avocado(a)') avocadasDepois++; } votadas.add(x.n_pa); }
+    if (x.evento==='votada') { const res = String(x.detalhe||'').split(' · ')[0]; if (ultimo.has(x.n_pa) && ultimo.get(x.n_pa)!==res) { if (!primeiro.has(x.n_pa)) primeiro.set(x.n_pa, ultimo.get(x.n_pa)); } ultimo.set(x.n_pa, res); votadas.add(x.n_pa); }
     else if (x.evento==='nova') { if (String(x.n_pa).includes('-') && (ausentes.has(base(x.n_pa)) || PA.some(r=>r.n_pa!==x.n_pa && base(r.n_pa)===base(x.n_pa) && (r.primeira_captura||'') < (x.momento||'')))) divididas.add(base(x.n_pa)); else novas.add(base(x.n_pa)); }
-    else if (x.evento==='estado alterado') { const [de, para] = String(x.detalhe||'').split(' → '); if (!/Aprovad|Rejeitad/.test(para||'')) outras.push({n_pa:x.n_pa, de:curtoEstado(de), para:curtoEstado(para)}); }
+    else if (x.evento==='estado alterado') { const [de, para] = String(x.detalhe||'').split(' → '); if (/Aprovad|Rejeitad/.test(de||'') && /Aprovad|Rejeitad/.test(para||'') && de!==para) { if (!primeiro.has(x.n_pa)) primeiro.set(x.n_pa, de); ultimo.set(x.n_pa, para); votadas.add(x.n_pa); } else if (!/Aprovad|Rejeitad/.test(para||'')) outras.push({n_pa:x.n_pa, de:curtoEstado(de), para:curtoEstado(para)}); }
   }
-  return {votadas, novas, divididas, outras, aprovadas, avocadasDepois};
+  for (const [n, res] of ultimo) if (/^Aprovad/.test(res)) { aprovadas++; const r = PA.find(r=>r.n_pa===n); if (r && r.estado_ar==='Avocado(a)') avocadasDepois++; }
+  const repetidas = [...primeiro].filter(([n, antes]) => /^Rejeitad/.test(antes) && /^Aprovad/.test(ultimo.get(n))).length;
+  return {votadas, novas, divididas, outras, aprovadas, avocadasDepois, repetidas};
+}
+function tiposOutras(outras) {
+  const nomes = {'Avocada':['avocação','avocações'],'Prejudicada':['prejudicada','prejudicadas'],'Aguarda voto':['regresso a «aguarda voto»','regressos a «aguarda voto»'],'Retirada':['retirada','retiradas'],'Não Admitida':['não admissão','não admissões'],'Substituída':['substituição','substituições'],'Admitida':['admissão','admissões'],'Remetida a Plenário':['remessa a Plenário','remessas a Plenário'],'Entrada (via IPA)':['regresso a «entrada»','regressos a «entrada»']};
+  const c = {}; for (const o of outras) c[o.para] = (c[o.para]||0) + 1;
+  const partes = Object.entries(c).sort((a,b)=>b[1]-a[1]).map(([k,n]) => `${fmtN(n)} ${(nomes[k]||[k.toLowerCase(),k.toLowerCase()])[n===1?0:1]}`);
+  return partes.length > 1 ? partes.slice(0,-1).join(', ') + ' e ' + partes[partes.length-1] : partes[0];
 }
 // ----- glossário
 const GL = (D.glossario||{termos:[],grupos:[]});
@@ -589,7 +598,8 @@ function montar() {
   }
   $('#hero-n').innerHTML = `${fmtN(PA.length)}<small>propostas de alteração, pela contagem da AR · ${fmtN(nBase)} números distintos${basesComPartes?` · ${fmtN(basesComPartes)} divididas em partes`:''}</small>`;
   $('#hero-stack').innerHTML = ESTADOS.filter(e=>porEstado[e]).map(e=>`<span class="${CLS[e]}" style="width:${(porEstado[e]/PA.length*100).toFixed(2)}%" title="${e}: ${fmtN(porEstado[e])}"></span>`).join('');
-  $('#hero-leg').innerHTML = ESTADOS.filter(e=>porEstado[e]).map(e=>`<span><i class="${CLS[e]}"></i>${e} <b>${fmtN(porEstado[e])}</b> (${pct(porEstado[e],PA.length)}%)</span>`).join('');
+  { const grupos = [['aprovada',['aprovada']],['aprovada parcialmente',['aprovada parcialmente']],['rejeitada',['rejeitada']],['retirada ou não admitida',['retirada','não admitida']],['prejudicada',['prejudicada']],['em apreciação',['em apreciação']]];
+    $('#hero-leg').innerHTML = grupos.map(([l,es])=>[l, CLS[es[0]], es.reduce((a,e)=>a+(porEstado[e]||0),0)]).filter(g=>g[2]).map(([l,c,n])=>`<span><i class="${c}"></i>${l} <b>${fmtN(n)}</b> (${pct(n,PA.length)}%)</span>`).join(''); }
   $('#hero-nota').textContent = taxa!==null ? `Taxa de aprovação: ${taxa}% dos ${fmtN(votadas.length)} registos com votação publicada.` : '';
   $('#kpis').innerHTML = [
     ['Propostas de alteração (contagem da AR)', PA.length, ''],
@@ -603,7 +613,7 @@ function montar() {
   $('#n-pa').textContent = fmtN(PA.length); $('#n-vot').textContent = fmtN(votadas.length);
   const proponentes = cont(PA, r=>split(r.proponente)).map(p=>p[0]);
   const porProp = proponentes.map(p => { const rs = PA.filter(r=>split(r.proponente).includes(p)); return [p, porEstadoDe(rs), rs.length]; });
-  barrasEmpilhadas($('#g-partido'), porProp, p => { irPara('pa'); $('#f-partido').value = p; render(); }, true);
+  barrasEmpilhadas($('#g-partido'), porProp, p => { irPara('pa'); $('#f-partido').value = p; render(); });
   const dias = cont(PA, r=>[(r.data_entrada||'').slice(0,10)||'—']).filter(d=>d[0]!=='—').sort((a,b)=>a[0].localeCompare(b[0]));
   colunas($('#g-dias'), dias, d=>diaMes(d));
   const ultimoDia = dias.length ? dias[dias.length-1][0] : '';
@@ -634,7 +644,7 @@ function montar() {
     const linhas24 = [['Votações publicadas', r24.votadas.size], ['PA novas', r24.novas.size], ['PA divididas em partes', r24.divididas.size], ['Outras mudanças de estado', r24.outras.length]].filter(l=>l[1]);
     barras($('#g-24h'), linhas24);
     if (!linhas24.length) $('#g-24h').innerHTML = '<div class="mini">Sem alterações nas últimas 24 horas.</div>';
-    else $('#g-24h').insertAdjacentHTML('beforeend', `<div class="mini" style="grid-column:1/-1;margin-top:6px;line-height:1.55">${r24.votadas.size?`Das PA votadas, ${fmtN(r24.aprovadas)} ${r24.aprovadas===1?'foi aprovada':'foram aprovadas'} (total ou parcialmente)${r24.avocadasDepois?`; ${fmtN(r24.avocadasDepois)} ${r24.avocadasDepois===1?'foi depois avocada':'foram depois avocadas'} e aguarda${r24.avocadasDepois===1?'':'m'} votação em Plenário`:''}. `:''}${r24.divididas.size?`Divididas em partes: ${[...r24.divididas].map(esc).join(', ')}. `:''}${r24.outras.length?`<br><b>Outras mudanças de estado:</b> ${r24.outras.slice(0,12).map(o=>`${esc(o.n_pa)} (${esc(o.de)} → ${esc(o.para)})`).join('; ')}${r24.outras.length>12?`; e mais ${fmtN(r24.outras.length-12)}`:''}.`:''}</div>`);
+    else $('#g-24h').insertAdjacentHTML('beforeend', `<div class="mini" style="grid-column:1/-1;margin-top:6px;line-height:1.55">${r24.votadas.size?`Das PA votadas, ${fmtN(r24.aprovadas)} ${r24.aprovadas===1?'foi aprovada':'foram aprovadas'} (total ou parcialmente)${r24.repetidas?`, ${fmtN(r24.repetidas)} delas depois de votação repetida que mudou o resultado de rejeitada para aprovada`:''}${r24.avocadasDepois?`; ${fmtN(r24.avocadasDepois)} ${r24.avocadasDepois===1?'foi depois avocada':'foram depois avocadas'} e aguarda${r24.avocadasDepois===1?'':'m'} votação em Plenário`:''}. `:''}${r24.divididas.size?`Divididas em partes: ${[...r24.divididas].map(esc).join(', ')}. `:''}${r24.outras.length?`<br>Outras mudanças de estado: ${tiposOutras(r24.outras)}. Não incluem os resultados das votações.`:''}</div>`);
   }
   const EF = E.estado_fontes || {};
   const linhaFonte = (nome, f, corpo) => `<div style="margin-bottom:10px"><b>${nome}</b><br><span class="mini">${f ? corpo(f) : 'Ainda não verificada.'}</span></div>`;
