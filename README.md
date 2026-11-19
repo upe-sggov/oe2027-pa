@@ -8,7 +8,7 @@ Extração automática, base de dados, painel e Excel das propostas de alteraç�
 | OE 2026 | Proposta de Lei n.º 37/XVII/1.ª | Concluída e congelada: dados fixados a 27 out. 2026 (ficheiro final dos dados abertos, 2 193 registos). Nenhum script ou workflow volta a escrever nesta edição (`"congelada": true` em `config.json`). |
 
 - Painel: https://upe-sggov.github.io/oe2027-pa/ (seletor de edição no canto superior direito)
-- Base completa em Excel: https://upe-sggov.github.io/oe2027-pa/PA_OE2027_dados_AR.xlsx (e `PA_OE2026_dados_AR.xlsx`)
+- Base completa em Excel: `PA_OE2026_dados_AR.xlsx` (ficheiro final do OE 2026, ligado em «Fontes e método»). No OE 2027 o ficheiro `PA_OE2027_dados_AR.xlsx` continua a ser gerado em cada captura, mas não aparece no painel: serve só de reserva do botão «Exportar para Excel».
 - Repositório: https://github.com/upe-sggov/oe2027-pa
 
 ## Fontes
