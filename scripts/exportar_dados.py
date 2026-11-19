@@ -55,6 +55,8 @@ def valor(k: str, v):
         return int(v)
     if k in DATAS and v:
         return str(v).replace("T", " ").replace("Z", "")[:16]
+    if k == "estado" and v == "em apreciação":
+        return "por votar"  # mesma designação do painel
     return v
 
 
