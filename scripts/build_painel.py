@@ -361,7 +361,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <div class="card" style="margin-top:12px"><h3 id="h-docs">Documentos publicados pela COFAP</h3><div class="tabela-wrap"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></div>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
-    <div class="filtros"><input type="search" id="f-q-res" placeholder="Pesquisar no objeto, artigo, epígrafe, diplomas, tema, n.º da PA, deputados…"><span class="mini" id="f-n-res"></span></div>
+    <div class="filtros"><input type="search" id="f-q-res" placeholder="Pesquisar no objeto, artigo, epígrafe, diplomas, tema, n.º da PA, deputados…"><button class="btn" id="b-exp-res" onclick="exportarExcelVot()" title="Descarrega em Excel os registos do grupo escolhido, com a pesquisa aplicada">Exportar para Excel</button><span class="mini" id="f-n-res"></span></div>
     <div class="tabela-wrap"><table id="tab-res"><thead><tr><th>N.º</th><th>Proponente</th><th>Artigo</th><th>Objeto</th><th>Tema</th><th>Resultado</th><th>Data</th><th>Sentido de voto por grupo parlamentar</th><th>Texto da PA</th></tr></thead><tbody></tbody></table></div>
     <div class="legenda">Por registo publicado pela AR. «PDF» abre o texto da proposta publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
   </div>
@@ -648,11 +648,19 @@ function carregarXLSX() {
   });
 }
 async function exportarExcel() {
-  const b = $('#b-exp'), txt = b.textContent;
+  const filtros = [['Pesquisa', $('#f-q').value], ['Proponente', $('#f-partido').value], ['Tema (AR)', $('#f-tema').value], ['Tipo', $('#f-tipo').value], ['Incide', $('#f-incide').value], ['Estado', $('#f-estado').value], ['Outros critérios', $('#f-extra').selectedOptions[0]?.value ? $('#f-extra').selectedOptions[0].textContent : '']].filter(f => f[1]);
+  return gerarExcel($('#b-exp'), filtrar(), filtros, filtros.length ? 'selecao' : 'todas', 'nenhum (todas as propostas)');
+}
+async function exportarExcelVot() {
+  const filtros = [['Detalhe das votações', GRUPOS_RES[segAtivo][0]], ['Pesquisa', $('#f-q-res').value.trim()]].filter(f => f[1]);
+  return gerarExcel($('#b-exp-res'), linhasRes(), filtros, 'votacoes_' + GRUPOS_RES[segAtivo][0].split(' ')[0].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''), '');
+}
+async function gerarExcel(b, rows, filtros, sufixo, semFiltros) {
+  const txt = b.textContent;
   b.disabled = true; b.textContent = 'A preparar o Excel…';
   try {
     await carregarXLSX();
-    const linhas = filtrar().sort(ordemPA).map(r => Object.fromEntries(COLS_EXP.map(([k,l]) => {
+    const linhas = rows.slice().sort(ordemPA).map(r => Object.fromEntries(COLS_EXP.map(([k,l]) => {
       let v = r[k] ?? '';
       if (['data_entrada','primeira_captura','ultima_captura'].includes(k) && v) v = v.replace('T',' ').replace('Z','').slice(0,16);
       if (['parte','n_votacoes','id_ar'].includes(k) && v !== '' && !isNaN(+v)) v = +v;
@@ -661,21 +669,20 @@ async function exportarExcel() {
     const ws = XLSX.utils.json_to_sheet(linhas, {header: COLS_EXP.map(c=>c[1])});
     ws['!cols'] = COLS_EXP.map(([k]) => ({wch: {objeto:60, votos_por_partido:50, proponente_deputados:30, tema_ar:30, artigo_epigrafe:35, diplomas:35, requerimentos:35, url_detalhe:30, url_pdf:30}[k] || 14}));
     ws['!autofilter'] = {ref: ws['!ref']};
-    const filtros = [['Pesquisa', $('#f-q').value], ['Proponente', $('#f-partido').value], ['Tema (AR)', $('#f-tema').value], ['Tipo', $('#f-tipo').value], ['Incide', $('#f-incide').value], ['Estado', $('#f-estado').value], ['Outros critérios', $('#f-extra').selectedOptions[0]?.value ? $('#f-extra').selectedOptions[0].textContent : '']].filter(f => f[1]);
     const info = XLSX.utils.aoa_to_sheet([
       [`Propostas de alteração ao Orçamento do Estado para ${ANO} — ${E.designacao}`],
       ['Fonte', 'Assembleia da República, dados abertos (categoria «Orçamento do Estado», XVII Legislatura)'],
       ['Exportado em', new Date().toLocaleString('pt-PT')],
       ['Dados de', (E.execucao||{}).momento ? E.execucao.momento.replace('T',' ').slice(0,16)+' UTC' : '—'],
       ['Registos exportados', linhas.length],
-      ['Filtros aplicados', filtros.length ? filtros.map(f => f.join(': ')).join(' · ') : 'nenhum (todas as propostas)'],
+      ['Filtros aplicados', filtros.length ? filtros.map(f => f.join(': ')).join(' · ') : semFiltros],
       ['Tratamento', 'Área de Suporte à Decisão, Secretaria-Geral do Governo']
     ]);
     info['!cols'] = [{wch: 22}, {wch: 110}];
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Propostas');
     XLSX.utils.book_append_sheet(wb, info, 'Sobre esta exportação');
-    XLSX.writeFile(wb, `PA_OE${ANO}_${filtros.length ? 'selecao' : 'todas'}_${new Date().toISOString().slice(0,10)}.xlsx`);
+    XLSX.writeFile(wb, `PA_OE${ANO}_${sufixo}_${new Date().toISOString().slice(0,10)}.xlsx`);
   } catch (e) {
     if (E.excel) { const a = document.createElement('a'); a.href = E.excel; a.download = ''; a.click(); alert('Não foi possível gerar a seleção neste momento: foi descarregada a base completa em Excel.'); }
     else alert('Não foi possível gerar o Excel neste momento.');
@@ -706,9 +713,14 @@ const GRUPOS_RES = [
   ['Por votar', r=>r.estado==='em apreciação'],
   ['Todas', r=>true]
 ];
-function renderRes() {
+function baseRes() {
   const q = ($('#f-q-res').value||'').trim().toLowerCase();
-  const base = q ? PA.filter(r => [r.n_pa,r.objeto,r.artigo,r.artigo_epigrafe,r.diplomas,r.proponente_deputados,temaDe(r)].join(' ').toLowerCase().includes(q)) : PA;
+  return q ? PA.filter(r => [r.n_pa,r.objeto,r.artigo,r.artigo_epigrafe,r.diplomas,r.proponente_deputados,temaDe(r)].join(' ').toLowerCase().includes(q)) : PA;
+}
+const linhasRes = () => baseRes().filter(GRUPOS_RES[segAtivo][1]);
+function renderRes() {
+  const q = ($('#f-q-res').value||'').trim();
+  const base = baseRes();
   $('#seg-res').innerHTML = GRUPOS_RES.map(([l,f],i)=>`<button class="${i===segAtivo?'on':''}" onclick="segAtivo=${i};renderRes()">${esc(l)} (${fmtN(base.filter(f).length)})</button>`).join('');
   const rows = base.filter(GRUPOS_RES[segAtivo][1]).sort(ordemPA);
   $('#f-n-res').textContent = q ? `${fmtN(rows.length)} registos com «${$('#f-q-res').value.trim()}» neste grupo` : '';
