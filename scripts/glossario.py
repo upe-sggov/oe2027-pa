@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Glossário do painel (separador «Fontes e método»).
+"""Glossário do painel (separador «Fontes, método e glossário»).
 
 Cada termo indica a fonte. Quando a AR não publica definição, a entrada é
 marcada como leitura do painel ou convenção do painel. Validado pela UPE
@@ -139,7 +139,7 @@ TERMOS = [
      "Cada leitura dos dados abertos da AR feita pelo painel. Cada uma fica guardada, com data e hora.",
      "Convenção do painel", ""),
     ("historico", "Histórico de alterações", 4,
-     "Registo, captura a captura, das PA que entram, das mudanças de estado e das votações publicadas pela AR. Pode ser descarregado em «Fontes e método»; a Síntese resume as últimas 24 horas.",
+     "Registo, captura a captura, das PA que entram, das mudanças de estado e das votações publicadas pela AR. Pode ser descarregado em «Fontes, método e glossário»; a Síntese resume as últimas 24 horas.",
      "Convenção do painel", ""),
     ("ausente", "Ausente da fonte", 4,
      "Registo que deixou de constar dos dados da AR, normalmente porque foi dividido em partes. Fica no histórico, mas não entra nas contagens.",

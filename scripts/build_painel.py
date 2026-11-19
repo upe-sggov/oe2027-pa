@@ -22,7 +22,7 @@ import json
 from pathlib import Path
 
 import capa_painel  # capa de abertura (CSS, HTML e JS)
-import glossario  # glossário (separador «Fontes e método»)
+import glossario  # glossário (separador «Fontes, método e glossário»)
 
 RAIZ = Path(__file__).resolve().parents[1]
 DOCS = RAIZ / "docs"
@@ -42,7 +42,7 @@ def ler_json(f: Path, default):
 
 
 def copiar_historico(ano: str, pasta: Path) -> str:
-    """Publica uma cópia do histórico completo junto do painel (descarregável em «Fontes e método»)."""
+    """Publica uma cópia do histórico completo junto do painel (descarregável em «Fontes, método e glossário»)."""
     origem = pasta / "historico.csv"
     if not origem.exists():
         return ""
@@ -327,7 +327,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <button data-t="sintese" class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Síntese</button>
   <button data-t="pa"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Propostas de alteração <span class="n" id="n-pa"></span></button>
   <button data-t="votacoes"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h11"/></svg>Votações <span class="n" id="n-vot"></span></button>
-  <button data-t="fontes"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>Fontes e método</button>
+  <button data-t="fontes"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>Fontes, método e glossário</button>
   <span class="ed" id="ed-nav"></span>
 </div></nav>
 <main>
@@ -400,7 +400,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="legenda">Por registo publicado pela AR. «PDF» abre o texto da proposta publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
   </div>
 </section>
-<section class="tab" id="t-fontes" data-titulo="Fontes e método">
+<section class="tab" id="t-fontes" data-titulo="Fontes, método e glossário">
   <div class="grid duas">
     <div class="card"><h3>Fontes (Assembleia da República)</h3><ul id="lista-fontes" style="margin:0;padding-left:18px;font-size:13px"></ul></div>
     <div class="card"><h3>Método</h3>
