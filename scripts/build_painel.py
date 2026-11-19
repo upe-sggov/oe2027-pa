@@ -102,7 +102,7 @@ def main(argv=None) -> int:
         "fontes": {k: v for k, v in CONFIG["fontes"].items() if str(v).startswith("http")},
         "partidos": list(TAX["partidos"].keys()),
         "cores": TAX.get("cores", {}),
-        "glossario": glossario.payload(),
+        "glossario": glossario.payload(CONFIG),
     }
     html = (TEMPLATE.replace("/*__CAPA_CSS__*/", capa_painel.CSS).replace("<!--__CAPA_HTML__-->", capa_painel.HTML)
             .replace("//__CAPA_JS__", capa_painel.JS))
@@ -523,7 +523,7 @@ function renderGlossario() {
   const termos = q ? todos.filter(t => glNorm(t.termo+' '+t.def).includes(q)) : todos.filter(t => glLetra(t) === glLetraAtiva);
   $('#gl-letras').innerHTML = letras.map(l=>`<button type="button" class="${!q && l===glLetraAtiva ? 'on' : ''}" aria-pressed="${!q && l===glLetraAtiva}" onclick="glLetraAtiva='${l}';$('#f-q-gl').value='';renderGlossario()">${l}</button>`).join('');
   $('#gl-lista').innerHTML = termos.map(t => {
-    return `<dt id="g-${t.id}">${esc(t.termo)}<span class="gl-g">${esc(GL.grupos[t.grupo]||'')}</span></dt><dd id="gd-${t.id}">${esc(t.def)}<span class="gl-f">Fonte: ${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.fonte)}</a>`:esc(t.fonte)}</span></dd>`; }).join('') || '<dd class="mini">Nenhum termo encontrado.</dd>';
+    return `<dt id="g-${t.id}">${esc(t.termo)}<span class="gl-g">${esc(GL.grupos[t.grupo]||'')}</span></dt><dd id="gd-${t.id}">${esc(t.def)}<span class="gl-f">Fonte: ${(t.fontes||[{t:t.fonte,u:''}]).map(f=>f.u?`<a href="${esc(f.u)}" target="_blank" rel="noopener">${esc(f.t)}</a>`:esc(f.t)).join('; ')}</span></dd>`; }).join('') || '<dd class="mini">Nenhum termo encontrado.</dd>';
   $('#f-n-gl').textContent = q ? `${termos.length} de ${GL.termos.length} termos (todas as letras)` : `${termos.length} ${termos.length===1?'termo':'termos'} com ${glLetraAtiva} · ${GL.termos.length} no total`;
 }
 function irGlossario(id) {

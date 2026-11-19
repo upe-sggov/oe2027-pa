@@ -147,9 +147,33 @@ TERMOS = [
 ]
 
 
-def payload():
+def ligar_fonte(texto: str, url: str, config: dict | None) -> list:
+    """Parte a fonte em segmentos («; ») e liga cada um ao documento ou página da AR correspondente."""
+    cfg = config or {}
+    ed = (cfg.get("edicoes") or {}).get(cfg.get("edicao_ativa", ""), {})
+    dados_abertos = (cfg.get("fontes") or {}).get("dados_abertos_pagina_oe", "")
+    segs = []
+    for seg in texto.split("; "):
+        s = seg.lower()
+        if s.startswith("regimento"):
+            u = REGIMENTO
+        elif s.startswith("resolução da assembleia"):
+            u = RES_UTAO
+        elif "dados abertos" in s:
+            u = dados_abertos
+        elif "cofap" in s:
+            u = ed.get("url_cofap", "")
+        elif "página da iniciativa" in s:
+            u = ed.get("url_iniciativa", "")
+        else:
+            u = ""  # leitura ou convenção do painel: sem ligação
+        segs.append({"t": seg, "u": u or ("" if s.startswith(("definição", "convenção", "leitura")) else url if len(texto.split("; ")) == 1 else "")})
+    return segs
+
+
+def payload(config: dict | None = None):
     return {
         "grupos": GRUPOS,
-        "termos": [{"id": i, "termo": t, "grupo": g, "def": d, "fonte": f, "url": u}
+        "termos": [{"id": i, "termo": t, "grupo": g, "def": d, "fonte": f, "fontes": ligar_fonte(f, u, config)}
                    for (i, t, g, d, f, u) in TERMOS],
     }
