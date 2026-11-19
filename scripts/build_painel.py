@@ -198,7 +198,7 @@ section.tab.oculta{display:none!important}
 .duas{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
 .barras{display:grid;grid-template-columns:max-content 1fr max-content;gap:6px 10px;align-items:center;font-size:13px}
 .barras .b{height:12px;background:var(--azul);border-radius:0 4px 4px 0;min-width:2px}
-.barras .bs{display:flex;height:14px;border-radius:0 4px 4px 0;overflow:hidden;background:transparent}
+.barras .bs{display:flex;height:14px;border-radius:0 4px 4px 0;overflow:hidden;background:transparent;min-width:3px}
 .barras .bs span{display:block;height:100%}
 .barras .n{color:var(--ink2);text-align:right;font-variant-numeric:tabular-nums}
 .barras .k{color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:280px;display:flex;align-items:center;gap:6px}
@@ -373,10 +373,11 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   </div>
   <div class="grid duas" style="margin-top:12px">
     <div class="card"><h3>PA por proponente e resultado</h3><div class="barras" id="g-partido"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas</span><span><i class="c-par"></i>aprovadas parcialmente</span><span><i class="c-nok"></i>rejeitadas</span><span><i class="c-ret"></i>retiradas ou não admitidas</span><span><i class="c-pre"></i>prejudicadas</span><span><i class="c-pend"></i>por votar</span></div></div>
-    <div class="card"><h3>Entradas por dia</h3><div class="colunas" id="g-dias"></div><div class="legenda" id="g-dias-nota">Data e hora de entrada registadas pela AR, por registo.</div></div>
+    <div class="card" id="c-vot-dia" hidden><h3>Aprovadas e rejeitadas por dia de votação</h3><div class="colunas" id="g-vot-dia"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas (total ou parcialmente)</span><span><i class="c-nok"></i>rejeitadas</span></div><div class="legenda" id="g-vot-dia-nota"></div></div>
+    <div class="card" id="c-ent-dia"><h3>Entradas por dia</h3><div class="colunas" id="g-dias"></div><div class="legenda" id="g-dias-nota">Data e hora de entrada registadas pela AR, por registo.</div></div>
     <div class="card"><h3>PA por tema (atribuído pela AR)</h3><div class="barras" id="g-tema"></div><div class="legenda">Uma proposta com vários temas conta em cada um deles.</div></div>
-    <div class="card"><h3>Entradas por hora no último dia</h3><div class="colunas" id="g-horas"></div><div class="legenda" id="g-horas-nota"></div></div>
-    <div class="card"><h3>PA por tipo (natureza publicada pela AR)</h3><div class="barras" id="g-tipo"></div></div>
+    <div class="card" id="c-ent-hora"><h3>Entradas por hora no último dia</h3><div class="colunas" id="g-horas"></div><div class="legenda" id="g-horas-nota"></div></div>
+    <div class="card"><h3>PA por tipo e resultado</h3><div class="barras" id="g-tipo"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas</span><span><i class="c-par"></i>parcialmente</span><span><i class="c-nok"></i>rejeitadas</span><span><i class="c-ret"></i>retiradas ou não admitidas</span><span><i class="c-pre"></i>prejudicadas</span><span><i class="c-pend"></i>por votar</span></div><div class="legenda">Tipo: natureza da PA publicada pela AR. Clique num tipo para ver as PA na lista.</div></div>
     <div class="card"><h3 id="h-cal">Calendário de apreciação na AR</h3><div class="cal" id="cal"></div><div class="legenda" id="cal-fonte"></div></div>
   </div>
 </section>
@@ -508,6 +509,18 @@ function barrasEmpilhadas(el, linhas, onclick, comCor) {
   const max = Math.max(1, ...linhas.map(l=>l[2]));
   el.innerHTML = linhas.map(([k,m,t]) => `<div class="k" title="${esc(k)}" ${onclick?`style="cursor:pointer" data-k="${esc(k)}"`:''}>${comCor?`<span class="dot" style="background:${corGP(k)}"></span>`:''}${esc(k)}</div><div><div class="bs" style="width:${(t/max*100).toFixed(1)}%">${ESTADOS.map(e=>m[e]?`<span class="${CLS[e]}" style="width:${(m[e]/t*100).toFixed(2)}%" title="${esc(k)} · ${rotEstado(e)}: ${fmtN(m[e])}"></span>`:'').join('')}</div></div><div class="n">${fmtN(t)}</div>`).join('') || '<div class="mini">Sem dados.</div>';
   if (onclick) el.querySelectorAll('.k').forEach(k => k.addEventListener('click', () => onclick(k.dataset.k)));
+}
+function colunasEmp(el, linhas, fmtX) {
+  // colunas empilhadas: linhas [rótulo, [[valor, cor, nome], ...], rótulo de topo, provisório]
+  if (!linhas.length) { el.innerHTML = '<div class="mini">Sem dados.</div>'; return; }
+  const W = 640, H = 200, pad = {l: 40, r: 8, t: 16, b: 34}, n = linhas.length, tot = l => l[1].reduce((a,x)=>a+x[0],0), max = Math.max(1, ...linhas.map(tot));
+  const cw = (W - pad.l - pad.r) / n, bw = Math.min(90, Math.max(2, cw * 0.6));
+  const y = v => pad.t + (H - pad.t - pad.b) * (1 - v / max);
+  const grelha = [0, .25, .5, .75, 1].map(f => `<line x1="${pad.l}" x2="${W-pad.r}" y1="${y(max*f)}" y2="${y(max*f)}" stroke="currentColor" stroke-opacity=".12"/><text x="${pad.l-6}" y="${y(max*f)+4}" text-anchor="end" font-size="10" fill="currentColor" fill-opacity=".6">${fmtN(Math.round(max*f))}</text>`).join('');
+  const cols = linhas.map(([k, segs, topo, prov], i) => { const x = pad.l + i*cw + (cw-bw)/2; let acc = 0;
+    const r = segs.map(([v, cor, nome]) => { if (!v) return ''; const y1 = y(acc+v), h = y(acc) - y1; acc += v; return `<rect x="${x}" y="${y1}" width="${bw}" height="${h}" fill="${cor}"${prov?' fill-opacity=".8"':''}><title>${esc(fmtX?fmtX(k):k)} · ${esc(nome)}: ${fmtN(v)}</title></rect>`; }).join('');
+    return r + `<text x="${x+bw/2}" y="${y(acc)-4}" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">${esc(topo||'')}</text><text x="${x+bw/2}" y="${H-pad.b+14}" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity=".7">${esc(fmtX?fmtX(k):k)}${prov?' *':''}</text>`; }).join('');
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico de colunas empilhadas" style="color:var(--ink)">${grelha}${cols}</svg>`;
 }
 function colunas(el, pares, fmtX) {
   // gráfico de colunas em SVG: pares [rótulo, valor]
@@ -722,8 +735,21 @@ function montar() {
   const horas = ultimoDia ? cont(PA.filter(r=>(r.data_entrada||'').startsWith(ultimoDia)), r=>[(r.data_entrada||'').slice(11,13)+'h']).sort((a,b)=>a[0].localeCompare(b[0])) : [];
   colunas($('#g-horas'), horas);
   $('#g-horas-nota').textContent = ultimoDia ? `${fmtData(ultimoDia)}: ${fmtN(dias[dias.length-1][1])} registos (${pct(dias[dias.length-1][1], PA.length)}% do total), por hora de entrada.` : '';
+  // Fase de votações: aprovadas por dia e últimas aprovadas passam para a frente; as entradas ficam numa secção dobrável
+  const emVotacao = votadas.length > 0;
+  $('#c-vot-dia').hidden = !emVotacao; $('#c-ent-hora').hidden = emVotacao;
+  if (emVotacao) {
+    const cCal = $('#cal').closest('.card'); cCal.parentElement.insertBefore($('#c-ent-dia'), cCal);
+    const prov = diasProvisorios();
+    const dv = [...new Set(votadas.map(diaVot).filter(Boolean))].sort();
+    const linhasV = dv.map(d => { const rs = PA.filter(r => diaVot(r) === d), v = rs.filter(r=>r.votos_por_partido).length, ap = rs.filter(r=>/^aprovada/.test(r.estado)).length, rj = rs.filter(r=>r.estado==='rejeitada').length;
+      return [d, [[ap,'var(--ok)','aprovadas'],[rj,'var(--nok)','rejeitadas']], `${fmtN(ap)} / ${fmtN(v)}`, prov.has(d)]; });
+    colunasEmp($('#g-vot-dia'), linhasV, d=>diaMes(d));
+    const temProv = dv.some(d=>prov.has(d));
+    $('#g-vot-dia-nota').textContent = `Por cima de cada coluna: aprovadas / votadas com sentido de voto publicado. O dia é o da sessão em que se votou (data publicada pela AR).${temProv?' * Dia ainda não fechado: números provisórios.':''}`;
+  }
   barras($('#g-tema'), cont(PA, temasPA).slice(0,16), tm => { irPara('pa'); filtrarTema(tm); });
-  barras($('#g-tipo'), cont(PA, r=>[r.tipo_ar||'—']));
+  barrasEmpilhadas($('#g-tipo'), cont(PA, r=>[r.tipo_ar||'—']).map(([tp]) => { const rs = PA.filter(r=>(r.tipo_ar||'—')===tp); return [tp, porEstadoDe(rs), rs.length]; }), tp => { irPara('pa'); filtrarTipo(tp); });
   const hoje = new Date().toISOString().slice(0,10);
   let cal = E.calendario || [];
   if (!cal.length && PA.length) {
@@ -880,6 +906,11 @@ function renderPosicao() {
 $('#f-pos-prop').addEventListener('input', renderPosicao);
 $('#f-q-res').addEventListener('input', () => renderRes());
 { const ajNav = () => document.documentElement.style.setProperty('--nav-h', (document.querySelector('nav.tabs')?.offsetHeight || 54) + 'px'); ajNav(); window.addEventListener('resize', ajNav); }
+function filtrarTipo(tp) {
+  ['#f-q','#f-partido','#f-tema','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
+  $('#f-tipo').value = tp === '—' ? '' : tp; render();
+  document.getElementById('lista-pa').scrollIntoView({behavior:'smooth', block:'start'});
+}
 function filtrarTema(tm) {
   ['#f-q','#f-partido','#f-tipo','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
   $('#f-tema').value = tm; render();
