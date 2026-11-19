@@ -216,6 +216,13 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .tip .gl-link,.gl-link{color:var(--azul);cursor:pointer;text-decoration:underline;background:none;border:0;padding:0;font:inherit}
 [data-g]{cursor:help}
 @media (max-width:700px){.gl{grid-template-columns:1fr}.gl dd{border-top:0;padding-top:2px}}
+details.dobra>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+details.dobra>summary::-webkit-details-marker{display:none}
+details.dobra>summary h3{margin:0}
+details.dobra>summary::before{content:'▸';color:var(--ink3);font-size:12px;transition:transform .15s}
+details.dobra[open]>summary::before{transform:rotate(90deg)}
+details.dobra>summary:hover h3{color:var(--azul)}
+@media print{details.dobra>.tabela-wrap,details.dobra>.legenda{display:block}}
 .chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--ink2);font-size:11.5px;white-space:nowrap}
 .chip.ok{background:#e3f1ea;color:#145a44}.chip.nok{background:#f9e3e1;color:#8a1711}.chip.pre{background:#eee;color:#555}.chip.ret{background:#fdf1d6;color:#7a5200}
 .chip.gp .dot{margin-right:4px;vertical-align:0}
@@ -372,7 +379,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="legenda">Indicador histórico calculado a partir dos temas e dos sentidos de voto publicados pela AR. Não é uma previsão. Inclui os deputados únicos representantes de partido.</div>
   </div>
   <div class="card" style="margin-top:12px"><h3>Como vota cada grupo parlamentar nas PA de cada proponente</h3><div class="tabela-wrap"><table class="matriz calor" id="m-cruzado"></table></div><div class="legenda">Linhas: proponente da PA. Colunas: grupo parlamentar que vota. Percentagem de votos a favor nas PA votadas; por baixo, favor · contra · abstenção.</div></div>
-  <div class="card" style="margin-top:12px"><h3 id="h-docs">Documentos publicados pela COFAP</h3><div class="tabela-wrap"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></div>
+  <details class="card dobra" id="card-docs" style="margin-top:12px"><summary><h3 id="h-docs">Documentos publicados pela COFAP</h3><span class="mini" id="n-docs"></span></summary><div class="tabela-wrap" style="margin-top:10px"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></details>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
     <div class="filtros"><input type="search" id="f-q-res" placeholder="Pesquisar no objeto, artigo, epígrafe, diplomas, tema, n.º da PA, deputados…"><button class="btn" id="b-exp-res" onclick="exportarExcelVot()" title="Descarrega em Excel os registos do grupo escolhido, com a pesquisa aplicada">Exportar para Excel</button><span class="mini" id="f-n-res"></span></div>
@@ -653,6 +660,7 @@ function montar() {
   segAtivo = 0; $('#f-q-res').value = ''; renderRes();
 
   // ----- documentos, histórico, fontes
+  { const n=(E.documentos||[]).length, u=n?(E.documentos||[]).map(d=>d.primeira_captura||'').sort().pop():''; const t = () => $('#n-docs').textContent = n ? `${fmtN(n)} documentos · último registado ${hm(u)} · ${$('#card-docs').open ? 'clique para fechar' : 'clique para ver a lista'}` : 'ainda sem documentos'; t(); $('#card-docs').ontoggle = t; }
   $('#tab-docs tbody').innerHTML = (E.documentos||[]).map(d => `<tr><td><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.titulo)}</a></td><td class="num">${esc(hm(d.primeira_captura))}</td></tr>`).join('') || '<tr><td colspan="2" class="mini">Ainda sem documentos publicados.</td></tr>';
   $('#tab-hist tbody').innerHTML = E.historico.map(h => `<tr><td class="num">${esc((h.momento||'').replace('T',' ').slice(0,16))}</td><td class="num"><b>${esc(h.n_pa)}</b></td><td><span class="chip ${({nova:'ok','ausente da fonte':'ret'})[h.evento]||''}">${esc(h.evento)}</span></td><td>${esc(h.detalhe)}</td><td class="mini">${esc(h.fonte)}</td></tr>`).join('') || '<tr><td colspan="5" class="mini">Sem eventos.</td></tr>';
   const nomes = {url_pesquisa_pa:'Pesquisa de propostas de alteração (portal da AR)', url_iniciativa:`${E.designacao} — detalhe da iniciativa`, url_texto_ppl:'Texto da proposta de lei com legislação citada', url_calendario:`Calendário de apreciação do OE ${ANO} (COFAP)`, url_cofap:`Página do OE ${ANO} na Comissão de Orçamento, Finanças e Administração Pública`, dados_abertos_pagina_oe:'Dados abertos — categoria Orçamento do Estado', dados_abertos_pasta_xvii:'Dados abertos — pasta XVII Legislatura'};
