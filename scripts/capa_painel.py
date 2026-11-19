@@ -40,6 +40,9 @@ body.cp-aberta{overflow:hidden}
 .cp-rot{padding-bottom:.45rem;font-size:.95rem;line-height:1.35}
 .cp-rot small{display:block;font-size:.76rem;opacity:.78;font-weight:300}
 .cp-estados{margin-top:1.1rem;max-width:480px}
+.cp-aprov{margin-top:1.1rem}
+.cp-aprov .cp-num{font-size:clamp(2.6rem,5vw,3.8rem);color:#7CF0A8}
+.cp-estados .cp-tit{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.85;margin:0 0 .45rem}
 .cp-barra{display:flex;height:10px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.14)}
 .cp-barra span{display:block;height:100%;width:0;transition:width 1.4s cubic-bezier(.2,.8,.3,1)}
 .cp-leg{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin-top:.55rem;font-size:.76rem;opacity:.92}
@@ -141,6 +144,10 @@ HTML = r"""
           <div class="cp-num" id="cp-num">0</div>
           <div class="cp-rot">propostas de alteração registadas<small id="cp-subnum"></small></div>
         </div>
+        <div class="cp-cont cp-aprov cp-e" id="cp-aprov" style="animation-delay:.5s" hidden>
+          <div class="cp-num" id="cp-num-ap">0</div>
+          <div class="cp-rot">aprovadas na especialidade<small id="cp-sub-ap"></small></div>
+        </div>
         <div class="cp-estados cp-e" style="animation-delay:.55s"><div class="cp-barra" id="cp-barra"></div><div class="cp-leg" id="cp-leg"></div></div>
         <div class="cp-botoes cp-e" style="animation-delay:.65s">
           <button class="cp-btn pri" id="cp-entrar">Entrar no painel <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
@@ -152,7 +159,7 @@ HTML = r"""
         <p class="cp-nota" id="cp-nota"></p>
         <div class="cp-euro-wrap"><canvas id="cp-euro" aria-label="€ formado pelas propostas de alteração"></canvas><div class="cp-dica" id="cp-dica" hidden></div></div>
         <div class="cp-leg2" id="cp-leg2"></div>
-        <div class="cp-ult"><h3>Últimas entradas</h3><div class="cp-fita"><ul id="cp-fita"></ul></div></div>
+        <div class="cp-ult"><h3 id="cp-ult-tit">Últimas entradas</h3><div class="cp-fita"><ul id="cp-fita"></ul></div></div>
       </div>
     </div>
     <div class="cp-linha cp-e" style="animation-delay:.75s">
@@ -221,6 +228,24 @@ JS = r"""
   const est = ordemE.filter(([k]) => cont[k]).map(([k,l,c]) => [cont[k],l,c]).concat(outros ? [[outros,'outros estados','#9ec5d6']] : []);
   $('#cp-barra').innerHTML = est.map(([n,,c]) => `<span style="background:${c}" data-w="${N ? 100*n/N : 0}"></span>`).join('');
   $('#cp-leg').innerHTML = est.map(([n,l,c]) => `<span><i style="background:${c}"></i><b>${fmtN(n)}</b> ${l}</span>`).join('');
+  // fase das votações (depois do prazo, quando a AR já publicou votações): aprovadas, barra das votações e últimas aprovadas
+  const votadas = PAc.filter(r => r.votos_por_partido), emVot = (dias !== null && dias < 0) && votadas.length > 0;
+  const aprovadas = PAc.filter(r => /^Aprovad/.test(r.estado_ar||''));
+  if (emVot) {
+    const vf = (EA.marcos_capa||[]).find(m => /final global/i.test(m.texto||''));
+    $('#cp-prazo').innerHTML = `Prazo de entrega terminado · <b>votações na especialidade</b> a decorrer${vf ? ` · votação final global a <b>${esc(vf.rotulo)}</b>` : ''}`;
+    $('#cp-aprov').hidden = false;
+    const dVot = [...new Set(votadas.map(r => (r.data_votacao||'').slice(0,10)).filter(Boolean))].sort();
+    $('#cp-sub-ap').textContent = `de ${fmtN(votadas.length)} votadas com sentido de voto publicado (${(aprovadas.length/votadas.length*100).toFixed(1).replace('.',',')}%) · última votação publicada a ${dia(dVot[dVot.length-1])}`;
+    const elA = $('#cp-num-ap'); const NA = aprovadas.length;
+    if (reduzir) elA.textContent = fmtN(NA); else setTimeout(() => { const t0 = performance.now(); (function f(t){ const k = Math.min(1,(t-t0)/1600); elA.textContent = fmtN(Math.round(NA*(1-Math.pow(1-k,3)))); if (k<1) requestAnimationFrame(f); })(t0); }, 700);
+    const rej = PAc.filter(r => /^Rejeitad/.test(r.estado_ar||'')).length, outrasDec = PAc.filter(r => /Retirad|Não Admitida|Prejudicad/.test(r.estado_ar||'')).length;
+    const porVotar = N - NA - rej - outrasDec;
+    const ev = [[NA,'aprovadas','#7CF0A8'],[rej,'rejeitadas','#F28B82'],[outrasDec,'retiradas, não admitidas ou prejudicadas','#FFD200'],[porVotar,'por votar','rgba(255,255,255,.35)']].filter(x => x[0] > 0);
+    $('#cp-barra').innerHTML = ev.map(([n,,c]) => `<span style="background:${c}" data-w="${N ? 100*n/N : 0}"></span>`).join('');
+    $('#cp-leg').innerHTML = ev.map(([n,l,c]) => `<span><i style="background:${c}"></i><b>${fmtN(n)}</b> ${l}</span>`).join('');
+    $('#cp-barra').insertAdjacentHTML('beforebegin', '<div class="cp-tit">Resultado das propostas</div>');
+  }
   setTimeout(() => document.querySelectorAll('#cp-barra span').forEach(s => s.style.width = s.dataset.w + '%'), reduzir ? 0 : 900);
 
   // o € feito de propostas: cada ponto é um registo; o € está sempre cheio e os pontos encolhem à medida que entram PA
@@ -299,9 +324,10 @@ JS = r"""
   $('#cp-leg2').innerHTML = Object.entries(porP).sort((a,b) => b[1]-a[1]).map(([p,n]) => `<span><i style="background:${corP(p)}"></i>${esc(nomeP(p))} <b>${fmtN(n)}</b></span>`).join('')
     + (cont['Não Admitida'] ? '<span><i style="background:repeating-linear-gradient(135deg,#fff 0 2px,transparent 2px 4px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)"></i>não admitida</span>' : '');
 
-  // fita das últimas entradas (títulos tal como a AR os publica)
-  const ultimas = PAc.slice(-8).reverse();
-  $('#cp-fita').innerHTML = ultimas.map(r => `<li><span class="n">${esc(r.n_pa)}</span><span class="gp" style="background:${corP(r.proponente)}">${esc(nomeP(r.proponente))}</span><span class="h">${esc(dia(r.data_entrada||''))} ${esc(hora(r.data_entrada||''))}</span><span class="t">${esc(r.objeto)}</span></li>`).join('');
+  // fita das últimas entradas ou, na fase das votações, das últimas aprovadas (títulos tal como a AR os publica)
+  const ultimas = emVot ? aprovadas.slice().sort((a,b) => (b.data_votacao||'').localeCompare(a.data_votacao||'') || (b.id_ar|0) - (a.id_ar|0)).slice(0,8) : PAc.slice(-8).reverse();
+  if (emVot) $('#cp-ult-tit').textContent = 'Últimas aprovadas';
+  $('#cp-fita').innerHTML = ultimas.map(r => `<li><span class="n">${esc(r.n_pa)}</span><span class="gp" style="background:${corP(r.proponente)}">${esc(nomeP(r.proponente))}</span><span class="h">${emVot ? esc(dia(r.data_votacao||'')) : esc(dia(r.data_entrada||'')) + ' ' + esc(hora(r.data_entrada||''))}</span><span class="t">${esc(r.objeto)}</span></li>`).join('');
   let pos = 0;
   const rodar = !reduzir && ultimas.length > 3 ? setInterval(() => { pos = (pos+1) % (ultimas.length-2); $('#cp-fita').style.transform = `translateY(${-pos*2.55}rem)`; }, 3200) : null;
 
