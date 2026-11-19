@@ -172,6 +172,7 @@ section.tab.oculta{display:none!important}
 .grid{display:grid;gap:12px}
 .grid>*{min-width:0}
 .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+#kpis-vot{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))}
 .card{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;box-shadow:var(--sombra)}
 .card h3{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:.04em}
 .kpi .v{font-size:28px;font-weight:600;color:var(--azul);line-height:1.1}
@@ -244,6 +245,13 @@ table.t-dia th{font-size:11px;color:var(--ink3);font-weight:600}
 table.t-dia td.num,table.t-dia th.num{text-align:right;white-space:nowrap}
 table.t-dia tfoot td{border-bottom:0;border-top:1.5px solid var(--linha)}
 table.t-dia td.bar-c{width:34%}
+.ap-lista{display:grid;grid-template-columns:minmax(90px,max-content) 1fr max-content;gap:7px 12px;align-items:center;font-size:12.5px}
+.ap-lista .r{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:250px}
+.ap-lista .bb{display:flex;height:14px;border-radius:0 4px 4px 0;overflow:hidden;min-width:3px}
+.ap-lista .bb .a{background:var(--ok)}.ap-lista .bb .n{background:var(--nok);opacity:.35}
+.ap-lista .q{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.ap-lista .q b{color:var(--ok);font-size:13px}
+.ap-lista .tot{border-top:1.5px solid var(--linha);padding-top:6px;font-weight:600}
 .bar-dia{display:block;height:8px;background:var(--chip);border-radius:4px;overflow:hidden}
 .bar-dia i{display:block;height:100%;background:var(--verde);border-radius:4px}
 .barra-dia{position:sticky;top:var(--nav-h,54px);z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--bg);padding:8px 0 10px;margin:0 0 4px;border-bottom:1px solid var(--linha)}
@@ -309,6 +317,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   .card{break-inside:avoid;page-break-inside:avoid;box-shadow:none}
   .grid.duas{grid-template-columns:1fr 1fr}
   .kpis{grid-template-columns:repeat(7,1fr)}
+  #kpis-vot{grid-template-columns:repeat(8,1fr)}
   .kpi .v{font-size:22px}
   .kpi .info{display:none}
   .kpi .tip{display:none!important}
@@ -413,9 +422,10 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <div id="nota-dia"></div>
   <div class="grid kpis" id="kpis-vot"></div>
   <div class="card" id="c-dia" style="margin-top:12px"><h3>Aprovadas por proponente e por tema</h3>
+    <div class="stack-leg" style="margin:0 0 10px"><span><i class="c-ok"></i>aprovadas (total ou parcialmente)</span><span><i class="c-nok" style="opacity:.35"></i>votadas e não aprovadas</span><span class="mini">Comprimento da barra = PA votadas · à direita: aprovadas de votadas · taxa de aprovação</span></div>
     <div class="grid duas dia-duas">
-      <div><h4 class="sub-h">Por proponente</h4><table class="t-dia" id="t-dia-prop"></table></div>
-      <div><h4 class="sub-h">Por tema (atribuído pela AR)</h4><table class="t-dia" id="t-dia-tema"></table></div>
+      <div><h4 class="sub-h">Por proponente</h4><div class="ap-lista" id="t-dia-prop"></div></div>
+      <div><h4 class="sub-h">Por tema (atribuído pela AR)</h4><div class="ap-lista" id="t-dia-tema"></div></div>
     </div>
     <div class="legenda">Aprovadas (total ou parcialmente) sobre as PA votadas com sentido de voto publicado pela AR, como nos indicadores. O dia é o da sessão em que se votou; uma PA com vários temas conta em cada um deles. </div>
   </div>
@@ -568,7 +578,8 @@ function renderVotacoes() {
   const proponentes = cont(PA, r=>split(r.proponente)).map(p=>p[0]);
   const reqDia = r => split(r.requerimentos).some(x => /^avocação/i.test(x) && (!dia || (x.split(' · ')[2]||'').slice(0,10) === dia));
   const SEM = '—';
-  $('#kpis-vot').innerHTML = [['PA votadas', votadas.length,''],['Aprovadas (total ou parcialmente)', aprov,'ok'],['Rejeitadas', porEstado['rejeitada']||0,'nok'],['Prejudicadas', dia ? SEM : (porEstado['prejudicada']||0),'neu'],['Votadas em Plenário (avocação)', R.filter(r=>r.sede_votacao==='Plenário').length,'neu'],['Requerimentos de avocação publicados', PA.filter(reqDia).length,'neu'],['Por votar', dia ? SEM : (porEstado['em apreciação']||0),'neu']].map(kpi).join('');
+  const taxaV = votadas.length ? pct(aprov, votadas.length) : null;
+  $('#kpis-vot').innerHTML = [['PA votadas', votadas.length,''],['Aprovadas (total ou parcialmente)', aprov,'ok'],['Taxa de aprovação', taxaV===null?'—':String(taxaV).replace('.',','),'ok', taxaV===null?'':'%'],['Rejeitadas', porEstado['rejeitada']||0,'nok'],['Prejudicadas', dia ? SEM : (porEstado['prejudicada']||0),'neu'],['Votadas em Plenário (avocação)', R.filter(r=>r.sede_votacao==='Plenário').length,'neu'],['Requerimentos de avocação publicados', PA.filter(reqDia).length,'neu'],['Por votar', dia ? SEM : (porEstado['em apreciação']||0),'neu']].map(kpi).join('');
   const semData = ['retirada','não admitida','prejudicada','em apreciação'];
   const porProp = proponentes.map(p => { const rs = R.filter(r=>split(r.proponente).includes(p)); return [p, porEstadoDe(rs), rs.length]; }).filter(x => !dia || x[2]);
   $('#m-resultado').innerHTML = porProp.length ? `<tr><th>Proponente</th>${ESTADOS.map(e=>`<th>${rotEstado(e)}</th>`).join('')}<th>total</th><th>taxa de aprovação</th></tr>` + porProp.map(([p,m,t]) => { const v = R.filter(r=>split(r.proponente).includes(p) && r.votos_por_partido).length; return `<tr><td style="text-align:left"><b><span class="dot" style="background:${corGP(p)}"></span> ${esc(p)}</b></td>${ESTADOS.map(e=>`<td class="num">${dia && semData.includes(e) ? SEM : fmtN(m[e]||0)}</td>`).join('')}<td class="num"><b>${fmtN(t)}</b></td><td class="num">${v?pct((m['aprovada']||0)+(m['aprovada parcialmente']||0), v)+'%':'—'}</td></tr>`; }).join('') : '<tr><td class="mini">Sem votações publicadas neste dia.</td></tr>';
@@ -589,12 +600,14 @@ function renderDia() {
   const v = todasV.filter(r => !dia || diaVot(r) === dia), apr = r => r.estado === 'aprovada' || r.estado === 'aprovada parcialmente';
   const apDia = PA.filter(r => apr(r) && (!dia || diaVot(r) === dia));
 
-  const linha = (rotulo, a, t) => `<tr><td>${rotulo}</td><td class="num">${fmtN(a)} / ${fmtN(t)}</td><td class="bar-c"><span class="bar-dia"><i style="width:${t ? (a/t*100).toFixed(1) : 0}%"></i></span></td><td class="num mini">${t ? pct(a,t).toString().replace('.',',') + '%' : '—'}</td></tr>`;
+  const pctTxt = (a,t) => t ? String(pct(a,t)).replace('.',',') + '%' : '—';
+  const lista = (linhas, total) => { const max = Math.max(1, ...linhas.map(l=>l[2]));
+    const ln = ([rot, a, t, tit], cls='') => `<div class="r ${cls}" title="${esc(tit)}">${rot}</div><div class="${cls}"><div class="bb" style="width:${(t/max*100).toFixed(1)}%" title="${esc(tit)}: ${fmtN(a)} aprovadas de ${fmtN(t)} votadas"><span class="a" style="width:${t?(Math.min(a,t)/t*100).toFixed(1):0}%"></span><span class="n" style="flex:1"></span></div></div><div class="q ${cls}"><b>${fmtN(a)}</b> de ${fmtN(t)} · ${pctTxt(a,t)}</div>`;
+    return linhas.map(l=>ln(l)).join('') + (total ? ln(total, 'tot').replace(/<div class="bb"[^]*?<\/div><\/div>/, '</div>') : ''); };
   const pp = {}; v.forEach(r => { const p = r.proponente.replace('; ','/'); (pp[p] = pp[p] || [0,0])[1]++; }); apDia.forEach(r => { const p = r.proponente.replace('; ','/'); (pp[p] = pp[p] || [0,0])[0]++; });
-  const cab = c => `<thead><tr><th>${c}</th><th class="num">Aprovadas / votadas</th><th></th><th class="num">Taxa de aprovação</th></tr></thead>`;
-  $('#t-dia-prop').innerHTML = cab('Proponente') + '<tbody>' + Object.entries(pp).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([p,[a,t]]) => linha(gpChip(p), a, t)).join('') + `</tbody><tfoot><tr><td><b>Total</b></td><td class="num"><b>${fmtN(apDia.length)} / ${fmtN(v.length)}</b></td><td></td><td class="num mini">${v.length ? pct(apDia.length, v.length).toString().replace('.',',') + '%' : '—'}</td></tr></tfoot>`;
+  $('#t-dia-prop').innerHTML = lista(Object.entries(pp).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([p,[a,t]]) => [gpChip(p), a, t, p]), ['<b>Total</b>', apDia.length, v.length, 'Total']);
   const tt = {}; v.forEach(r => temasPA(r).forEach(t => { (tt[t] = tt[t] || [0,0])[1]++; })); apDia.forEach(r => temasPA(r).forEach(t => { (tt[t] = tt[t] || [0,0])[0]++; }));
-  $('#t-dia-tema').innerHTML = cab('Tema') + '<tbody>' + Object.entries(tt).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([t,[a,n]]) => linha(esc(t), a, n)).join('') + '</tbody>';
+  $('#t-dia-tema').innerHTML = lista(Object.entries(tt).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([t,[a,n]]) => [esc(t), a, n, t]));
 }
 // ----- últimas 24 horas: acontecimentos, sem contar duas vezes a mesma votação
 const curtoEstado = x => String(x||'').replace(/o[(]a[)]/g,'a').replace(' em Comissão','').replace('Aguarda Voto','Aguarda voto').trim();
