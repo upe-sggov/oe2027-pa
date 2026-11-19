@@ -211,7 +211,8 @@ td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
 .gl dd .gl-f{display:block;font-size:11.5px;color:var(--ink3);margin-top:4px}
 .gl .gl-on{background:color-mix(in srgb,var(--azul) 12%,transparent);transition:background .6s}
 .gl-letras{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}
-.gl-letras a{font-size:12px;padding:2px 7px;border-radius:6px;border:1px solid var(--linha);color:var(--ink2);text-decoration:none}
+.gl-letras button{font:inherit;font-size:12.5px;min-width:30px;padding:4px 8px;border-radius:6px;border:1px solid var(--linha);background:var(--card);color:var(--ink2);cursor:pointer}
+.gl-letras button.on{background:var(--azul);border-color:var(--azul);color:#fff}
 .tip .gl-link,.gl-link{color:var(--azul);cursor:pointer;text-decoration:underline;background:none;border:0;padding:0;font:inherit}
 [data-g]{cursor:help}
 @media (max-width:700px){.gl{grid-template-columns:1fr}.gl dd{border-top:0;padding-top:2px}}
@@ -405,7 +406,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="filtros"><input type="search" id="f-q-gl" placeholder="Pesquisar um termo ou uma palavra da definição…"><span class="mini" id="f-n-gl"></span></div>
     <div class="gl-letras" id="gl-letras"></div>
     <dl class="gl" id="gl-lista"></dl>
-    <div class="legenda">Cada termo indica a fonte. Os estados são os valores publicados pela AR; quando a AR não publica a definição, a entrada indica «leitura do painel». «Convenção do painel» assinala regras de contagem próprias desta ferramenta.</div>
+    <div class="legenda">Escolha uma letra para ver os termos que começam por ela; a pesquisa procura em todas as letras. Cada termo indica a fonte. Os estados são os valores publicados pela AR; quando a AR não publica a definição, a entrada indica «leitura do painel». «Convenção do painel» assinala regras de contagem próprias desta ferramenta.</div>
   </div>
 </section>
 </main>
@@ -477,18 +478,21 @@ const GL_ESTADO = {'aprovada':'aprovada','aprovada parcialmente':'aprovada','rej
 const GL_KPI = {'Propostas de alteração (contagem da AR)':'registo','Números de PA distintos':'pa-distinta','Aprovadas (total ou parcialmente)':'aprovada','Rejeitadas':'rejeitada','Retiradas, prejudicadas ou não admitidas':'retirada','Taxa de aprovação':'taxa','PA votadas':'pa-votadas','Prejudicadas':'prejudicada','Votadas em Plenário (avocação)':'avocacao','Requerimentos de avocação publicados':'requerimento','Por votar':'aguarda','Em apreciação':'aguarda','Temas atribuídos pela AR':'tema'};
 const glAttr = id => GL_POR_ID[id] ? ` data-g="${id}" title="${esc(GL_POR_ID[id].def)} (clique para abrir o glossário)"` : '';
 const glNorm = x => String(x||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const glLetra = t => glNorm(t.termo[0]).toUpperCase();
+let glLetraAtiva = '';
 function renderGlossario() {
   const q = glNorm($('#f-q-gl').value.trim());
-  const termos = GL.termos.slice().sort((a,b)=>a.termo.localeCompare(b.termo,'pt')).filter(t => !q || glNorm(t.termo+' '+t.def).includes(q));
-  const letras = [...new Set(termos.map(t=>glNorm(t.termo[0]).toUpperCase()))];
-  $('#gl-letras').innerHTML = letras.map(l=>`<a href="#" onclick="event.preventDefault();document.querySelector('.gl dt[data-l=&quot;${l}&quot;]').scrollIntoView({behavior:'smooth',block:'start'})">${l}</a>`).join('');
-  const vistas = new Set();
-  $('#gl-lista').innerHTML = termos.map(t => { const l = glNorm(t.termo[0]).toUpperCase(); const dl = vistas.has(l) ? '' : ` data-l="${l}"`; vistas.add(l);
-    return `<dt id="g-${t.id}"${dl}>${esc(t.termo)}<span class="gl-g">${esc(GL.grupos[t.grupo]||'')}</span></dt><dd id="gd-${t.id}">${esc(t.def)}<span class="gl-f">Fonte: ${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.fonte)}</a>`:esc(t.fonte)}</span></dd>`; }).join('') || '<dd class="mini">Nenhum termo encontrado.</dd>';
-  $('#f-n-gl').textContent = q ? `${termos.length} de ${GL.termos.length} termos` : `${GL.termos.length} termos`;
+  const todos = GL.termos.slice().sort((a,b)=>a.termo.localeCompare(b.termo,'pt'));
+  const letras = [...new Set(todos.map(glLetra))];
+  if (!letras.includes(glLetraAtiva)) glLetraAtiva = letras[0] || '';
+  const termos = q ? todos.filter(t => glNorm(t.termo+' '+t.def).includes(q)) : todos.filter(t => glLetra(t) === glLetraAtiva);
+  $('#gl-letras').innerHTML = letras.map(l=>`<button type="button" class="${!q && l===glLetraAtiva ? 'on' : ''}" aria-pressed="${!q && l===glLetraAtiva}" onclick="glLetraAtiva='${l}';$('#f-q-gl').value='';renderGlossario()">${l}</button>`).join('');
+  $('#gl-lista').innerHTML = termos.map(t => {
+    return `<dt id="g-${t.id}">${esc(t.termo)}<span class="gl-g">${esc(GL.grupos[t.grupo]||'')}</span></dt><dd id="gd-${t.id}">${esc(t.def)}<span class="gl-f">Fonte: ${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">${esc(t.fonte)}</a>`:esc(t.fonte)}</span></dd>`; }).join('') || '<dd class="mini">Nenhum termo encontrado.</dd>';
+  $('#f-n-gl').textContent = q ? `${termos.length} de ${GL.termos.length} termos (todas as letras)` : `${termos.length} ${termos.length===1?'termo':'termos'} com ${glLetraAtiva} · ${GL.termos.length} no total`;
 }
 function irGlossario(id) {
-  if ($('#f-q-gl').value) { $('#f-q-gl').value=''; renderGlossario(); }
+  $('#f-q-gl').value = ''; if (GL_POR_ID[id]) glLetraAtiva = glLetra(GL_POR_ID[id]); renderGlossario();
   irPara('fontes');
   const dt = document.getElementById('g-'+id), dd = document.getElementById('gd-'+id);
   if (!dt) { document.getElementById('glossario').scrollIntoView({behavior:'smooth'}); return; }
