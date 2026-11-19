@@ -170,6 +170,7 @@ main{max-width:1380px;margin:0 auto;padding:16px}
 section.tab{display:none}section.tab.on{display:block}
 section.tab.oculta{display:none!important}
 .grid{display:grid;gap:12px}
+.grid>*{min-width:0}
 .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .card{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;box-shadow:var(--sombra)}
 .card h3{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--ink2);text-transform:uppercase;letter-spacing:.04em}
