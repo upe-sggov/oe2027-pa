@@ -245,14 +245,12 @@ table.t-dia tfoot td{border-bottom:0;border-top:1.5px solid var(--linha)}
 table.t-dia td.bar-c{width:34%}
 .bar-dia{display:block;height:8px;background:var(--chip);border-radius:4px;overflow:hidden}
 .bar-dia i{display:block;height:100%;background:var(--verde);border-radius:4px}
-#dias-vot a{color:var(--azul);text-decoration:none;border-bottom:1px dotted var(--azul)}
-#dias-vot a.on{font-weight:700;border-bottom-style:solid}
-#b-dia-todo.on{background:var(--azul);border-color:var(--azul);color:#fff}
 .barra-dia{position:sticky;top:var(--nav-h,54px);z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--bg);padding:8px 0 10px;margin:0 0 4px;border-bottom:1px solid var(--linha)}
-.barra-dia label{font-size:12.5px;font-weight:600;color:var(--ink2)}
+.barra-dia .lbl-dia{font-size:12.5px;font-weight:600;color:var(--ink2)}
+.barra-dia .seg{margin:0}
 .barra-dia input[type=date]{font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--linha);border-radius:8px;background:var(--card);color:var(--ink)}
 .barra-dia .dia-ativo{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--azul)}
-@media print{.barra-dia{position:static;border:0}.barra-dia input,.barra-dia .btn,#dias-vot{display:none}}
+@media print{.barra-dia{position:static;border:0}.barra-dia .lbl-dia,#dias-vot{display:none}}
 .nota-prov{background:color-mix(in srgb,#e0b24c 18%,transparent);border:1px solid color-mix(in srgb,#e0b24c 55%,transparent);border-radius:8px;padding:7px 10px;font-size:12.5px;margin:0 0 10px}
 .chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--ink2);font-size:11.5px;white-space:nowrap}
 .chip.ok{background:#e3f1ea;color:#145a44}.chip.nok{background:#f9e3e1;color:#8a1711}.chip.pre{background:#efe9f7;color:#5b4a7a}.chip.ret{background:#fdf1d6;color:#7a5200}
@@ -399,7 +397,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
 </section>
 
 <section class="tab" id="t-votacoes" data-titulo="Votações">
-  <div class="barra-dia" id="barra-dia"><label for="f-dia-vot">Dia da votação</label><input type="date" id="f-dia-vot"><button class="btn" id="b-dia-todo" type="button">Todo o período</button><span class="mini" id="dias-vot"></span><span class="dia-ativo" id="dia-ativo"></span></div>
+  <div class="barra-dia" id="barra-dia"><span class="lbl-dia">Dia da votação</span><div class="seg" id="dias-vot" role="group" aria-label="Dia da votação"></div><span class="dia-ativo" id="dia-ativo"></span></div>
   <div id="nota-dia"></div>
   <div class="grid kpis" id="kpis-vot"></div>
   <div class="card" id="c-dia" style="margin-top:12px"><h3>Aprovadas por proponente e por tema</h3>
@@ -528,15 +526,14 @@ function renderBarraDia() {
   const dias = [...new Set(PA.filter(r => r.votos_por_partido).map(diaVot).filter(Boolean))].sort();
   $('#barra-dia').hidden = !dias.length;
   if (!dias.length) { $('#nota-dia').innerHTML = ''; return; }
-  const inp = $('#f-dia-vot'); inp.min = dias[0]; inp.max = dias[dias.length-1];
   const dia = DIA;
-  $('#b-dia-todo').classList.toggle('on', !dia);
-  $('#dias-vot').innerHTML = 'Dias com votações: ' + dias.map(d => `<a href="#" class="${d===dia?'on':''}" onclick="event.preventDefault();$('#f-dia-vot').value='${d}';$('#f-dia-vot').dispatchEvent(new Event('input'))">${diaCurto(d)}</a>`).join(' · ');
-  $('#dia-ativo').textContent = dia ? `A mostrar: sessão de ${fmtData(dia)} (documentos da COFAP: todo o período)` : 'A mostrar: todo o período';
+  $('#dias-vot').innerHTML = [['', 'Todo o período'], ...dias.map(d => [d, diaCurto(d)])].map(([d,l]) => `<button type="button" class="${d===dia?'on':''}" aria-pressed="${d===dia}" onclick="DIA='${d}';renderVotacoes()">${l}</button>`).join('');
+  $('#dia-ativo').textContent = dia ? `A mostrar: sessão de ${diaCurto(dia)} ${dia.slice(0,4)} (documentos da COFAP: todo o período)` : 'A mostrar: todo o período';
   const prov = diasProvisorios();
   $('#nota-dia').innerHTML = dia && !dias.includes(dia) ? '<div class="nota-prov">Sem votações publicadas pela AR neste dia.</div>'
     : (dia ? (prov.has(dia) ? '<div class="nota-prov"><b>Dia ainda não fechado.</b> A AR pode ainda publicar ou corrigir votações desta sessão; os números são provisórios.</div>' : '')
-           : (dias.some(d => prov.has(d)) ? `<div class="nota-prov"><b>Inclui dias ainda não fechados</b> (${dias.filter(d=>prov.has(d)).map(diaCurto).join(', ')}): a AR pode ainda publicar ou corrigir votações; os números são provisórios.</div>` : ''));
+           : (() => { const ab = dias.filter(d => prov.has(d)); if (!ab.length) return ''; const um = ab.length === 1, lista = ab.map(diaCurto).join(', ').replace(/, ([^,]*)$/, ' e $1');
+               return `<div class="nota-prov"><b>${um ? `O dia ${lista} ainda não está fechado` : `Os dias ${lista} ainda não estão fechados`}:</b> a AR pode ainda publicar ou corrigir votações ${um ? 'dessa sessão' : 'dessas sessões'}; os números ${um ? 'desse dia são provisórios' : 'desses dias são provisórios'}.</div>`; })());
 }
 const M_SENTIDO = (gpsVot, sent) => { $('#m-sentido').innerHTML = gpsVot.length ? `<tr><th>Grupo parlamentar</th><th>Favor</th><th>Contra</th><th>Abstenção</th><th>Ausente</th><th>votações</th></tr>` + gpsVot.map(g => { const s=sent[g], n=s.Favor+s.Contra+s['Abstenção']+s.Ausente; return `<tr><td style="text-align:left"><b><span class="dot" style="background:${corGP(g)}"></span> ${esc(g)}</b></td><td class="num f">${fmtN(s.Favor)}</td><td class="num c">${fmtN(s.Contra)}</td><td class="num a">${fmtN(s['Abstenção'])}</td><td class="num">${fmtN(s.Ausente)}</td><td class="num">${fmtN(n)}</td></tr>`; }).join('') : (DIA ? '<tr><td class="mini">Sem votações publicadas neste dia.</td></tr>' : '<tr><td class="mini">Ainda sem votações registadas pela AR.</td></tr>'); };
 function renderVotacoes() {
@@ -765,7 +762,7 @@ function montar() {
   opts('#f-pos-prop', proponentes); $('#f-pos-prop').value = '';
 
   // ----- votações (filtráveis por dia de votação)
-  DIA = ''; $('#f-dia-vot').value = ''; segAtivo = 0; $('#f-q-res').value = ''; renderVotacoes();
+  DIA = ''; segAtivo = 0; $('#f-q-res').value = ''; renderVotacoes();
 
   // ----- documentos, histórico, fontes
   { const n=(E.documentos||[]).length, u=n?(E.documentos||[]).map(d=>d.primeira_captura||'').sort().pop():''; const t = () => $('#n-docs').textContent = n ? `${fmtN(n)} documentos · último registado ${hm(u)} · ${$('#card-docs').open ? 'clique para fechar' : 'clique para ver a lista'}` : 'ainda sem documentos'; t(); $('#card-docs').ontoggle = t; }
@@ -864,9 +861,7 @@ function renderPosicao() {
 }
 $('#f-pos-prop').addEventListener('input', renderPosicao);
 $('#f-q-res').addEventListener('input', () => renderRes());
-$('#f-dia-vot').addEventListener('input', () => { DIA = $('#f-dia-vot').value; renderVotacoes(); });
 { const ajNav = () => document.documentElement.style.setProperty('--nav-h', (document.querySelector('nav.tabs')?.offsetHeight || 54) + 'px'); ajNav(); window.addEventListener('resize', ajNav); }
-$('#b-dia-todo').addEventListener('click', () => { $('#f-dia-vot').value = ''; DIA = ''; renderVotacoes(); });
 function filtrarTema(tm) {
   ['#f-q','#f-partido','#f-tipo','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
   $('#f-tema').value = tm; render();
