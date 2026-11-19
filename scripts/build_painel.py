@@ -41,6 +41,17 @@ def ler_json(f: Path, default):
     return json.loads(f.read_text(encoding="utf-8")) if f.exists() else default
 
 
+def copiar_historico(ano: str, pasta: Path) -> str:
+    """Publica uma cópia do histórico completo junto do painel (descarregável em «Fontes e método»)."""
+    origem = pasta / "historico.csv"
+    if not origem.exists():
+        return ""
+    destino = DOCS / f"historico_OE{ano}.csv"
+    if not destino.exists() or destino.read_bytes() != origem.read_bytes():
+        destino.write_bytes(origem.read_bytes())
+    return destino.name
+
+
 def carregar_edicao(ano: str, ed: dict, pasta: Path) -> dict:
     # Só os registos que a AR publica na versão atual do ficheiro. Os que deixaram de constar (por exemplo, uma PA
     # que a AR dividiu em partes: 118C passou a 118C-1 e 118C-2) ficam na base e no histórico, mas não contam.
@@ -60,7 +71,9 @@ def carregar_edicao(ano: str, ed: dict, pasta: Path) -> dict:
         "calendario_nota": ed.get("calendario_nota", ""),
         "execucao": ler_json(pasta / "ultima_execucao.json", {}),
         "pa": pa,
-        "historico": historico[-400:][::-1],
+        "historico_csv": copiar_historico(ano, pasta),
+        "n_historico": len(historico),
+        "inicio_historico": historico[0].get("momento", "") if historico else "",
         "historico_24h": [h for h in historico if h.get("momento", "") >= (agora - dt.timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M")],
         "estado_fontes": ler_json(pasta / "estado_fontes.json", {}),
         "documentos": ler_json(pasta / "documentos.json", []),
@@ -313,7 +326,6 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <button data-t="sintese" class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Síntese</button>
   <button data-t="pa"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>Propostas de alteração <span class="n" id="n-pa"></span></button>
   <button data-t="votacoes"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h11"/></svg>Votações <span class="n" id="n-vot"></span></button>
-  <button data-t="historico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Alterações entre capturas <span class="n" id="n-hist"></span></button>
   <button data-t="fontes"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>Fontes e método</button>
   <span class="ed" id="ed-nav"></span>
 </div></nav>
@@ -387,14 +399,6 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="legenda">Por registo publicado pela AR. «PDF» abre o texto da proposta publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
   </div>
 </section>
-
-<section class="tab" id="t-historico" data-titulo="Alterações entre capturas">
-  <div class="card"><h3>O que mudou na publicação da AR entre capturas (mais recente primeiro)</h3>
-  <div class="legenda" style="margin:-4px 0 10px">Em cada captura automática, o painel compara a publicação da AR com a anterior e regista o que mudou. Serve para ver, desde a última consulta, que PA entraram, quais mudaram de estado e quais foram votadas.</div>
-  <div class="tabela-wrap"><table id="tab-hist"><thead><tr><th>Momento</th><th>N.º PA</th><th>Evento</th><th>Detalhe</th><th>Fonte</th></tr></thead><tbody></tbody></table></div>
-  <div class="legenda">«nova»: a PA apareceu pela primeira vez. «estado alterado»: o estado publicado mudou. «votada»: foi publicada uma votação. «ausente da fonte»: a PA deixou de constar da publicação da AR. O painel mostra os últimos 400 eventos; o histórico completo está em <code>historico.csv</code>.</div></div>
-</section>
-
 <section class="tab" id="t-fontes" data-titulo="Fontes e método">
   <div class="grid duas">
     <div class="card"><h3>Fontes (Assembleia da República)</h3><ul id="lista-fontes" style="margin:0;padding-left:18px;font-size:13px"></ul></div>
@@ -403,7 +407,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
         <li>Toda a informação do painel é publicada pela Assembleia da República: dados abertos (categoria «Orçamento do Estado», XVII Legislatura) e, em reserva, a página de detalhe de cada proposta no parlamento.pt.</li>
         <li>O painel não acrescenta classificações próprias. Tema, tipo, estado, requerimentos, pareceres e sentido de voto são os registados pela AR. O tema é o atribuído pelos serviços da AR a cada proposta (em 2026, corresponde à comissão parlamentar competente).</li>
         <li>Contagens pela convenção da AR: cada registo numerado conta como uma proposta, incluindo as partes em que a AR divide uma proposta que altera vários artigos ou alíneas. O número de propostas distintas (sem partes) é apresentado à parte.</li>
-        <li>Cada captura guarda uma cópia dos dados recebidos. A base mantém a última versão de cada proposta e regista, entre capturas, entradas, alterações de estado e votações.</li>
+        <li>Cada captura guarda uma cópia dos dados recebidos. A base mantém a última versão de cada proposta e regista, entre capturas, entradas, alterações de estado e votações. <span id="li-hist"></span></li>
         <li>Uma proposta que deixe de constar da fonte é assinalada como «ausente da fonte» e deve ser confirmada no parlamento.pt.</li>
         <li>O OE 2026 (processo concluído) serve de base de comparação: é a única edição completa da XVII Legislatura, com a mesma composição parlamentar.</li>
       </ol>
@@ -477,6 +481,19 @@ function colunas(el, pares, fmtX) {
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico de colunas" style="color:var(--ink)">${grelha}${cols}</svg>`;
 }
 const opts = (id, vals, manter=1) => { const s=$(id); while (s.options.length>manter) s.remove(manter); for (const v of vals) { const o=document.createElement('option'); o.value=v; o.textContent=v; s.appendChild(o);} };
+// ----- últimas 24 horas: acontecimentos, sem contar duas vezes a mesma votação
+const curtoEstado = x => String(x||'').replace(/o[(]a[)]/g,'a').replace(' em Comissão','').replace('Aguarda Voto','Aguarda voto').trim();
+function resumo24h(h) {
+  const base = n => String(n).split('-')[0];
+  const ausentes = new Set(h.filter(x=>x.evento==='ausente da fonte').map(x=>base(x.n_pa)));
+  const votadas = new Set(), novas = new Set(), divididas = new Set(), outras = []; let aprovadas = 0, avocadasDepois = 0;
+  for (const x of h) {
+    if (x.evento==='votada') { if (!votadas.has(x.n_pa) && /^Aprovad/.test(x.detalhe||'')) { aprovadas++; const r = PA.find(r=>r.n_pa===x.n_pa); if (r && r.estado_ar==='Avocado(a)') avocadasDepois++; } votadas.add(x.n_pa); }
+    else if (x.evento==='nova') { if (String(x.n_pa).includes('-') && (ausentes.has(base(x.n_pa)) || PA.some(r=>r.n_pa!==x.n_pa && base(r.n_pa)===base(x.n_pa) && (r.primeira_captura||'') < (x.momento||'')))) divididas.add(base(x.n_pa)); else novas.add(base(x.n_pa)); }
+    else if (x.evento==='estado alterado') { const [de, para] = String(x.detalhe||'').split(' → '); if (!/Aprovad|Rejeitad/.test(para||'')) outras.push({n_pa:x.n_pa, de:curtoEstado(de), para:curtoEstado(para)}); }
+  }
+  return {votadas, novas, divididas, outras, aprovadas, avocadasDepois};
+}
 // ----- glossário
 const GL = (D.glossario||{termos:[],grupos:[]});
 const GL_POR_ID = Object.fromEntries(GL.termos.map(t=>[t.id,t]));
@@ -583,10 +600,7 @@ function montar() {
     ['Retiradas, prejudicadas ou não admitidas', (porEstado['retirada']||0)+(porEstado['prejudicada']||0)+(porEstado['não admitida']||0), 'neu'],
     ['Taxa de aprovação', taxa===null?'—':taxa, 'ok', taxa===null?'':'%'],
   ].map(kpi).join('');
-  $('#n-pa').textContent = fmtN(PA.length); $('#n-vot').textContent = fmtN(votadas.length); $('#n-hist').textContent = fmtN(E.historico.length);
-  const bHist = document.querySelector('nav.tabs button[data-t="historico"]');
-  bHist.hidden = concluido; $('#t-historico').classList.toggle('oculta', concluido);
-  if (concluido && tabAtiva()==='historico') irPara('sintese');
+  $('#n-pa').textContent = fmtN(PA.length); $('#n-vot').textContent = fmtN(votadas.length);
   const proponentes = cont(PA, r=>split(r.proponente)).map(p=>p[0]);
   const porProp = proponentes.map(p => { const rs = PA.filter(r=>split(r.proponente).includes(p)); return [p, porEstadoDe(rs), rs.length]; });
   barrasEmpilhadas($('#g-partido'), porProp, p => { irPara('pa'); $('#f-partido').value = p; render(); }, true);
@@ -616,9 +630,11 @@ function montar() {
     $('#g-24h').innerHTML = `<div class="mini" style="grid-column:1/-1">${esc(E.nota || 'Processo concluído.')}</div>`;
   } else {
     $('#h-24h').textContent = 'Últimas 24 horas';
-    const ev24 = cont(E.historico_24h || [], h=>[h.evento]);
-    barras($('#g-24h'), ev24.length ? ev24.map(([k,v])=>[({nova:'PA novas','estado alterado':'Alterações de estado',votada:'Votações registadas','ausente da fonte':'Ausentes da fonte'})[k]||k, v]) : []);
-    if (!ev24.length) $('#g-24h').innerHTML = '<div class="mini">Sem alterações nas últimas 24 horas.</div>';
+    const r24 = resumo24h(E.historico_24h || []);
+    const linhas24 = [['Votações publicadas', r24.votadas.size], ['PA novas', r24.novas.size], ['PA divididas em partes', r24.divididas.size], ['Outras mudanças de estado', r24.outras.length]].filter(l=>l[1]);
+    barras($('#g-24h'), linhas24);
+    if (!linhas24.length) $('#g-24h').innerHTML = '<div class="mini">Sem alterações nas últimas 24 horas.</div>';
+    else $('#g-24h').insertAdjacentHTML('beforeend', `<div class="mini" style="grid-column:1/-1;margin-top:6px;line-height:1.55">${r24.votadas.size?`Das PA votadas, ${fmtN(r24.aprovadas)} ${r24.aprovadas===1?'foi aprovada':'foram aprovadas'} (total ou parcialmente)${r24.avocadasDepois?`; ${fmtN(r24.avocadasDepois)} ${r24.avocadasDepois===1?'foi depois avocada':'foram depois avocadas'} e aguarda${r24.avocadasDepois===1?'':'m'} votação em Plenário`:''}. `:''}${r24.divididas.size?`Divididas em partes: ${[...r24.divididas].map(esc).join(', ')}. `:''}${r24.outras.length?`<br><b>Outras mudanças de estado:</b> ${r24.outras.slice(0,12).map(o=>`${esc(o.n_pa)} (${esc(o.de)} → ${esc(o.para)})`).join('; ')}${r24.outras.length>12?`; e mais ${fmtN(r24.outras.length-12)}`:''}.`:''}</div>`);
   }
   const EF = E.estado_fontes || {};
   const linhaFonte = (nome, f, corpo) => `<div style="margin-bottom:10px"><b>${nome}</b><br><span class="mini">${f ? corpo(f) : 'Ainda não verificada.'}</span></div>`;
@@ -662,8 +678,8 @@ function montar() {
   // ----- documentos, histórico, fontes
   { const n=(E.documentos||[]).length, u=n?(E.documentos||[]).map(d=>d.primeira_captura||'').sort().pop():''; const t = () => $('#n-docs').textContent = n ? `${fmtN(n)} documentos · último registado ${hm(u)} · ${$('#card-docs').open ? 'clique para fechar' : 'clique para ver a lista'}` : 'ainda sem documentos'; t(); $('#card-docs').ontoggle = t; }
   $('#tab-docs tbody').innerHTML = (E.documentos||[]).map(d => `<tr><td><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.titulo)}</a></td><td class="num">${esc(hm(d.primeira_captura))}</td></tr>`).join('') || '<tr><td colspan="2" class="mini">Ainda sem documentos publicados.</td></tr>';
-  $('#tab-hist tbody').innerHTML = E.historico.map(h => `<tr><td class="num">${esc((h.momento||'').replace('T',' ').slice(0,16))}</td><td class="num"><b>${esc(h.n_pa)}</b></td><td><span class="chip ${({nova:'ok','ausente da fonte':'ret'})[h.evento]||''}">${esc(h.evento)}</span></td><td>${esc(h.detalhe)}</td><td class="mini">${esc(h.fonte)}</td></tr>`).join('') || '<tr><td colspan="5" class="mini">Sem eventos.</td></tr>';
   const nomes = {url_pesquisa_pa:'Pesquisa de propostas de alteração (portal da AR)', url_iniciativa:`${E.designacao} — detalhe da iniciativa`, url_texto_ppl:'Texto da proposta de lei com legislação citada', url_calendario:`Calendário de apreciação do OE ${ANO} (COFAP)`, url_cofap:`Página do OE ${ANO} na Comissão de Orçamento, Finanças e Administração Pública`, dados_abertos_pagina_oe:'Dados abertos — categoria Orçamento do Estado', dados_abertos_pasta_xvii:'Dados abertos — pasta XVII Legislatura'};
+  $('#li-hist').innerHTML = E.historico_csv ? `Histórico completo: <a href="${esc(E.historico_csv)}" download>descarregar (CSV, ${fmtN(E.n_historico||0)} eventos desde ${esc(fmtData(E.inicio_historico))})</a>. Abre no Excel; uma linha por evento, com o momento da captura, o n.º da PA, o tipo de evento (nova, estado alterado, votada, ausente da fonte) e o detalhe.` : '';
   $('#lista-fontes').innerHTML = `<li><b>Fonte principal:</b> ${ligDA}.</li>` + Object.entries({...D.fontes, ...E.urls}).filter(([k,v])=>nomes[k] && String(v).startsWith('http')).map(([k,v])=>`<li><a href="${esc(v)}" target="_blank" rel="noopener">${esc(nomes[k])}</a></li>`).join('') + (E.excel ? `<li><a href="${esc(E.excel)}" download>Base completa em Excel (dados da AR), ${concluido ? 'dados fixados no ficheiro final da AR' : 'gerada em cada captura'}</a></li>` : '');
 }
 
