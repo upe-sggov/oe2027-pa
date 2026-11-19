@@ -276,6 +276,16 @@ table.t-dia td.bar-c{width:34%}
 :root[data-theme="dark"] .matriz td.f{background:#1b3a30}:root[data-theme="dark"] .matriz td.c{background:#4a1b18}:root[data-theme="dark"] .matriz td.a{background:#4a3a12}
 .calor td.q{color:#1c2630;font-variant-numeric:tabular-nums;min-width:62px}
 .calor td.q small{display:block;font-size:10px;opacity:.75}
+.calor td.nq{text-align:left;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:92px}
+.calor td.nq i{display:inline-block;height:8px;background:var(--azul);border-radius:0 3px 3px 0;vertical-align:middle;margin-right:6px;opacity:.75}
+.leg-calor{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:4px 0 10px;font-size:12px;color:var(--ink2)}
+.leg-calor .esc{display:flex;align-items:center;gap:6px}
+.leg-calor .grad{width:180px;height:12px;border-radius:3px;background:linear-gradient(90deg,hsl(0,55%,82%),hsl(60,55%,77%),hsl(120,55%,72%))}
+.leg-calor .ex{display:inline-block;background:hsl(96,55%,74%);color:#1c2630;border-radius:4px;padding:1px 7px;text-align:center;line-height:1.15;font-size:11px}
+.leg-calor .ex small{display:block;font-size:9px;opacity:.75}
+.resumo-sel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 8px;font-size:13px}
+.resumo-sel .pill{border:1px solid var(--linha);border-radius:999px;padding:2px 10px;background:var(--card)}
+.resumo-sel .pill b{font-variant-numeric:tabular-nums}
 .mini{font-size:11.5px;color:var(--ink3)}
 .obj{min-width:340px;max-width:460px}
 #tab-pa{min-width:1760px}
@@ -413,11 +423,12 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="card"><h3>Sentido de voto por grupo parlamentar (PA votadas)</h3><div class="tabela-wrap"><table class="matriz" id="m-sentido"></table></div><div class="legenda">Tal como publicado pela AR. Inclui os deputados únicos representantes de partido e, quando a AR o regista, votos individuais de deputados e ausências.</div></div>
   </div>
   <div class="card" style="margin-top:12px"><h3>Posição dos grupos parlamentares por tema</h3>
-    <div class="filtros"><label class="mini" for="f-pos-prop">PA apresentadas por</label><select id="f-pos-prop"><option value="">todos os proponentes</option></select><span class="mini">Percentagem de votos a favor de cada grupo parlamentar nas PA votadas de cada tema; por baixo, favor · contra · abstenção.</span></div>
+    <div class="filtros"><label class="mini" for="f-pos-prop">PA apresentadas por</label><select id="f-pos-prop"><option value="">todos os proponentes</option></select></div>
+    <div class="resumo-sel" id="pos-resumo"></div><div class="leg-calor"><span class="esc">Cor: % de votos a favor do grupo · <b>0%</b><span class="grad" aria-hidden="true"></span><b>100%</b></span><span>Em cada célula: <span class="ex">75%<small>3 · 1 · 0</small></span> = 75% a favor; por baixo, n.º de PA com voto a favor · contra · abstenção</span><span>«—» o grupo não votou nessas PA</span></div>
     <div class="tabela-wrap"><table class="matriz calor" id="m-posicao"></table></div>
     <div class="legenda">Indicador histórico calculado a partir dos temas e dos sentidos de voto publicados pela AR. Não é uma previsão. Inclui os deputados únicos representantes de partido.</div>
   </div>
-  <div class="card" style="margin-top:12px"><h3>Como vota cada grupo parlamentar nas PA de cada proponente</h3><div class="tabela-wrap"><table class="matriz calor" id="m-cruzado"></table></div><div class="legenda">Linhas: proponente da PA. Colunas: grupo parlamentar que vota. Percentagem de votos a favor nas PA votadas; por baixo, favor · contra · abstenção.</div></div>
+  <div class="card" style="margin-top:12px"><h3>Como vota cada grupo parlamentar nas PA de cada proponente</h3><div class="leg-calor"><span class="esc">Cor: % de votos a favor do grupo · <b>0%</b><span class="grad" aria-hidden="true"></span><b>100%</b></span><span>Em cada célula: <span class="ex">75%<small>3 · 1 · 0</small></span> = 75% a favor; por baixo, n.º de PA com voto a favor · contra · abstenção</span><span>«—» o grupo não votou nessas PA</span></div><div class="tabela-wrap"><table class="matriz calor" id="m-cruzado"></table></div><div class="legenda">Linhas: proponente da PA, com o n.º de PA votadas. Colunas: grupo parlamentar que vota.</div></div>
   <details class="card dobra" id="card-docs" style="margin-top:12px"><summary><h3 id="h-docs">Documentos publicados pela COFAP</h3><span class="mini" id="n-docs"></span></summary><div class="tabela-wrap" style="margin-top:10px"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></details>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
@@ -552,7 +563,8 @@ function renderVotacoes() {
   const gpsVot = D.partidos.concat(Object.keys(sent).filter(g=>!D.partidos.includes(g))).filter(g=>sent[g]);
   M_SENTIDO(gpsVot, sent);
   const cruz = sentidos(votadas, r=>split(r.proponente));
-  matrizCalor($('#m-cruzado'), proponentes.filter(p=>cruz[p]), gpsVot.filter(g=>D.partidos.includes(g)), (l,c)=>cruz[l]&&cruz[l][c], dia ? 'Sem votações publicadas neste dia.' : 'Ainda sem votações registadas pela AR.', true);
+  const nVotProp = p => votadas.filter(r=>split(r.proponente).includes(p)).length;
+  matrizCalor($('#m-cruzado'), proponentes.filter(p=>cruz[p]).sort((x,y)=>nVotProp(y)-nVotProp(x)), gpsVot.filter(g=>D.partidos.includes(g)), (l,c)=>cruz[l]&&cruz[l][c], dia ? 'Sem votações publicadas neste dia.' : 'Ainda sem votações registadas pela AR.', true, nVotProp);
   renderPosicao(); renderDia(); renderRes();
 }
 function renderDia() {
@@ -642,9 +654,10 @@ const INFO = {
   'Com pedido de parecer às Regiões Autónomas': 'Registos em que a AR assinala pedido de parecer à Região Autónoma dos Açores ou da Madeira.'
 };
 const kpi = ([l,v,c,sufixo]) => `<div class="card kpi ${c}">${INFO[l]?`<button class="info" aria-expanded="false" aria-label="O que significa «${esc(l)}»" title="O que significa?" onclick="const k=this.parentElement;k.classList.toggle('aberto');this.setAttribute('aria-expanded',k.classList.contains('aberto'))">i</button>`:''}<div class="v">${typeof v==='number'?fmtN(v):esc(v)}${sufixo||''}</div><div class="l">${l}</div>${INFO[l]?`<div class="tip">${esc(INFO[l])}${GL_KPI[l]?` <button class="gl-link" onclick="irGlossario('${GL_KPI[l]}')">Ver no glossário</button>`:''}</div>`:''}</div>`;
-const matrizCalor = (el, linhas, colunas, celula, vazio, corLinha) => {
+const matrizCalor = (el, linhas, colunas, celula, vazio, corLinha, nLinha) => {
   if (!linhas.length) { el.innerHTML = `<tr><td class="mini">${vazio}</td></tr>`; return; }
-  el.innerHTML = `<tr><th></th>${colunas.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>` + linhas.map(l => `<tr><td style="text-align:left"><b>${corLinha?`<span class="dot" style="background:${corGP(l)}"></span> `:''}${esc(l)}</b></td>${colunas.map(c => { const s = celula(l,c); if (!s || !(s.F+s.C+s.A)) return '<td class="q mini">—</td>'; const n=s.F+s.C+s.A, p=s.F/n; const cor = `hsl(${Math.round(p*120)},55%,${82-Math.round(p*10)}%)`; return `<td class="q" style="background:${cor}" title="${esc(c)} nas PA de ${esc(l)}: ${s.F} a favor, ${s.C} contra, ${s.A} abstenções">${Math.round(p*100)}%<small>${s.F} · ${s.C} · ${s.A}</small></td>`; }).join('')}</tr>`).join('');
+  const nMax = nLinha ? Math.max(1, ...linhas.map(nLinha)) : 1;
+  el.innerHTML = `<tr><th></th>${nLinha?'<th style="text-align:left">PA votadas</th>':''}${colunas.map(c=>`<th>${esc(c)}</th>`).join('')}</tr>` + linhas.map(l => `<tr><td style="text-align:left"><b>${corLinha?`<span class="dot" style="background:${corGP(l)}"></span> `:''}${esc(l)}</b></td>${nLinha?`<td class="nq"><i style="width:${Math.max(2,Math.round(nLinha(l)/nMax*44))}px"></i><b>${fmtN(nLinha(l))}</b></td>`:''}${colunas.map(c => { const s = celula(l,c); if (!s || !(s.F+s.C+s.A)) return '<td class="q mini">—</td>'; const n=s.F+s.C+s.A, p=s.F/n; const cor = `hsl(${Math.round(p*120)},55%,${82-Math.round(p*10)}%)`; return `<td class="q" style="background:${cor}" title="${esc(c)} nas PA de ${esc(l)}: ${s.F} a favor, ${s.C} contra, ${s.A} abstenções">${Math.round(p*100)}%<small>${s.F} · ${s.C} · ${s.A}</small></td>`; }).join('')}</tr>`).join('');
 };
 const sentidos = (regs, chaveLinha) => { const m = {}; for (const r of regs) { if (!r.votos_por_partido) continue; for (const l of chaveLinha(r)) { m[l] = m[l]||{}; for (const v of split(r.votos_por_partido)) { const [gp,s]=v.split(':').map(x=>x.trim()); const k={Favor:'F',Contra:'C','Abstenção':'A'}[s]; if(!gp||!k) continue; m[l][gp]=m[l][gp]||{F:0,C:0,A:0}; m[l][gp][k]++; } } } return m; };
 const porEstadoDe = regs => { const m = {}; for (const r of regs) m[r.estado||'—'] = (m[r.estado||'—']||0)+1; return m; };
@@ -858,7 +871,11 @@ function renderPosicao() {
   const m = sentidos(vot, temasPA);
   const gps = D.partidos.filter(g => Object.values(m).some(l=>l[g]));
   const temas = Object.keys(m).sort((a,b)=>Object.values(m[b]).reduce((s,x)=>s+x.F+x.C+x.A,0)-Object.values(m[a]).reduce((s,x)=>s+x.F+x.C+x.A,0));
-  matrizCalor($('#m-posicao'), temas, gps, (l,c)=>m[l]&&m[l][c], 'Ainda sem votações registadas pela AR.');
+  matrizCalor($('#m-posicao'), temas, gps, (l,c)=>m[l]&&m[l][c], DIA ? 'Sem votações publicadas neste dia.' : 'Ainda sem votações registadas pela AR.', false, t => vot.filter(r=>temasPA(r).includes(t)).length);
+  const ap = vot.filter(r=>/^aprovada/.test(r.estado)).length, rj = vot.filter(r=>r.estado==='rejeitada').length;
+  const quem = p ? `<span class="dot" style="background:${corGP(p)}"></span> <b>${esc(p)}</b>` : '<b>todos os proponentes</b>';
+  const apres = p ? PA.filter(r=>split(r.proponente).includes(p)).length : PA.length;
+  $('#pos-resumo').innerHTML = `<span>PA de ${quem}${DIA?` · votadas a ${esc(diaCurto(DIA))}`:''}:</span><span class="pill"><b>${fmtN(vot.length)}</b> ${vot.length===1?'votada':'votadas'}${DIA?'':` de ${fmtN(apres)} apresentadas`}</span><span class="pill" style="border-color:var(--ok)"><b>${fmtN(ap)}</b> ${ap===1?'aprovada':'aprovadas'}</span><span class="pill" style="border-color:var(--nok)"><b>${fmtN(rj)}</b> ${rj===1?'rejeitada':'rejeitadas'}</span>${temas.length?`<span class="mini">${temas.length} temas · uma PA com vários temas conta em cada um</span>`:''}`;
 }
 $('#f-pos-prop').addEventListener('input', renderPosicao);
 $('#f-q-res').addEventListener('input', () => renderRes());
