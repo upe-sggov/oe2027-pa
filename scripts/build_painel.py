@@ -361,8 +361,8 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <div class="card" style="margin-top:12px"><h3 id="h-docs">Documentos publicados pela COFAP</h3><div class="tabela-wrap"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></div>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
-    <div class="tabela-wrap"><table id="tab-res"><thead><tr><th>N.º</th><th>Proponente</th><th>Artigo</th><th>Objeto</th><th>Tema</th><th>Resultado</th><th>Data</th><th>Sentido de voto por grupo parlamentar</th></tr></thead><tbody></tbody></table></div>
-    <div class="legenda">Por registo publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
+    <div class="tabela-wrap"><table id="tab-res"><thead><tr><th>N.º</th><th>Proponente</th><th>Artigo</th><th>Objeto</th><th>Tema</th><th>Resultado</th><th>Data</th><th>Sentido de voto por grupo parlamentar</th><th>Texto da PA</th></tr></thead><tbody></tbody></table></div>
+    <div class="legenda">Por registo publicado pela AR. «PDF» abre o texto da proposta publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
   </div>
 </section>
 
@@ -707,9 +707,9 @@ const GRUPOS_RES = [
 function renderRes() {
   $('#seg-res').innerHTML = GRUPOS_RES.map(([l,f],i)=>`<button class="${i===segAtivo?'on':''}" onclick="segAtivo=${i};renderRes()">${esc(l)} (${fmtN(PA.filter(f).length)})</button>`).join('');
   const rows = PA.filter(GRUPOS_RES[segAtivo][1]).sort(ordemPA);
-  $('#tab-res tbody').innerHTML = rows.slice(0,1500).map(r => `<tr><td class="num"><b>${esc(r.n_pa)}</b></td><td>${split(r.proponente).map(gpChip).join(' ')}</td><td>${esc(r.artigo)}</td><td class="obj">${esc(r.objeto)}</td><td class="mini">${esc(temaDe(r))}</td><td>${estadoChip(r.estado)}${r.sede_votacao==='Plenário'?'<br><span class="mini">em Plenário</span>':''}${+r.n_votacoes>1?`<br><span class="mini">${r.n_votacoes} votações</span>`:''}</td><td class="num">${esc(fmtData(r.data_votacao))}</td><td class="mini votos">${votosHTML(r.votos_por_partido)||'—'}</td></tr>`).join('')
-    + (rows.length>1500?`<tr><td colspan="8" class="mini">Mostram-se 1 500 de ${fmtN(rows.length)} registos. Use a lista do separador «Propostas de alteração» para filtrar e exportar.</td></tr>`:'')
-    || `<tr><td colspan="8" class="mini">Sem registos neste grupo.</td></tr>`;
+  $('#tab-res tbody').innerHTML = rows.slice(0,1500).map(r => `<tr><td class="num"><b>${esc(r.n_pa)}</b></td><td>${split(r.proponente).map(gpChip).join(' ')}</td><td>${esc(r.artigo)}</td><td class="obj">${esc(r.objeto)}</td><td class="mini">${esc(temaDe(r))}</td><td>${estadoChip(r.estado)}${r.sede_votacao==='Plenário'?'<br><span class="mini">em Plenário</span>':''}${+r.n_votacoes>1?`<br><span class="mini">${r.n_votacoes} votações</span>`:''}</td><td class="num">${esc(fmtData(r.data_votacao))}</td><td class="mini votos">${votosHTML(r.votos_por_partido)||'—'}</td><td class="mini" style="white-space:nowrap">${r.url_pdf?`<a href="${esc(r.url_pdf)}" target="_blank" rel="noopener">PDF</a>`:''}${r.url_pdf&&r.url_detalhe?' · ':''}${r.url_detalhe?`<a href="${esc(r.url_detalhe)}" target="_blank" rel="noopener">ficha</a>`:''}</td></tr>`).join('')
+    + (rows.length>1500?`<tr><td colspan="9" class="mini">Mostram-se 1 500 de ${fmtN(rows.length)} registos. Use a lista do separador «Propostas de alteração» para filtrar e exportar.</td></tr>`:'')
+    || `<tr><td colspan="9" class="mini">Sem registos neste grupo.</td></tr>`;
 }
 montar();
 const alvoHash = hash[1]==='temas' ? 'pa' : hash[1];
