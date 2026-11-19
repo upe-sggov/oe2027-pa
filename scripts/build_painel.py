@@ -205,7 +205,7 @@ section.tab.oculta{display:none!important}
 .duas{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
 .barras{display:grid;grid-template-columns:max-content 1fr max-content;gap:6px 10px;align-items:center;font-size:13px}
 .barras .b{height:12px;background:var(--azul);border-radius:0 4px 4px 0;min-width:2px}
-.barras .bs{display:flex;height:14px;border-radius:0 4px 4px 0;overflow:hidden;background:transparent}
+.barras .bs{display:flex;height:14px;border-radius:0 4px 4px 0;overflow:hidden;background:transparent;min-width:3px}
 .barras .bs span{display:block;height:100%}
 .barras .n{color:var(--ink2);text-align:right;font-variant-numeric:tabular-nums}
 .barras .k{color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:280px;display:flex;align-items:center;gap:6px}
