@@ -361,6 +361,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <div class="card" style="margin-top:12px"><h3 id="h-docs">Documentos publicados pela COFAP</h3><div class="tabela-wrap"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></div>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
+    <div class="filtros"><input type="search" id="f-q-res" placeholder="Pesquisar no objeto, artigo, epígrafe, diplomas, tema, n.º da PA, deputados…"><span class="mini" id="f-n-res"></span></div>
     <div class="tabela-wrap"><table id="tab-res"><thead><tr><th>N.º</th><th>Proponente</th><th>Artigo</th><th>Objeto</th><th>Tema</th><th>Resultado</th><th>Data</th><th>Sentido de voto por grupo parlamentar</th><th>Texto da PA</th></tr></thead><tbody></tbody></table></div>
     <div class="legenda">Por registo publicado pela AR. «PDF» abre o texto da proposta publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
   </div>
@@ -600,7 +601,7 @@ function montar() {
   $('#m-sentido').innerHTML = gpsVot.length ? `<tr><th>Grupo parlamentar</th><th>Favor</th><th>Contra</th><th>Abstenção</th><th>Ausente</th><th>votações</th></tr>` + gpsVot.map(g => { const s=sent[g], n=s.Favor+s.Contra+s['Abstenção']+s.Ausente; return `<tr><td style="text-align:left"><b><span class="dot" style="background:${corGP(g)}"></span> ${esc(g)}</b></td><td class="num f">${fmtN(s.Favor)}</td><td class="num c">${fmtN(s.Contra)}</td><td class="num a">${fmtN(s['Abstenção'])}</td><td class="num">${fmtN(s.Ausente)}</td><td class="num">${fmtN(n)}</td></tr>`; }).join('') : '<tr><td class="mini">Ainda sem votações registadas pela AR.</td></tr>';
   const cruz = sentidos(votadas, r=>split(r.proponente));
   matrizCalor($('#m-cruzado'), proponentes.filter(p=>cruz[p]), gpsVot.filter(g=>D.partidos.includes(g)), (l,c)=>cruz[l]&&cruz[l][c], 'Ainda sem votações registadas pela AR.', true);
-  segAtivo = 0; renderRes();
+  segAtivo = 0; $('#f-q-res').value = ''; renderRes();
 
   // ----- documentos, histórico, fontes
   $('#tab-docs tbody').innerHTML = (E.documentos||[]).map(d => `<tr><td><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.titulo)}</a></td><td class="num">${esc(hm(d.primeira_captura))}</td></tr>`).join('') || '<tr><td colspan="2" class="mini">Ainda sem documentos publicados.</td></tr>';
@@ -689,6 +690,7 @@ function renderPosicao() {
   matrizCalor($('#m-posicao'), temas, gps, (l,c)=>m[l]&&m[l][c], 'Ainda sem votações registadas pela AR.');
 }
 $('#f-pos-prop').addEventListener('input', renderPosicao);
+$('#f-q-res').addEventListener('input', () => renderRes());
 function filtrarTema(tm) {
   ['#f-q','#f-partido','#f-tipo','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
   $('#f-tema').value = tm; render();
@@ -705,8 +707,11 @@ const GRUPOS_RES = [
   ['Todas', r=>true]
 ];
 function renderRes() {
-  $('#seg-res').innerHTML = GRUPOS_RES.map(([l,f],i)=>`<button class="${i===segAtivo?'on':''}" onclick="segAtivo=${i};renderRes()">${esc(l)} (${fmtN(PA.filter(f).length)})</button>`).join('');
-  const rows = PA.filter(GRUPOS_RES[segAtivo][1]).sort(ordemPA);
+  const q = ($('#f-q-res').value||'').trim().toLowerCase();
+  const base = q ? PA.filter(r => [r.n_pa,r.objeto,r.artigo,r.artigo_epigrafe,r.diplomas,r.proponente_deputados,temaDe(r)].join(' ').toLowerCase().includes(q)) : PA;
+  $('#seg-res').innerHTML = GRUPOS_RES.map(([l,f],i)=>`<button class="${i===segAtivo?'on':''}" onclick="segAtivo=${i};renderRes()">${esc(l)} (${fmtN(base.filter(f).length)})</button>`).join('');
+  const rows = base.filter(GRUPOS_RES[segAtivo][1]).sort(ordemPA);
+  $('#f-n-res').textContent = q ? `${fmtN(rows.length)} registos com «${$('#f-q-res').value.trim()}» neste grupo` : '';
   $('#tab-res tbody').innerHTML = rows.slice(0,1500).map(r => `<tr><td class="num"><b>${esc(r.n_pa)}</b></td><td>${split(r.proponente).map(gpChip).join(' ')}</td><td>${esc(r.artigo)}</td><td class="obj">${esc(r.objeto)}</td><td class="mini">${esc(temaDe(r))}</td><td>${estadoChip(r.estado)}${r.sede_votacao==='Plenário'?'<br><span class="mini">em Plenário</span>':''}${+r.n_votacoes>1?`<br><span class="mini">${r.n_votacoes} votações</span>`:''}</td><td class="num">${esc(fmtData(r.data_votacao))}</td><td class="mini votos">${votosHTML(r.votos_por_partido)||'—'}</td><td class="mini" style="white-space:nowrap">${r.url_pdf?`<a href="${esc(r.url_pdf)}" target="_blank" rel="noopener">PDF</a>`:''}${r.url_pdf&&r.url_detalhe?' · ':''}${r.url_detalhe?`<a href="${esc(r.url_detalhe)}" target="_blank" rel="noopener">ficha</a>`:''}</td></tr>`).join('')
     + (rows.length>1500?`<tr><td colspan="9" class="mini">Mostram-se 1 500 de ${fmtN(rows.length)} registos. Use a lista do separador «Propostas de alteração» para filtrar e exportar.</td></tr>`:'')
     || `<tr><td colspan="9" class="mini">Sem registos neste grupo.</td></tr>`;
