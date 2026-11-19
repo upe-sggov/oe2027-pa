@@ -236,6 +236,19 @@ details.dobra>summary::before{content:'▸';color:var(--ink3);font-size:12px;tra
 details.dobra[open]>summary::before{transform:rotate(90deg)}
 details.dobra>summary:hover h3{color:var(--azul)}
 @media print{details.dobra>.tabela-wrap,details.dobra>.legenda{display:block}}
+.sub-h{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3);margin:2px 0 6px;font-weight:600}
+table.t-dia{width:100%;border-collapse:collapse;font-size:12.5px}
+table.t-dia th,table.t-dia td{padding:5px 6px;border-bottom:1px solid var(--linha);text-align:left;vertical-align:middle}
+table.t-dia th{font-size:11px;color:var(--ink3);font-weight:600}
+table.t-dia td.num,table.t-dia th.num{text-align:right;white-space:nowrap}
+table.t-dia tfoot td{border-bottom:0;border-top:1.5px solid var(--linha)}
+table.t-dia td.bar-c{width:34%}
+.bar-dia{display:block;height:8px;background:var(--chip);border-radius:4px;overflow:hidden}
+.bar-dia i{display:block;height:100%;background:var(--verde);border-radius:4px}
+#dias-vot a{color:var(--azul);text-decoration:none;border-bottom:1px dotted var(--azul)}
+#dias-vot a.on{font-weight:700;border-bottom-style:solid}
+#b-dia-todo.on{background:var(--azul);border-color:var(--azul);color:#fff}
+.nota-prov{background:color-mix(in srgb,#e0b24c 18%,transparent);border:1px solid color-mix(in srgb,#e0b24c 55%,transparent);border-radius:8px;padding:7px 10px;font-size:12.5px;margin:0 0 10px}
 .chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--ink2);font-size:11.5px;white-space:nowrap}
 .chip.ok{background:#e3f1ea;color:#145a44}.chip.nok{background:#f9e3e1;color:#8a1711}.chip.pre{background:#efe9f7;color:#5b4a7a}.chip.ret{background:#fdf1d6;color:#7a5200}
 .chip.gp .dot{margin-right:4px;vertical-align:0}
@@ -382,6 +395,15 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
 
 <section class="tab" id="t-votacoes" data-titulo="Votações">
   <div class="grid kpis" id="kpis-vot"></div>
+  <div class="card" id="c-dia" style="margin-top:12px"><h3>Aprovadas por proponente e por tema</h3>
+    <div class="filtros"><label class="mini" for="f-dia-vot">Dia da votação</label><input type="date" id="f-dia-vot"><button class="btn" id="b-dia-todo" type="button">Todo o período</button><span class="mini" id="dias-vot"></span></div>
+    <div id="nota-dia"></div>
+    <div class="grid duas dia-duas">
+      <div><h4 class="sub-h">Por proponente</h4><table class="t-dia" id="t-dia-prop"></table></div>
+      <div><h4 class="sub-h">Por tema (atribuído pela AR)</h4><table class="t-dia" id="t-dia-tema"></table></div>
+    </div>
+    <div class="legenda">Aprovadas (total ou parcialmente) sobre as PA votadas com sentido de voto publicado pela AR, como nos indicadores. O dia é o da sessão em que se votou; uma PA com vários temas conta em cada um deles. O filtro aplica-se a este quadro e ao «Detalhe das votações»; os restantes quadros mostram todo o período.</div>
+  </div>
   <div class="grid duas" style="margin-top:12px">
     <div class="card"><h3>Resultado por proponente</h3><div class="tabela-wrap"><table class="matriz" id="m-resultado"></table></div><div class="legenda">Por registo publicado pela AR. Taxa de aprovação = aprovadas, incluindo as parciais, sobre os registos com votação publicada.</div></div>
     <div class="card"><h3>Sentido de voto por grupo parlamentar (PA votadas)</h3><div class="tabela-wrap"><table class="matriz" id="m-sentido"></table></div><div class="legenda">Tal como publicado pela AR. Inclui os deputados únicos representantes de partido e, quando a AR o regista, votos individuais de deputados e ausências.</div></div>
@@ -395,7 +417,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
   <details class="card dobra" id="card-docs" style="margin-top:12px"><summary><h3 id="h-docs">Documentos publicados pela COFAP</h3><span class="mini" id="n-docs"></span></summary><div class="tabela-wrap" style="margin-top:10px"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></details>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
-    <div class="filtros"><input type="search" id="f-q-res" placeholder="Pesquisar no objeto, artigo, epígrafe, diplomas, tema, n.º da PA, deputados…"><button class="btn" id="b-exp-res" onclick="exportarExcelVot()" title="Descarrega em Excel os registos do grupo escolhido, com a pesquisa aplicada">Exportar para Excel</button><span class="mini" id="f-n-res"></span></div>
+    <div class="filtros"><input type="search" id="f-q-res" placeholder="Pesquisar no objeto, artigo, epígrafe, diplomas, tema, n.º da PA, deputados…"><label class="mini" for="f-dia-res">Dia da votação</label><input type="date" id="f-dia-res" title="Dia da sessão em que se votou (vazio = todo o período)"><button class="btn" id="b-exp-res" onclick="exportarExcelVot()" title="Descarrega em Excel os registos do grupo escolhido, com a pesquisa aplicada">Exportar para Excel</button><span class="mini" id="f-n-res"></span></div>
     <div class="tabela-wrap"><table id="tab-res"><thead><tr><th>N.º</th><th>Proponente</th><th>Artigo</th><th>Objeto</th><th>Tema</th><th>Resultado</th><th>Data</th><th>Sentido de voto por grupo parlamentar</th><th>Texto da PA</th></tr></thead><tbody></tbody></table></div>
     <div class="legenda">Por registo publicado pela AR. «PDF» abre o texto da proposta publicado pela AR. «Em Plenário» assinala as votações feitas em Plenário por avocação. Sentido de voto: <span class="vt vf">a favor</span><span class="vt vc">contra</span><span class="vt va">abstenção</span><span class="vt vx">ausente</span></div>
   </div>
@@ -484,6 +506,39 @@ function colunas(el, pares, fmtX) {
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico de colunas" style="color:var(--ink)">${grelha}${cols}</svg>`;
 }
 const opts = (id, vals, manter=1) => { const s=$(id); while (s.options.length>manter) s.remove(manter); for (const v of vals) { const o=document.createElement('option'); o.value=v; o.textContent=v; s.appendChild(o);} };
+// ----- aprovadas por proponente e por tema, por dia de votação
+const diaVot = r => (r.data_votacao||'').slice(0,10);
+const RT_MESES = ['jan.','fev.','mar.','abr.','maio','jun.','jul.','ago.','set.','out.','nov.','dez.'];
+const diaCurto = d => { const [a,m,dd] = String(d).split('-'); return m ? `${+dd} ${RT_MESES[+m-1]}` : d; };
+function diasProvisorios() {
+  const porPA = Object.fromEntries(PA.map(r=>[r.n_pa, r])), s = new Set();
+  if (!concluidoEd()) s.add(new Date().toLocaleDateString('sv-SE', {timeZone:'Europe/Lisbon'}));
+  for (const x of (E.historico_24h || [])) if (x.evento==='votada' || x.evento==='estado alterado') { const r = porPA[x.n_pa]; if (r && diaVot(r)) s.add(diaVot(r)); }
+  return s;
+}
+const concluidoEd = () => /conclu/i.test(E.estado || '');
+function renderDia() {
+  const todasV = PA.filter(r => r.votos_por_partido);
+  const dias = [...new Set(todasV.map(diaVot).filter(Boolean))].sort();
+  $('#c-dia').hidden = !dias.length; if (!dias.length) return;
+  const inp = $('#f-dia-vot'); inp.min = dias[0]; inp.max = dias[dias.length-1]; $('#f-dia-res').min = dias[0]; $('#f-dia-res').max = dias[dias.length-1];
+  const dia = inp.value;
+  $('#b-dia-todo').classList.toggle('on', !dia);
+  $('#dias-vot').innerHTML = 'Dias com votações publicadas: ' + dias.map(d => `<a href="#" class="${d===dia?'on':''}" onclick="event.preventDefault();$('#f-dia-vot').value='${d}';$('#f-dia-vot').dispatchEvent(new Event('input'))">${diaCurto(d)}</a>`).join(' · ');
+  // como nos indicadores: aprovadas (todas) sobre as votadas com sentido de voto publicado
+  const v = todasV.filter(r => !dia || diaVot(r) === dia), apr = r => r.estado === 'aprovada' || r.estado === 'aprovada parcialmente';
+  const apDia = PA.filter(r => apr(r) && (!dia || diaVot(r) === dia));
+  const prov = diasProvisorios();
+  $('#nota-dia').innerHTML = dia && !dias.includes(dia) ? '<div class="nota-prov">Sem votações publicadas pela AR neste dia.</div>'
+    : (dia ? (prov.has(dia) ? '<div class="nota-prov"><b>Dia ainda não fechado.</b> A AR pode ainda publicar ou corrigir votações desta sessão; os números são provisórios.</div>' : '')
+           : (dias.some(d => prov.has(d)) ? `<div class="nota-prov"><b>Inclui dias ainda não fechados</b> (${dias.filter(d=>prov.has(d)).map(diaCurto).join(', ')}): a AR pode ainda publicar ou corrigir votações; os números são provisórios.</div>` : ''));
+  const linha = (rotulo, a, t) => `<tr><td>${rotulo}</td><td class="num">${fmtN(a)} / ${fmtN(t)}</td><td class="bar-c"><span class="bar-dia"><i style="width:${t ? (a/t*100).toFixed(1) : 0}%"></i></span></td><td class="num mini">${t ? pct(a,t).toString().replace('.',',') + '%' : '—'}</td></tr>`;
+  const pp = {}; v.forEach(r => { const p = r.proponente.replace('; ','/'); (pp[p] = pp[p] || [0,0])[1]++; }); apDia.forEach(r => { const p = r.proponente.replace('; ','/'); (pp[p] = pp[p] || [0,0])[0]++; });
+  const cab = c => `<thead><tr><th>${c}</th><th class="num">Aprovadas / votadas</th><th></th><th class="num">Taxa</th></tr></thead>`;
+  $('#t-dia-prop').innerHTML = cab('Proponente') + '<tbody>' + Object.entries(pp).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([p,[a,t]]) => linha(gpChip(p), a, t)).join('') + `</tbody><tfoot><tr><td><b>Total</b></td><td class="num"><b>${fmtN(apDia.length)} / ${fmtN(v.length)}</b></td><td></td><td class="num mini">${v.length ? pct(apDia.length, v.length).toString().replace('.',',') + '%' : '—'}</td></tr></tfoot>`;
+  const tt = {}; v.forEach(r => temasPA(r).forEach(t => { (tt[t] = tt[t] || [0,0])[1]++; })); apDia.forEach(r => temasPA(r).forEach(t => { (tt[t] = tt[t] || [0,0])[0]++; }));
+  $('#t-dia-tema').innerHTML = cab('Tema') + '<tbody>' + Object.entries(tt).sort((a,b)=>b[1][0]-a[1][0]||b[1][1]-a[1][1]).map(([t,[a,n]]) => linha(esc(t), a, n)).join('') + '</tbody>';
+}
 // ----- últimas 24 horas: acontecimentos, sem contar duas vezes a mesma votação
 const curtoEstado = x => String(x||'').replace(/o[(]a[)]/g,'a').replace(' em Comissão','').replace('Aguarda Voto','Aguarda voto').trim();
 function resumo24h(h) {
@@ -685,7 +740,7 @@ function montar() {
   $('#m-sentido').innerHTML = gpsVot.length ? `<tr><th>Grupo parlamentar</th><th>Favor</th><th>Contra</th><th>Abstenção</th><th>Ausente</th><th>votações</th></tr>` + gpsVot.map(g => { const s=sent[g], n=s.Favor+s.Contra+s['Abstenção']+s.Ausente; return `<tr><td style="text-align:left"><b><span class="dot" style="background:${corGP(g)}"></span> ${esc(g)}</b></td><td class="num f">${fmtN(s.Favor)}</td><td class="num c">${fmtN(s.Contra)}</td><td class="num a">${fmtN(s['Abstenção'])}</td><td class="num">${fmtN(s.Ausente)}</td><td class="num">${fmtN(n)}</td></tr>`; }).join('') : '<tr><td class="mini">Ainda sem votações registadas pela AR.</td></tr>';
   const cruz = sentidos(votadas, r=>split(r.proponente));
   matrizCalor($('#m-cruzado'), proponentes.filter(p=>cruz[p]), gpsVot.filter(g=>D.partidos.includes(g)), (l,c)=>cruz[l]&&cruz[l][c], 'Ainda sem votações registadas pela AR.', true);
-  segAtivo = 0; $('#f-q-res').value = ''; renderRes();
+  segAtivo = 0; $('#f-q-res').value = ''; $('#f-dia-vot').value = ''; $('#f-dia-res').value = ''; renderRes(); renderDia();
 
   // ----- documentos, histórico, fontes
   { const n=(E.documentos||[]).length, u=n?(E.documentos||[]).map(d=>d.primeira_captura||'').sort().pop():''; const t = () => $('#n-docs').textContent = n ? `${fmtN(n)} documentos · último registado ${hm(u)} · ${$('#card-docs').open ? 'clique para fechar' : 'clique para ver a lista'}` : 'ainda sem documentos'; t(); $('#card-docs').ontoggle = t; }
@@ -737,7 +792,7 @@ async function exportarExcel() {
   return gerarExcel($('#b-exp'), filtrar(), filtros, filtros.length ? 'selecao' : 'todas', 'nenhum (todas as propostas)');
 }
 async function exportarExcelVot() {
-  const filtros = [['Detalhe das votações', GRUPOS_RES[segAtivo][0]], ['Pesquisa', $('#f-q-res').value.trim()]].filter(f => f[1]);
+  const filtros = [['Detalhe das votações', GRUPOS_RES[segAtivo][0]], ['Pesquisa', $('#f-q-res').value.trim()], ['Dia da votação', $('#f-dia-res').value ? fmtData($('#f-dia-res').value) : '']].filter(f => f[1]);
   return gerarExcel($('#b-exp-res'), linhasRes(), filtros, 'votacoes_' + GRUPOS_RES[segAtivo][0].split(' ')[0].toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''), '');
 }
 async function gerarExcel(b, rows, filtros, sufixo, semFiltros) {
@@ -784,6 +839,9 @@ function renderPosicao() {
 }
 $('#f-pos-prop').addEventListener('input', renderPosicao);
 $('#f-q-res').addEventListener('input', () => renderRes());
+$('#f-dia-res').addEventListener('input', () => { renderRes(); });
+$('#f-dia-vot').addEventListener('input', () => { $('#f-dia-res').value = $('#f-dia-vot').value; renderDia(); renderRes(); });
+$('#b-dia-todo').addEventListener('click', () => { $('#f-dia-vot').value = ''; $('#f-dia-res').value = ''; renderDia(); renderRes(); });
 function filtrarTema(tm) {
   ['#f-q','#f-partido','#f-tipo','#f-incide','#f-estado','#f-extra'].forEach(s=>$(s).value='');
   $('#f-tema').value = tm; render();
@@ -800,8 +858,8 @@ const GRUPOS_RES = [
   ['Todas', r=>true]
 ];
 function baseRes() {
-  const q = ($('#f-q-res').value||'').trim().toLowerCase();
-  return q ? PA.filter(r => [r.n_pa,r.objeto,r.artigo,r.artigo_epigrafe,r.diplomas,r.proponente_deputados,temaDe(r)].join(' ').toLowerCase().includes(q)) : PA;
+  const q = ($('#f-q-res').value||'').trim().toLowerCase(), dia = $('#f-dia-res').value;
+  return PA.filter(r => (!q || [r.n_pa,r.objeto,r.artigo,r.artigo_epigrafe,r.diplomas,r.proponente_deputados,temaDe(r)].join(' ').toLowerCase().includes(q)) && (!dia || (r.data_votacao||'').slice(0,10) === dia));
 }
 const linhasRes = () => baseRes().filter(GRUPOS_RES[segAtivo][1]);
 function renderRes() {
@@ -809,7 +867,8 @@ function renderRes() {
   const base = baseRes();
   $('#seg-res').innerHTML = GRUPOS_RES.map(([l,f],i)=>`<button class="${i===segAtivo?'on':''}" onclick="segAtivo=${i};renderRes()">${esc(l)} (${fmtN(base.filter(f).length)})</button>`).join('');
   const rows = base.filter(GRUPOS_RES[segAtivo][1]).sort(ordemPA);
-  $('#f-n-res').textContent = q ? `${fmtN(rows.length)} registos com «${$('#f-q-res').value.trim()}» neste grupo` : '';
+  const dRes = $('#f-dia-res').value;
+  $('#f-n-res').textContent = (q || dRes) ? `${fmtN(rows.length)} registos neste grupo${q ? ` com «${$('#f-q-res').value.trim()}»` : ''}${dRes ? ` votados a ${fmtData(dRes)}` : ''}` : '';
   $('#tab-res tbody').innerHTML = rows.slice(0,1500).map(r => `<tr><td class="num"><b>${esc(r.n_pa)}</b></td><td>${split(r.proponente).map(gpChip).join(' ')}</td><td>${esc(r.artigo)}</td><td class="obj">${esc(r.objeto)}</td><td class="mini">${esc(temaDe(r))}</td><td>${estadoChip(r.estado)}${r.sede_votacao==='Plenário'?'<br><span class="mini">em Plenário</span>':''}${+r.n_votacoes>1?`<br><span class="mini">${r.n_votacoes} votações</span>`:''}</td><td class="num">${esc(fmtData(r.data_votacao))}</td><td class="mini votos">${votosHTML(r.votos_por_partido)||'—'}</td><td class="mini" style="white-space:nowrap">${r.url_pdf?`<a href="${esc(r.url_pdf)}" target="_blank" rel="noopener">PDF</a>`:''}${r.url_pdf&&r.url_detalhe?' · ':''}${r.url_detalhe?`<a href="${esc(r.url_detalhe)}" target="_blank" rel="noopener">ficha</a>`:''}</td></tr>`).join('')
     + (rows.length>1500?`<tr><td colspan="9" class="mini">Mostram-se 1 500 de ${fmtN(rows.length)} registos. Use a lista do separador «Propostas de alteração» para filtrar e exportar.</td></tr>`:'')
     || `<tr><td colspan="9" class="mini">Sem registos neste grupo.</td></tr>`;
