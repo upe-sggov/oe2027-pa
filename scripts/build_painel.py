@@ -394,7 +394,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="card"><h3>PA por proponente e resultado</h3><div class="barras" id="g-partido"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas</span><span><i class="c-par"></i>aprovadas parcialmente</span><span><i class="c-nok"></i>rejeitadas</span><span><i class="c-ret"></i>retiradas ou não admitidas</span><span><i class="c-pre"></i>prejudicadas</span><span><i class="c-pend"></i>por votar</span></div></div>
     <div class="card" id="c-vot-dia" hidden><h3>Aprovadas e rejeitadas por dia de votação</h3><div class="colunas" id="g-vot-dia"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas (total ou parcialmente)</span><span><i class="c-nok"></i>rejeitadas</span></div><div class="legenda" id="g-vot-dia-nota"></div></div>
     <div class="card" id="c-ent-dia"><h3>Entradas por dia</h3><div class="colunas" id="g-dias"></div><div class="legenda" id="g-dias-nota">Data e hora de entrada registadas pela AR, por registo.</div></div>
-    <div class="card"><h3>PA por tema (atribuído pela AR)</h3><div class="barras" id="g-tema"></div><div class="legenda">Uma proposta com vários temas conta em cada um deles.</div></div>
+    <div class="card"><h3>PA por tema e resultado (atribuído pela AR)</h3><div class="barras" id="g-tema"></div><div class="stack-leg" id="leg-tema"></div><div class="legenda">Uma proposta com vários temas conta em cada um deles. Clique num tema para ver as PA na lista.</div></div>
     <div class="card" id="c-ent-hora"><h3>Entradas por hora no último dia</h3><div class="colunas" id="g-horas"></div><div class="legenda" id="g-horas-nota"></div></div>
     <div class="card"><h3>PA por tipo e resultado</h3><div class="barras" id="g-tipo"></div><div class="stack-leg"><span><i class="c-ok"></i>aprovadas</span><span><i class="c-par"></i>parcialmente</span><span><i class="c-nok"></i>rejeitadas</span><span><i class="c-ret"></i>retiradas ou não admitidas</span><span><i class="c-pre"></i>prejudicadas</span><span><i class="c-pend"></i>por votar</span></div><div class="legenda">Tipo: natureza da PA publicada pela AR. Clique num tipo para ver as PA na lista.</div></div>
     <div class="card"><h3 id="h-cal">Calendário de apreciação na AR</h3><div class="cal" id="cal"></div><div class="legenda" id="cal-fonte"></div></div>
@@ -799,7 +799,8 @@ function montar() {
     const temProv = dv.some(d=>prov.has(d));
     $('#g-vot-dia-nota').textContent = `Por cima de cada coluna: aprovadas / votadas com sentido de voto publicado. O dia é o da sessão em que se votou (data publicada pela AR).${temProv?' * Dia ainda não fechado: números provisórios.':''}`;
   }
-  barras($('#g-tema'), cont(PA, temasPA).slice(0,16), tm => { irPara('pa'); filtrarTema(tm); });
+  barrasEmpilhadas($('#g-tema'), cont(PA, temasPA).slice(0,16).map(([tm]) => { const rs = PA.filter(r=>temasPA(r).includes(tm)); return [tm, porEstadoDe(rs), rs.length]; }), tm => { irPara('pa'); filtrarTema(tm); });
+  if ($('#leg-tema')) $('#leg-tema').innerHTML = $('#g-partido').closest('.card').querySelector('.stack-leg').innerHTML;
   barrasEmpilhadas($('#g-tipo'), cont(PA, r=>[r.tipo_ar||'—']).map(([tp]) => { const rs = PA.filter(r=>(r.tipo_ar||'—')===tp); return [tp, porEstadoDe(rs), rs.length]; }), tp => { irPara('pa'); filtrarTipo(tp); });
   const hoje = new Date().toISOString().slice(0,10);
   let cal = E.calendario || [];
