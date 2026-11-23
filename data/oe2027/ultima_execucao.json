@@ -1,5 +1,5 @@
 {
- "momento": "2026-11-23T16:01:28Z",
+ "momento": "2026-11-23T18:01:42Z",
  "comando": "opendata",
  "ano": 2027,
  "erros": [],
@@ -7,7 +7,7 @@
  "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=oPZGv3XJTa4eA4wDdbaqxmOKgLwm4qtn5jUBMgrSzJ9wFuhyjsbkLsej8Z2vYZv%2fKlWCJE1pxU7dg93AhVEtdbC0nymAar6jY3Zs%2b8YPj4gxD8WQbAlYEAA7LlkHdNlFC95mpzynINw6d3QI7XEeJdDICGHhvO1k%2fYC%2bai1UXo8VMYlN8oeFaAyioSe44hZhShZ2hcC%2b99enK4RIvxbTsSaJejGdvFpCK1JcKJYbtvte2hRwln4MGRVHya7qDTJt0eAoAqZ64F6OHDGbVHRtXedXesL9F2vb6M4NhklWipLoP2vZ7zPTAdSCU7cbuQDr6WoyetN4RJ%2fsWpeioRz2IBPoXusgWQBj0zwN7909ft0h0pD2aBZconq4Cf%2fIKEGCrzeDqZqUawfB1TC7ASrGDV9i9Gpu27IrhZLDO9Yet80%3d&fich=OEPropostasAlteracao2027Or_json.txt&Inline=true",
  "ultima_modificacao_ar": "",
  "capturados": 2919,
- "eventos": 98,
+ "eventos": 0,
  "resumo": {
   "registos": 3026,
   "pa": 2777,
