@@ -12031,3 +12031,755 @@
 2026-11-23T16:01:28Z;21C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
 2026-11-23T16:01:28Z;13C;estado alterado;Avocado(a) → Rejeitado(a) em Plenário;opendata
 2026-11-23T16:01:28Z;13C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;2759C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2759C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Abstenção; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Favor; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2758C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2758C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2737C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2737C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;2724C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2724C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2719C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2719C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Abstenção; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2717C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2717C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2713C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2713C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2709C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2709C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Contra; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2706C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2706C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2700C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2700C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2699C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2699C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2695C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2695C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2690C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2690C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2689C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2689C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2686C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2686C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2683C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2683C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2672C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2672C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2671C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2671C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2669C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2669C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Abstenção; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2668C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2668C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2665C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2665C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2663C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2663C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2657C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2657C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2652C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2652C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2650C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2650C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2647C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2647C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2644C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2644C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2640C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2640C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2633C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2633C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2630C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2630C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2629C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2629C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2627C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2627C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2595C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2595C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2591C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2591C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2566C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2566C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2554C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2554C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2553C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2553C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2549C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2549C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2547C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2547C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2545C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2545C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2454C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2454C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2437C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2437C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2422C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) Parcialmente em Comissão;opendata
+2026-11-23T19:11:38Z;2422C;votada;"Aprovado(a) Parcialmente em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2420C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2420C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2419C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2419C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2418C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2418C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2417C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2417C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2416C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2416C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2415C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2415C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2414C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2414C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2413C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2413C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2412C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2412C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2409C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2409C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2408C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2408C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2406C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2406C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2404C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2404C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2402C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2402C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2399C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2399C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2397C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2397C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2395C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2395C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2394C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2394C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2390C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2390C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2388C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2388C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2387C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2387C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2385C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2385C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2384C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2384C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2382C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2382C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2381C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2381C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2379C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2379C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2374C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2374C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2372C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2372C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2371C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2371C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2365C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2365C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2364C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2364C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2362C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2362C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2361C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2361C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Contra; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2360C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2360C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Contra; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2357C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2357C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2351C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2351C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Contra; PAN:Contra; JPP:Abstenção";opendata
+2026-11-23T19:11:38Z;2347C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2347C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2339C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2339C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2331C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2331C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2316C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2316C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2301C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2301C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2288C-2;estado alterado;Remetido(a) a Plenário → Aprovado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2288C-2;votada;"Aprovado(a) em Plenário · PSD:Favor; CH:Abstenção; PS:Favor; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Favor; BE:Abstenção; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;2288C-1;estado alterado;Remetido(a) a Plenário → Aprovado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2288C-1;votada;"Aprovado(a) em Plenário · PSD:Favor; CH:Abstenção; PS:Favor; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Favor; BE:Abstenção; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;2268C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2268C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2264C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2264C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2263C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2263C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2257C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2257C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Favor; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2256C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2256C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2253C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2253C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2243C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2243C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2238C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2238C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Favor; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2237C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2237C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Favor; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2231C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) por Unanimidade em Comissão;opendata
+2026-11-23T19:11:38Z;2231C;votada;"Aprovado(a) por Unanimidade em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Favor; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2227C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2227C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2226C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2226C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2224C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2224C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Favor; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2212C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2212C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Favor; L:Abstenção; PCP:Favor; CDS-PP:Favor; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2206C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2206C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Favor; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2203C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2203C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2195C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2195C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;2183C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2183C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2180C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2180C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2175C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2175C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2174C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2174C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2172C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2172C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2167C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2167C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Favor; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Abstenção; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2161C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2161C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2150C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2150C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2144C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2144C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2142C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2142C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2134C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2134C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2133C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2133C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2132C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2132C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2131C-2;estado alterado;Remetido(a) a Plenário → Aprovado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2131C-2;votada;"Aprovado(a) em Plenário · PSD:Favor; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Favor; BE:Favor; PAN:Abstenção; JPP:Abstenção";opendata
+2026-11-23T19:11:38Z;2131C-1;estado alterado;Remetido(a) a Plenário → Aprovado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2131C-1;votada;"Aprovado(a) em Plenário · PSD:Favor; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Favor; BE:Abstenção; PAN:Abstenção; JPP:Abstenção";opendata
+2026-11-23T19:11:38Z;2129C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2129C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2128C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2128C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2126C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2126C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2125C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2125C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2124C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2124C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2120C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2120C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2119C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2119C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2118C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2118C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2117C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2117C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2111C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2111C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2108C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) Parcialmente em Comissão;opendata
+2026-11-23T19:11:38Z;2108C;votada;"Aprovado(a) Parcialmente em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2106C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2106C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2103C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2103C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Favor; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2080C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2080C;votada;"Aprovado(a) em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Favor; BE:Abstenção; PAN:Contra";opendata
+2026-11-23T19:11:38Z;2077C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) Parcialmente em Comissão;opendata
+2026-11-23T19:11:38Z;2077C;votada;"Aprovado(a) Parcialmente em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2076C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2076C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2074C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2074C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2072C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;2072C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;2070C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2070C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2068C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2068C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2065C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2065C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2063C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2063C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2060C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2060C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2058C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2058C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2056C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2056C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2054C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2054C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2053C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2053C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2049C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) por Unanimidade em Comissão;opendata
+2026-11-23T19:11:38Z;2049C;votada;"Aprovado(a) por Unanimidade em Comissão · PSD:Favor; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Favor; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2048C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2048C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2047C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2047C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2045C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2045C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2041C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2041C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2037C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2037C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2034C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2034C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2032C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2032C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2030C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2030C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2029C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2029C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2024C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2024C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2023C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2023C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;2015C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2015C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;2006C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2006C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;2001C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;2001C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Favor; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Contra; PAN:Contra";opendata
+2026-11-23T19:11:38Z;1978C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1978C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1973C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1973C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1972C;estado alterado;Avocado(a) → Aprovado(a) Parcialmente em Plenário;opendata
+2026-11-23T19:11:38Z;1972C;votada;"Aprovado(a) Parcialmente em Plenário · PSD:Abstenção; CH:Abstenção; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Abstenção; BE:Favor; PAN:Abstenção; JPP:Favor";opendata
+2026-11-23T19:11:38Z;1971C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1971C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1969C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1969C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1966C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1966C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1965C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1965C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1963C;estado alterado;Remetido(a) a Plenário → Aprovado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;1963C;votada;"Aprovado(a) em Plenário · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;1944C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1944C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1932C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1932C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1904C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1904C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1895C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1895C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1870C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1870C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1852C;estado alterado;Aguarda Voto em Comissão → Retirado(a);opendata
+2026-11-23T19:11:38Z;1833C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;1833C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Abstenção; PS:Favor; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;1829C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) Parcialmente em Comissão;opendata
+2026-11-23T19:11:38Z;1829C;votada;"Aprovado(a) Parcialmente em Comissão · PSD:Favor; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Favor; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1822C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1822C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1814C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1814C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1805C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1805C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1802C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1802C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1801C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1801C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1800C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1800C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1792C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1792C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1775C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1775C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1771C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1771C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1768C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1768C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1727C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1727C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1672C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1672C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1670C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1670C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1667C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1667C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1666C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1666C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Contra; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1663C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1663C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1656C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1656C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1654C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1654C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1652C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1652C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Abstenção; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1651C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1651C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1648C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1648C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1644C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1644C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1642C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1642C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1640C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1640C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1637C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1637C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Contra; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1634C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1634C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1633C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1633C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1628C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1628C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1625C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1625C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1609C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1609C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1584C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1584C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1581C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1581C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1578C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1578C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1576C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1576C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1572C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1572C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1569C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1569C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1565C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1565C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1564C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1564C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1563C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1563C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1556C-1;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1556C-1;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Contra; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Contra; PAN:Contra";opendata
+2026-11-23T19:11:38Z;1543C;estado alterado;Avocado(a) → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;1543C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;1529C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1529C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1481C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1481C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;1476C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1476C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;1456C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1456C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1453C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1453C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1451C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1451C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1422C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1422C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1418C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1418C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1408C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;1408C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;1394C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1394C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1391C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1391C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1230C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1230C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1227C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1227C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1216C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) Parcialmente em Comissão;opendata
+2026-11-23T19:11:38Z;1216C;votada;"Aprovado(a) Parcialmente em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1212C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1212C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;1169C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1169C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1167C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1167C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1165C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1165C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1164C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1164C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1160C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1160C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Contra; PCP:Favor; CDS-PP:Contra; BE:Contra; PAN:Contra";opendata
+2026-11-23T19:11:38Z;1152C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1152C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor";opendata
+2026-11-23T19:11:38Z;1149C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1149C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1148C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1148C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1144C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1144C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;1139C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1139C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1133C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1133C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1131C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1131C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1120C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1120C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1099C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1099C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1090C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1090C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1089C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1089C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1079C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1079C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1077C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1077C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1076C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1076C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1062C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1062C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1060C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1060C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1059C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1059C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Abstenção; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1058C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1058C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1046C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1046C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1034C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1034C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;1004C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;1004C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;992C-3;estado alterado;Avocado(a) → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;992C-3;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Contra; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Contra; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;991C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;991C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;982C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;982C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;973C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;973C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Contra; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;972C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;972C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;971C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;971C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;970C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;970C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;969C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;969C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;963C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;963C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;926C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;926C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;908C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;908C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;907C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;907C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;889C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;889C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;886C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;886C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;882C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;882C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;880C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;880C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;877C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;877C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;875C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;875C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;874C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;874C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;873C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;873C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;871C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;871C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;870C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;870C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;869C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;869C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;868C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;868C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;867C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;867C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;866C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;866C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;864C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;864C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;863C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;863C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;862C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;862C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;861C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;861C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;860C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;860C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;859C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;859C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;858C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;858C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;856C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;856C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;855C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;855C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;854C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;854C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Contra; IL:Contra; L:Abstenção; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;853C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;853C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;851C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;851C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;849C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;849C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;848C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;848C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;847C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;847C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;839C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;839C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;768C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;768C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Contra; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;765C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;765C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;757C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;757C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;748C;estado alterado;Aguarda Voto em Comissão → Retirado(a);opendata
+2026-11-23T19:11:38Z;741C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;741C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;739C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;739C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;738C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;738C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;733C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;733C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;721C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;721C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;713C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;713C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Abstenção; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;707C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;707C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção";opendata
+2026-11-23T19:11:38Z;706C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;706C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;705C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;705C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;704C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;704C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;630C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;630C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;628C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;628C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;627C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;627C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;624C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;624C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;623C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;623C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;554C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;554C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;552C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;552C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;551C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;551C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;550C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;550C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;548C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;548C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;546C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;546C;votada;"Aprovado(a) em Comissão · PSD:Contra; CH:Favor; PS:Favor; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;544C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;544C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;540C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;540C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;539C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;539C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;482C-2;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;482C-2;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;482C-1;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;482C-1;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;480C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;480C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Abstenção; JPP:Favor";opendata
+2026-11-23T19:11:38Z;472C;estado alterado;Aguarda Voto em Comissão → Aprovado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;472C;votada;"Aprovado(a) em Comissão · PSD:Abstenção; CH:Favor; PS:Favor; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Abstenção; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;470C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;470C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;465C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;465C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;463C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;463C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;454C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;454C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Favor; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;453C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;453C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;451C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;451C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;450C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;450C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;449C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;449C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;447C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;447C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;335C;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;335C;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Contra; PAN:Abstenção; JPP:Abstenção";opendata
+2026-11-23T19:11:38Z;313C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;313C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;312C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;312C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;310C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;310C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;309C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;309C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;289C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;289C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Contra; PCP:Abstenção; CDS-PP:Contra; BE:Contra; PAN:Contra";opendata
+2026-11-23T19:11:38Z;258C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;258C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Contra; IL:Contra; L:Contra; PCP:Contra; CDS-PP:Contra; BE:Contra; PAN:Contra";opendata
+2026-11-23T19:11:38Z;255C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;255C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;254C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;254C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Abstenção; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;193C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;193C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;191C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;191C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;186C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;186C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Contra";opendata
+2026-11-23T19:11:38Z;184C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;184C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;183C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;183C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Favor; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Favor";opendata
+2026-11-23T19:11:38Z;181C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;181C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;176C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;176C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;175C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;175C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;174C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;174C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;118C-2;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;118C-2;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Contra; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;118C-1;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;118C-1;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;117C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;117C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;97C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;97C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;89C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;89C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;87C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;87C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;81C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;81C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Abstenção; PAN:Favor";opendata
+2026-11-23T19:11:38Z;60C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;60C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Contra; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;53C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;53C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;52C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;52C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;47C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;47C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;46C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;46C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;45C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;45C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;19C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;19C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Contra; PS:Abstenção; IL:Abstenção; L:Abstenção; PCP:Abstenção; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;15C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;15C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor";opendata
+2026-11-23T19:11:38Z;4C;estado alterado;Aguarda Voto em Comissão → Rejeitado(a) em Comissão;opendata
+2026-11-23T19:11:38Z;4C;votada;"Rejeitado(a) em Comissão · PSD:Contra; CH:Favor; PS:Abstenção; IL:Contra; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Ausente; PAN:Ausente";opendata
+2026-11-23T19:11:38Z;1C-2;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;1C-2;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Favor; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
+2026-11-23T19:11:38Z;1C-1;estado alterado;Remetido(a) a Plenário → Rejeitado(a) em Plenário;opendata
+2026-11-23T19:11:38Z;1C-1;votada;"Rejeitado(a) em Plenário · PSD:Contra; CH:Abstenção; PS:Abstenção; IL:Favor; L:Favor; PCP:Abstenção; CDS-PP:Contra; BE:Favor; PAN:Favor; JPP:Favor";opendata
