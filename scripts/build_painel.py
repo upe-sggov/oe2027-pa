@@ -294,6 +294,7 @@ table.t-dia td.bar-c{width:34%}
 .leg-calor .grad{width:180px;height:12px;border-radius:3px;background:linear-gradient(90deg,hsl(0,55%,82%),hsl(60,55%,77%),hsl(120,55%,72%))}
 .leg-calor .ex{display:inline-block;background:hsl(96,55%,74%);color:#1c2630;border-radius:4px;padding:1px 7px;text-align:center;line-height:1.15;font-size:11px}
 .leg-calor .ex small{display:block;font-size:9px;opacity:.75}
+.calor td.diag{background:var(--chip);color:var(--ink3)}
 .resumo-sel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 8px;font-size:13px}
 .resumo-sel .pill{border:1px solid var(--linha);border-radius:999px;padding:2px 10px;background:var(--card)}
 .resumo-sel .pill b{font-variant-numeric:tabular-nums}
@@ -453,6 +454,7 @@ footer .filete{height:3px;background:linear-gradient(90deg,var(--azul),var(--tea
     <div class="legenda">Indicador histórico calculado a partir dos temas e dos sentidos de voto publicados pela AR. Não é uma previsão. Inclui os deputados únicos representantes de partido.</div>
   </div>
   <div class="card" style="margin-top:12px"><h3>Como vota cada grupo parlamentar nas PA de cada proponente</h3><div class="leg-calor"><span class="esc">Cor: % de votos a favor do grupo · <b>0%</b><span class="grad" aria-hidden="true"></span><b>100%</b></span><span>Em cada célula: <span class="ex">75%<small>3 · 1 · 0</small></span> = 75% a favor; por baixo, n.º de PA com voto a favor · contra · abstenção</span><span>«—» o grupo não votou nessas PA</span></div><div class="tabela-wrap"><table class="matriz calor" id="m-cruzado"></table></div><div class="legenda">Linhas: proponente da PA, com o n.º de PA votadas. Colunas: grupo parlamentar que vota.</div></div>
+  <div class="card" style="margin-top:12px"><h3>Concordância entre grupos parlamentares</h3><div class="leg-calor"><span class="esc">Cor: % de PA em que os dois grupos votaram no mesmo sentido · <b>0%</b><span class="grad" aria-hidden="true"></span><b>100%</b></span><span>Em cada célula: <span class="ex">75%<small>300 de 400</small></span> = votaram no mesmo sentido em 300 das 400 PA em que ambos votaram</span><span>«—» sem PA em que ambos tenham votado</span></div><div class="tabela-wrap"><table class="matriz calor" id="m-concord"></table></div><div class="legenda">Mesmo sentido = os dois grupos votaram a favor, os dois contra ou os dois se abstiveram, tal como a AR publica o voto de cada grupo. Conta só as PA em que ambos votaram (as ausências ficam de fora), por isso a base de cada par é diferente e aparece em cada célula. Passe o rato sobre uma célula para ver a decomposição. Os votos individuais de deputados não entram. Segue o filtro «Dia da votação».</div></div>
   <details class="card dobra" id="card-docs" style="margin-top:12px"><summary><h3 id="h-docs">Documentos publicados pela COFAP</h3><span class="mini" id="n-docs"></span></summary><div class="tabela-wrap" style="margin-top:10px"><table id="tab-docs"><thead><tr><th>Documento</th><th>Registado no painel</th></tr></thead><tbody></tbody></table></div><div class="legenda">Guiões e resultados de votações, textos finais, relatórios e pareceres (por exemplo, da UTAO e do Conselho das Finanças Públicas) publicados na página do OE da Comissão de Orçamento, Finanças e Administração Pública. Não inclui os contributos de entidades e cidadãos.</div></details>
   <div class="card" style="margin-top:12px"><h3>Detalhe das votações</h3>
     <div class="seg" id="seg-res"></div>
@@ -617,7 +619,22 @@ function renderVotacoes() {
   const cruz = sentidos(votadas, r=>split(r.proponente));
   const nVotProp = p => votadas.filter(r=>split(r.proponente).includes(p)).length;
   matrizCalor($('#m-cruzado'), proponentes.filter(p=>cruz[p]).sort((x,y)=>nVotProp(y)-nVotProp(x)), gpsVot.filter(g=>D.partidos.includes(g)), (l,c)=>cruz[l]&&cruz[l][c], dia ? 'Sem votações publicadas neste dia.' : 'Ainda sem votações registadas pela AR.', true, nVotProp);
+  renderConcord(votadas, gpsVot.filter(g=>D.partidos.includes(g)));
   renderPosicao(); renderDia(); renderRes();
+}
+// ----- concordância entre grupos parlamentares (mesmo sentido de voto, nas PA em que ambos votaram)
+function renderConcord(votadas, gps) {
+  const el = $('#m-concord');
+  if (!votadas.length || gps.length < 2) { el.innerHTML = `<tr><td class="mini">${DIA ? 'Sem votações publicadas neste dia.' : 'Ainda sem votações registadas pela AR.'}</td></tr>`; return; }
+  const votos = votadas.map(r => { const m = {}; for (const v of split(r.votos_por_partido)) { const [g,s] = v.split(':').map(x=>x.trim()); if (g && /^(Favor|Contra|Abstenção)$/.test(s)) m[g] = s; } return m; });
+  const par = (a,b) => { let n=0, f=0, c=0, ab=0; for (const m of votos) if (m[a] && m[b]) { n++; if (m[a]===m[b]) { if (m[a]==='Favor') f++; else if (m[a]==='Contra') c++; else ab++; } } return {n, eq:f+c+ab, f, c, ab}; };
+  const nVot = g => votos.filter(m => m[g]).length;
+  const ordem = gps.filter(g => nVot(g));
+  el.innerHTML = `<tr><th></th>${ordem.map(g=>`<th><span class="dot" style="background:${corGP(g)}"></span> ${esc(g)}</th>`).join('')}</tr>` + ordem.map(a => `<tr><td style="text-align:left"><b><span class="dot" style="background:${corGP(a)}"></span> ${esc(a)}</b> <span class="mini">${fmtN(nVot(a))}</span></td>${ordem.map(b => {
+    if (a === b) return '<td class="q diag mini">—</td>';
+    const x = par(a,b); if (!x.n) return '<td class="q mini">—</td>';
+    const p = x.eq/x.n, cor = `hsl(${Math.round(p*120)},55%,${82-Math.round(p*10)}%)`;
+    return `<td class="q" style="background:${cor}" title="${esc(a)} e ${esc(b)}: mesmo sentido em ${fmtN(x.eq)} de ${fmtN(x.n)} PA em que ambos votaram (${fmtN(x.f)} ambos a favor, ${fmtN(x.c)} ambos contra, ${fmtN(x.ab)} ambos abstenção); sentido diferente em ${fmtN(x.n-x.eq)}">${pctF(x.eq,x.n)}%<small>${fmtN(x.eq)} de ${fmtN(x.n)}</small></td>`; }).join('')}</tr>`).join('');
 }
 function renderDia() {
   const todasV = PA.filter(r => r.votos_por_partido);
