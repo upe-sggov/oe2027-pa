@@ -1,5 +1,5 @@
 {
- "momento": "2026-11-25T12:01:24Z",
+ "momento": "2026-11-25T14:01:03Z",
  "comando": "opendata",
  "ano": 2027,
  "erros": [],
@@ -7,7 +7,7 @@
  "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=MC4NV7duEfDzE7ecIDP06ynsznj5BD4Otsh2SwXSe%2bgBq4cS2rePTQHBovRy7Q4%2fND6iCENQ6PO9lXNLL6w%2bfmlOoJgLg4KESo3oV%2bJ5%2bCKgLqCAeXmlqOQxjePI9Net5AUwocWUh1CtSzirhbeir42zQLBDCMTXVlb%2fkGGpZ501MH06X5wbqT%2b0hmv%2b4yllzoBEhiCLnpAkFmuwpWoH2CX33FmEwUK1nWrhS%2bEfKfRZTu9OSl0dHax%2fkulpea7ML6ajkhcnTao3Hec0S2bTzvf2HddXZfbEdZU2zBLXDfWgcb6bjh6ZUyBlVsakK1ZfOoAZ394XLShYovYtCEwtTCMZuXEP7n8%2fFpn3jSdplBoi1QLeXPyZ5qiP3CWXf1dekk2TwCvMHm9yb5X0PVbLD0np1Ve8KYF3yePYkBd7wY9rtHn3a548fM8Is4t5tc6G&fich=OEPropostasAlteracao2027Or_json.txt&Inline=true",
  "ultima_modificacao_ar": "",
  "capturados": 2919,
- "eventos": 0,
+ "eventos": 1,
  "resumo": {
   "registos": 3026,
   "pa": 2777,
@@ -24,8 +24,8 @@
    "IL": 72
   },
   "por_estado": {
-   "rejeitada": 2469,
-   "aprovada": 331,
+   "rejeitada": 2470,
+   "aprovada": 330,
    "em apreciação": 110,
    "retirada": 54,
    "aprovada parcialmente": 35,
